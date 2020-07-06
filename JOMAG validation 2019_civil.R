@@ -6398,7 +6398,6 @@ round(freq(ordered(gibush_candidates_kakatz_07.2020_civil$gap_warning), plot = F
 cor.test(as.numeric(gibush_candidates_kakatz_07.2020_civil$alternative_weighted_score),as.numeric(gibush_candidates_kakatz_07.2020_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
 cor.test(as.numeric(gibush_candidates_kakatz_07.2020_civil$altenative_weighted_score_final),as.numeric(gibush_candidates_kakatz_07.2020_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
 
-
 gibush_candidates_kakatz_07.2020_civil$gap_direction<-ifelse(gibush_candidates_kakatz_07.2020_civil$gap<0,1,2)
 
 gibush_candidates_kakatz_07.2020_civil_negative=gibush_candidates_kakatz_07.2020_civil %>%
@@ -6418,6 +6417,21 @@ round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2020_civil_positive
 # col.data=ifelse(gibush_candidates_kakatz_07.2020_civil$warning==1,'red','black')
 
 write.csv(gibush_candidates_kakatz_07.2020_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/gibush_candidates_kakatz_07.2020_civil_final_scores_new.csv")
+
+
+#presentation
+
+presentation_filtered_vars<-JOMAG_predictores_criteria_merged_civil %>%
+  select(personal_number,final_apptitudes_new,tkufatitam)
+presentation <-
+  merge(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar,presentation_filtered_vars,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+
+
+cor.test(as.numeric(presentation$kaba),as.numeric(presentation$final_apptitudes_new),use="pairwise.complete.obs",na.action = "na.exclude")
+cor.test(as.numeric(presentation$kaba),as.numeric(presentation$tkufatitam),use="pairwise.complete.obs",na.action = "na.exclude")
+cor.test(as.numeric(presentation$am_courses_soc_mac),as.numeric(presentation$tkufatitam),use="pairwise.complete.obs",na.action = "na.exclude")
+cor.test(as.numeric(presentation$final_mac_course_score),as.numeric(presentation$tkufatitam),use="pairwise.complete.obs",na.action = "na.exclude")
+
 
 
 #shiny app
@@ -6462,6 +6476,10 @@ colnames(JOMAG_predictores_criteria_merged_civil[1:1000])
 colnames(JOMAG_predictores_criteria_merged_civil[1001:ncol(JOMAG_predictores_criteria_merged_civil)])
 colnames(JOMAG_predictores_criteria_merged_civil_officers[1:1000])
 colnames(JOMAG_predictores_criteria_merged_civil_officers[1001:ncol(JOMAG_predictores_criteria_merged_civil_officers)])
+
+colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+colnames(JOMAG_predictores_criteria_merged_civil[1:1000])
+
 
 colnames(JOMAG_predictores_criteria_merged_civil_old[1001:ncol(JOMAG_predictores_criteria_merged_civil_old)])
 JOMAG_predictores_criteria_merged_civil_qv<-JOMAG_predictores_criteria_merged_civil_qv[-1475]
