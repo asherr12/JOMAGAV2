@@ -6025,7 +6025,7 @@ round(describe(as.numeric(unlist(filtered_residual_positive$residual))),2)
 #   geom_point(aes(color = abs(residual), size = abs(residual))) + # size also mapped
 #   scale_color_continuous(low = "green", high = "red") +
 #   guides(color = FALSE, size = FALSE) +  # Size legend also removed
-#   # <
+#   
 # 
 #   geom_point(aes(y = predicted_FileGrade), shape = 1) +
 #   theme_bw()
@@ -6306,6 +6306,7 @@ gibush_candidates_kakatz_07.2020_civil[27][gibush_candidates_kakatz_07.2020_civi
 gibush_candidates_kakatz_07.2020_civil[27][gibush_candidates_kakatz_07.2020_civil[2]==43] <- 2.5
 gibush_candidates_kakatz_07.2020_civil[27][gibush_candidates_kakatz_07.2020_civil[2]==44] <- 3.75
 
+
 # interview
 gibush_candidates_kakatz_07.2020_civil[28][gibush_candidates_kakatz_07.2020_civil[2]==1] <- 3.5
 gibush_candidates_kakatz_07.2020_civil[28][gibush_candidates_kakatz_07.2020_civil[2]==2] <- 3.5
@@ -6394,8 +6395,8 @@ round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2020_civil$gap_abs)
 
 round(freq(ordered(gibush_candidates_kakatz_07.2020_civil$gap_warning), plot = F,main=colnames(gibush_candidates_kakatz_07.2020_civil$gap_warning),font=2),2)
 
-cor.test(as.numeric(gibush_candidates_kakatz_07.2020_civil$alternative_weighted_score),as.numeric(gibush_candidates_kakatz_07.2020_civil$predicted_FileGrade),use="pairwise.complete.obs")
-cor.test(as.numeric(gibush_candidates_kakatz_07.2020_civil$altenative_weighted_score_final),as.numeric(gibush_candidates_kakatz_07.2020_civil$predicted_FileGrade),use="pairwise.complete.obs")
+cor.test(as.numeric(gibush_candidates_kakatz_07.2020_civil$alternative_weighted_score),as.numeric(gibush_candidates_kakatz_07.2020_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
+cor.test(as.numeric(gibush_candidates_kakatz_07.2020_civil$altenative_weighted_score_final),as.numeric(gibush_candidates_kakatz_07.2020_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
 
 
 gibush_candidates_kakatz_07.2020_civil$gap_direction<-ifelse(gibush_candidates_kakatz_07.2020_civil$gap<0,1,2)
