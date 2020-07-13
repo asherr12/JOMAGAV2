@@ -2987,7 +2987,6 @@ for(i in 1:(ncol(JOMAG_predictores_criteria_merged_civil_old_corr_output)/4)){
 write.csv(JOMAG_predictores_criteria_merged_civil_old_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/JOMAG_predictores_criteria_merged_civil_old_corr_output_assessors_all_sample.csv")
 
 
-
 # flexible cutoff point
 # JOMAG_predictores_criteria_merged_civil<-read.csv("C:/Users/Administrator.MAMADA-777/Documents/Junior officers MAGAV validation/JOMAG_predictores_criteria_merged_civil_old.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
 JOMAG_predictores_criteria_merged_civil<-read.csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/JOMAG_predictores_criteria_merged_civil_old.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
@@ -3172,6 +3171,7 @@ filtered_FileGrade_candidates_2019$passed<-
 
 library(descr)
 CrossTable(filtered_FileGrade_candidates_2019$VaadaGrade_completed,filtered_FileGrade_candidates_2019$passed,simulate.p.value=TRUE)
+CrossTable(filtered_FileGrade_candidates_2019$candidates_2019,filtered_FileGrade_candidates_2019$passed,simulate.p.value=TRUE)
 
 t.test(as.numeric(filtered_FileGrade_candidates_2019$final_apptitudes_new)~as.numeric(filtered_FileGrade_candidates_2019$passed),use="pairwise.complete.obs")
 round(tapply(as.numeric(filtered_FileGrade_candidates_2019$final_apptitudes_new),filtered_FileGrade_candidates_2019$passed,mean,na.rm=T),2)
