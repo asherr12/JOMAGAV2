@@ -5197,9 +5197,17 @@ head(JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed)
 
 class(JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed)
 
-library(dplyr)
+
+JOMAG_predictores_criteria_merged_civil = JOMAG_predictores_criteria_merged_civil %>%
+  rowwise() %>%
+  mutate(gender_new = ifelse(!is.na(gender),gender,
+                      ifelse(!is.na(Sex),Sex,NA)))
+                                        
+JOMAG_predictores_criteria_merged_civil$gender<-JOMAG_predictores_criteria_merged_civil$gender_new
+
+
 filtered_vars<-JOMAG_predictores_criteria_merged_civil %>%
-  select(personal_number,id,FileGrade,VaadaGrade_completed,officer)
+  select(personal_number,id,FileGrade,VaadaGrade_completed,officer,gender_new)
 mac_datets_and_scores_civil <-
   merge(mac_datets_and_scores_civil,filtered_vars,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 
@@ -5785,6 +5793,8 @@ round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_ma
 
 colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
 
+nrow(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+
 # Correlations predictors-criteria
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_for_correlations <- mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,105,113,114,117,118)]
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_names_for_correlations <- c(colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,105,113,114,117,118)]))
@@ -5988,6 +5998,10 @@ library(dplyr)
 filtered_residual=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar %>%
   filter(!is.na(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$predicted_FileGrade)
          & !is.na(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$FileGrade))
+
+nrow(filtered_residual)
+round(freq(ordered(filtered_residual$gender_new), plot = F,main=colnames(filtered_residual$gender_new),font=2),2)
+
 
 filtered_residual$residual = round(resid(reg_FileGrade1),2)
 filtered_residual$residual_abs = abs(round(resid(reg_FileGrade1),2))
