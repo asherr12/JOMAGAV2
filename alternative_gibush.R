@@ -124,8 +124,6 @@ criteria_merged<-rename(criteria_merged,c("מעריך2015"="evaluator2015","עובד.מערי
                                           "ציון.יחסי.ישיר2017"="direct.relative.score2017", "גודל.קבוצה2017"="group.size.2017",
                                           "ציון.סופי2017"="final.score.2017"))
 
-colnames(criteria_merged)
-
 #Remove duplicate rows from criteria_merged.
 n_occur<-data.frame(table(criteria_merged$personal_number))
 n_occur[n_occur$Freq>1,]
@@ -175,6 +173,7 @@ class(mac_datets_and_scores$GibDate)
 head(mac_datets_and_scores$GibDate)
 
 #End of Tali code.
+# Begin of civil cose.
 
 library(readr)
 locale("he")
@@ -230,7 +229,6 @@ JOMAG_predictores_criteria_merged_civil = JOMAG_predictores_criteria_merged_civi
                              ifelse(!is.na(Sex),Sex,NA)))
 
 JOMAG_predictores_criteria_merged_civil$gender<-JOMAG_predictores_criteria_merged_civil$gender_new
-
 
 filtered_vars<-JOMAG_predictores_criteria_merged_civil %>%
   select(personal_number,id,FileGrade,VaadaGrade_completed,officer,gender_new)
@@ -296,7 +294,6 @@ JOMAG_predictores_criteria_merged_civil_qv<-JOMAG_predictores_criteria_merged_ci
 
 filtered_mac_datets_and_scores_civil$matching<-match(as.numeric(filtered_mac_datets_and_scores_civil$personal_number),as.numeric(JOMAG_predictores_criteria_merged_civil$personal_number))
 filtered_mac_datets_and_scores_civil$matching_qv<-match(as.numeric(filtered_mac_datets_and_scores_civil$personal_number),as.numeric(JOMAG_predictores_criteria_merged_civil_qv$personal_number))
-colnames(filtered_mac_datets_and_scores_civil)
 
 library(descr)
 library(psych)
@@ -821,9 +818,11 @@ colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am
 
 nrow(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
 
+colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+
 # Correlations predictors-criteria
-mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_for_correlations <- mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,105,113,114,117,118)]
-mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_names_for_correlations <- c(colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,105,113,114,117,118)]))
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_for_correlations <- mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,106,114,115,118,119)]
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_names_for_correlations <- c(colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,106,114,115,118,119)]))
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_criteria_columns_for_correlations <- mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(101,102)]
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_criteria_columns_names_for_correlations <- c(colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(101,102)]))
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output<-data.frame()[1:2,]
@@ -853,8 +852,8 @@ for(i in 1:(ncol(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_
 write.csv(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_p_c_corr_output.csv")
 
 # Correlations within predictors.
-mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_for_correlations <- mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,105,113,114,117,118)]
-mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_names_for_correlations <- c(colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,105,113,114,117,118)]))
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_for_correlations <- mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,106,114,115,118,119)]
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_names_for_correlations <- c(colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,106,114,115,118,119)]))
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output<-data.frame()[1:6,]
 
 for(j in 1:length(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_names_for_correlations)){
@@ -961,59 +960,59 @@ R
 # round(0.16181,2)
 # round(0.16900,2)
 
-reg_FileGrade2 <- lm(FileGrade ~ final_mac_course_score
-                     + dapar_copmlete
-                     + am_courses_soc_mac,
-                     data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
-summary(reg_FileGrade2)
-
-
-reg_FileGrade3 <- lm(FileGrade ~ final_mac_course_score
-                     + keva
-                     + kaba
-                     + am_courses_soc_mac,
-                     data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
-summary(reg_FileGrade3)
-
-
-reg_FileGrade4 <- lm(FileGrade ~ final_mac_course_score
-                     + kaba
-                     + am_courses_soc_mac
-                     + tenure,
-                     data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
-summary(reg_FileGrade4)
-
-
-reg_FileGrade5 <- lm(FileGrade ~ final_mac_course_score
-                     + keva
-                     + kaba
-                     + am_courses_soc_mac
-                     + dapar_copmlete,
-                     data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
-summary(reg_FileGrade5)
-
-
-reg_FileGrade6 <- lm(FileGrade ~ final_mac_course_score
-                     + kaba
-                     + am_courses_soc_mac
-                     + dapar_copmlete
-                     + tenure,
-                     data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
-summary(reg_FileGrade6)
-
-
-reg_VaadaGrade_completed1 <- lm(VaadaGrade_completed ~ final_mac_course_score
-                                + kaba
-                                + am_courses_soc_mac,
-                                data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
-summary(reg_VaadaGrade_completed1)
-
-# standardised coefficients
-round(lm.beta(reg_VaadaGrade_completed1),2)
+# reg_FileGrade2 <- lm(FileGrade ~ final_mac_course_score
+#                      + dapar_copmlete
+#                      + am_courses_soc_mac,
+#                      data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+# summary(reg_FileGrade2)
+# 
+# 
+# reg_FileGrade3 <- lm(FileGrade ~ final_mac_course_score
+#                      + keva
+#                      + kaba
+#                      + am_courses_soc_mac,
+#                      data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+# summary(reg_FileGrade3)
+# 
+# 
+# reg_FileGrade4 <- lm(FileGrade ~ final_mac_course_score
+#                      + kaba
+#                      + am_courses_soc_mac
+#                      + tenure,
+#                      data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+# summary(reg_FileGrade4)
+# 
+# 
+# reg_FileGrade5 <- lm(FileGrade ~ final_mac_course_score
+#                      + keva
+#                      + kaba
+#                      + am_courses_soc_mac
+#                      + dapar_copmlete,
+#                      data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+# summary(reg_FileGrade5)
+# 
+# 
+# reg_FileGrade6 <- lm(FileGrade ~ final_mac_course_score
+#                      + kaba
+#                      + am_courses_soc_mac
+#                      + dapar_copmlete
+#                      + tenure,
+#                      data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+# summary(reg_FileGrade6)
+# 
+# 
+# reg_VaadaGrade_completed1 <- lm(VaadaGrade_completed ~ final_mac_course_score
+#                                 + kaba
+#                                 + am_courses_soc_mac,
+#                                 data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+# summary(reg_VaadaGrade_completed1)
+# 
+# # standardised coefficients
+# round(lm.beta(reg_VaadaGrade_completed1),2)
 
 # R
-R<-round(sqrt(0.1034),2)
-R
+# R<-round(sqrt(0.1034),2)
+# R
 
 # predicted_FileGrade
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$predicted_FileGrade <- 
@@ -1204,7 +1203,7 @@ write.csv(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output,file = "C
 
 library(readr)
 locale("he")
-gibush_candidates_kakatz_07.2020_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/gibush_candidates_kakatz_07.2020_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+gibush_candidates_kakatz_07.2020_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2020_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 gibush_candidates_kakatz_07.2020_civil<-gibush_candidates_kakatz_07.2020_civil[-1]
 colnames(gibush_candidates_kakatz_07.2020_civil)[1]<-"order_num"
 colnames(gibush_candidates_kakatz_07.2020_civil)[13]<-"kaba"
@@ -1223,7 +1222,7 @@ freq(ordered(gibush_candidates_kakatz_07.2020_civil$GroupName_courses_soc_mac), 
 #final_mac_course_score
 library(readr)
 locale("he")
-mac_datets_and_scores_full_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/mac_datets_and_scores_full_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+mac_datets_and_scores_full_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/mac_datets_and_scores_full_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 mac_datets_and_scores_full_civil<-mac_datets_and_scores_full_civil[-1]
 
 class(mac_datets_and_scores_full_civil$end_mac_course_date)
@@ -1404,7 +1403,7 @@ gibush_candidates_kakatz_07.2020_civil$gap_abs <- abs(gibush_candidates_kakatz_0
 
 gibush_candidates_kakatz_07.2020_civil$gap_warning<-ifelse(round(gibush_candidates_kakatz_07.2020_civil$gap_abs,2)>.64,1,0)
 
-gibush_candidates_kakatz_07.2020_civil_final_two_scores<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/gibush_candidates_kakatz_07.2020_civil_final_two_scores.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+gibush_candidates_kakatz_07.2020_civil_final_two_scores<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2020_civil_final_two_scores.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 gibush_candidates_kakatz_07.2020_civil_final_two_scores<-gibush_candidates_kakatz_07.2020_civil_final_two_scores[-1]
 gibush_candidates_kakatz_07.2020_civil <-
   merge(gibush_candidates_kakatz_07.2020_civil,gibush_candidates_kakatz_07.2020_civil_final_two_scores,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
@@ -1456,7 +1455,7 @@ round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2020_civil_positive
 # col.rownames="Darkblue"
 # col.data=ifelse(gibush_candidates_kakatz_07.2020_civil$warning==1,'red','black')
 
-write.csv(gibush_candidates_kakatz_07.2020_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/gibush_candidates_kakatz_07.2020_civil_final_scores_new.csv")
+write.csv(gibush_candidates_kakatz_07.2020_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2020_civil_final_scores_new.csv")
 
 
 #presentation
