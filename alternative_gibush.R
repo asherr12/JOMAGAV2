@@ -1744,6 +1744,7 @@ round(describe(as.numeric(unlist(gibush_candidates_kakatz_11.2020_civil_positive
 write.csv(gibush_candidates_kakatz_11.2020_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_new.csv")
 
 # https://www.youtube.com/watch?v=yjRrsha0TdQ
+# https://googledrive.tidyverse.org/reference/drive_auth.html
 library(googledrive)
 drive_auth()
 drive_auth(token = NULL)
