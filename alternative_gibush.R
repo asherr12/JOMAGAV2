@@ -1745,12 +1745,43 @@ write.csv(gibush_candidates_kakatz_11.2020_civil, file="C:/Users/Asher/Documents
 
 # https://www.youtube.com/watch?v=yjRrsha0TdQ
 # https://googledrive.tidyverse.org/reference/drive_auth.html
+# https://cran.r-project.org/web/packages/googledrive/googledrive.pdf
+#  The access can be removed, through my google account.
 library(googledrive)
 drive_auth()
-drive_auth(token = NULL)
-drive_find(n_max = 10,type = "csv", team_drive = "altenative_gibush")
-filep = drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv", overwrite=T)
+drive_find(n_max = 10,type = "csv")
 
+# add a loop with time to run the following commands
+
+# use this*****************
+# https://stackoverflow.com/questions/30993185/set-a-timer-in-r-to-execute-a-program
+
+interval = 7
+for (i in 1:3) {
+  startTime = Sys.time()
+  timestamp() #add before this line my code
+  sleepTime = startTime + interval - Sys.time()
+  if (sleepTime > 0)
+    Sys.sleep(sleepTime)
+}
+
+
+
+drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
+
+library(readr)
+locale("he")
+gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+
+# gibush_candidates_kakatz_11.2020_civil_final_scores_gd[5]<-gibush_candidates_kakatz_11.2020_civil[31]
+
+
+# insert here a code that creates the rusults in the imported google sheet
+
+
+write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+
+drive_upload("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv",path="https://drive.google.com/drive/folders/1vkCCxKNhMo2OmDj4KdsW0n_f_ffPX7TS?usp=sharing", name="gibush_candidates_kakatz_11.2020_civil_final_scores",type = "spreadsheet",overwrite=T)
 
 
 
