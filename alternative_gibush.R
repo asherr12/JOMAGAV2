@@ -177,7 +177,7 @@ head(mac_datets_and_scores$GibDate)
 
 library(readr)
 locale("he")
-mac_datets_and_scores_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/mac_datets_and_scores_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+mac_datets_and_scores_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/mac_datets_and_scores_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 mac_datets_and_scores_civil<-mac_datets_and_scores_civil[-1]
 
 library(descr)
@@ -187,7 +187,7 @@ freq(ordered(round(mac_datets_and_scores_civil$final_mac_course_score,2)), plot 
 
 library(readr)
 locale("he")
-JOMAG_predictores_criteria_merged_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/JOMAG_predictores_criteria_merged_civil_old.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+JOMAG_predictores_criteria_merged_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/JOMAG_predictores_criteria_merged_civil_old.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 JOMAG_predictores_criteria_merged_civil<-JOMAG_predictores_criteria_merged_civil[-1]
 mac_datets_and_scores_civil$id<-NULL
 
@@ -330,7 +330,7 @@ round(freq(ordered(as.numeric(unlist(mac_datets_and_scores_civil$tkufatit))), pl
 library(readr)
 locale("he")
 # ranks_new_civil<-read_csv("C:/Users/Administrator.MAMADA-777/Documents/Junior officers MAGAV validation/ranks_new_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
-ranks_new_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/ranks_new_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+ranks_new_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/ranks_new_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 ranks_new_civil<-ranks_new_civil[-1]
 colnames(ranks_new_civil)[3]<-"rank_new"
 colnames(ranks_new_civil)[4]<-"rank_new_date"
@@ -397,12 +397,12 @@ mac_datets_and_scores_civil_ranks_new_civil$keva[mac_datets_and_scores_civil_ran
 round(freq(ordered(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil$keva))), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil$keva),font=2),2)
 freq(mac_datets_and_scores_civil_ranks_new_civil$rank_new, plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil$rank_new),font=2)
 freq(mac_datets_and_scores_civil_ranks_new_civil$tkufatit_date, plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil$tkufatit_date),font=2)
-# write.csv(mac_datets_and_scores_civil_ranks_new_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/mac_datets_and_scores_civil_ranks_new_civil_qa.csv")
+# write.csv(mac_datets_and_scores_civil_ranks_new_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/mac_datets_and_scores_civil_ranks_new_civil_qa.csv")
 
 #kaba
 library(readr)
 locale("he")
-kaba_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/kaba_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+kaba_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/kaba_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 kaba_civil<-kaba_civil[-1]
 n_occur<-data.frame(table(kaba_civil$personal_number))
 n_occur[n_occur$Freq>1,]
@@ -417,7 +417,7 @@ round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kab
 # soc_mac
 library(readr)
 locale("he")
-soc_mac_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/courses_soc_mac_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+soc_mac_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 soc_mac_civil<-soc_mac_civil[-1]
 colnames(soc_mac_civil)
 nrow(soc_mac_civil)
@@ -786,7 +786,7 @@ round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_ma
 
 #DAPAR
 
-DAPAR_GIBUSH_MAGAV_civil<-read.csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/DAPAR_GIBUSH_MAGAV_civil.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
+DAPAR_GIBUSH_MAGAV_civil<-read.csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/DAPAR_GIBUSH_MAGAV_civil.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
 DAPAR_GIBUSH_MAGAV_civil<-DAPAR_GIBUSH_MAGAV_civil[-c(1,4,5)]
 colnames(DAPAR_GIBUSH_MAGAV_civil)[2]<-paste(colnames(DAPAR_GIBUSH_MAGAV_civil)[2],"DAPAR",sep="_")
 n_occur<-data.frame(table(DAPAR_GIBUSH_MAGAV_civil$id))
@@ -849,7 +849,7 @@ row.names(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_a
 for(i in 1:(ncol(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output)/4)){
   colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output)[i*4] <- ""
 }
-write.csv(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_p_c_corr_output.csv")
+write.csv(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_p_c_corr_output.csv")
 
 # Correlations within predictors.
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_relevant_predictors_columns_for_correlations <- mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar[c(16,106,114,115,118,119)]
@@ -878,7 +878,7 @@ row.names(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_a
 for(i in 1:(ncol(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output)/4)){
   colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output)[i*4] <- ""
 }
-write.csv(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output_p-p.csv")
+write.csv(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_corr_output_p-p.csv")
 
 # sadir/keva on FileGrade
 
@@ -1168,7 +1168,7 @@ row.names(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output)<-JOMAG_p
 for(i in 1:(ncol(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output)/4)){
   colnames(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output)[i*4] <- ""
 }
-write.csv(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/JOMAG_predictores_criteria_merged_civil_qv_field_p_c_corr_output.csv")
+write.csv(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/JOMAG_predictores_criteria_merged_civil_qv_field_p_c_corr_output.csv")
 
 # Correlations within predictors.
 JOMAG_predictores_criteria_merged_civil_qv_field_relevant_predictors_columns_for_correlations <- JOMAG_predictores_criteria_merged_civil_qv_field[c(60,61,64,1460:1463,1457,1464,1465)]
@@ -1197,7 +1197,7 @@ row.names(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output)<-JOMAG_p
 for(i in 1:(ncol(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output)/4)){
   colnames(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output)[i*4] <- ""
 }
-write.csv(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/JOMAG_predictores_criteria_merged_civil_qv_field_corr_output_p-p.csv")
+write.csv(JOMAG_predictores_criteria_merged_civil_qv_field_corr_output,file = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/JOMAG_predictores_criteria_merged_civil_qv_field_corr_output_p-p.csv")
 
 #predict FileGrade of new candidates 07.2020 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
@@ -1464,7 +1464,7 @@ write.csv(gibush_candidates_kakatz_07.2020_civil, file="C:/Users/Asher/Documents
 library(readr)
 locale("he")
 gibush_candidates_kakatz_11.2020_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
-# gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[-1]
+gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[-1]
 colnames(gibush_candidates_kakatz_11.2020_civil)[1]<-"order_num"
 colnames(gibush_candidates_kakatz_11.2020_civil)[14]<-"kaba"
 colnames(gibush_candidates_kakatz_11.2020_civil)[16]<-"apptitudes"
@@ -1472,11 +1472,10 @@ colnames(gibush_candidates_kakatz_11.2020_civil)[24]<-"begin_mac_course_date"
 colnames(gibush_candidates_kakatz_11.2020_civil)[25]<-"end_mac_course_date"
 colnames(gibush_candidates_kakatz_11.2020_civil)[26]<-"final_mac_course_score"
 
-# When I'll have the real scores update accordingly************
-# gibush_candidates_kakatz_11.2020_civil <-
-#   merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-1
-gibush_candidates_kakatz_11.2020_civil$GroupName_courses_soc_mac<-NA
+gibush_candidates_kakatz_11.2020_civil <-
+  merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+# gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-1
+# gibush_candidates_kakatz_11.2020_civil$GroupName_courses_soc_mac<-NA
 gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
 
 library(descr)
