@@ -1472,10 +1472,58 @@ colnames(gibush_candidates_kakatz_11.2020_civil)[24]<-"begin_mac_course_date"
 colnames(gibush_candidates_kakatz_11.2020_civil)[25]<-"end_mac_course_date"
 colnames(gibush_candidates_kakatz_11.2020_civil)[26]<-"final_mac_course_score"
 
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==1] <- 1076
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==2] <- 1034
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==3] <- 1570
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==4] <- 238
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==5] <- 1604
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==6] <- 1928
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==7] <- 124
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==8] <- 1156
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==9] <- 492
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==10] <- 1370
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==11] <- 156
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==12] <- 1756
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==13] <- 358
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==14] <- 982
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==15] <- 66
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==16] <- 722
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==17] <- 10
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==18] <- 1050
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==19] <- 1150
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==20] <- 916
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==21] <- 310
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==22] <- 1326
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==23] <- 248
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==24] <- 410
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==25] <- 444
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==26] <- 1178
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==27] <- 692
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==28] <- 1322
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==29] <- 1142
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==30] <- 1654
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==31] <- 484
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==32] <- 1722
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==33] <- 1234
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==34] <- 612
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==35] <- 1654
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==36] <- 164
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 158
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==38] <- 1584
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==39] <- 1370
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==40] <- 1476
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==41] <- 1382
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==42] <- 1464
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==43] <- 10
+gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 376
+
+gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 84
+gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 76
+
+
+
 gibush_candidates_kakatz_11.2020_civil <-
-  merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-# gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-1
-# gibush_candidates_kakatz_11.2020_civil$GroupName_courses_soc_mac<-NA
+  merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
 
 library(descr)
