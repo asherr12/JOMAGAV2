@@ -1520,10 +1520,350 @@ gibush_candidates_kakatz_11.2020_civil[3][gibush_candidates_kakatz_11.2020_civil
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 84
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 76
 
+# soc_mac_civil_11.2020_civil
+library(readr)
+locale("he")
+soc_mac_civil_11.2020_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_civil_11.2020_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+soc_mac_civil_11.2020_civil<-soc_mac_civil_11.2020_civil[-1]
+colnames(soc_mac_civil_11.2020_civil)
+nrow(soc_mac_civil_11.2020_civil)
+soc_mac_civil_11.2020_civil <- soc_mac_civil_11.2020_civil %>%
+  filter(GroupId_courses_soc_mac==147 |
+           GroupId_courses_soc_mac==148 |
+           GroupId_courses_soc_mac==149 |
+           GroupId_courses_soc_mac==150 |
+           GroupId_courses_soc_mac==151 |
+           GroupId_courses_soc_mac==178 |
+           GroupId_courses_soc_mac==179 |
+           GroupId_courses_soc_mac==182 |
+           GroupId_courses_soc_mac==183 |
+           GroupId_courses_soc_mac==184 |
+           GroupId_courses_soc_mac==200 |
+           GroupId_courses_soc_mac==201 |
+           GroupId_courses_soc_mac==202 |
+           GroupId_courses_soc_mac==211 |
+           GroupId_courses_soc_mac==212 |
+           GroupId_courses_soc_mac==213 |
+           GroupId_courses_soc_mac==216 |
+           GroupId_courses_soc_mac==217 |
+           GroupId_courses_soc_mac==218 |
+           GroupId_courses_soc_mac==222 |
+           GroupId_courses_soc_mac==223 |
+           GroupId_courses_soc_mac==224 |
+           GroupId_courses_soc_mac==301 |
+           GroupId_courses_soc_mac==302 |
+           GroupId_courses_soc_mac==303 |
+           GroupId_courses_soc_mac==304 |
+           GroupId_courses_soc_mac==307 |
+           GroupId_courses_soc_mac==308 |
+           GroupId_courses_soc_mac==309 |
+           GroupId_courses_soc_mac==310 |
+           GroupId_courses_soc_mac==311 |
+           GroupId_courses_soc_mac==312 |
+           GroupId_courses_soc_mac==318 |
+           GroupId_courses_soc_mac==319 |
+           GroupId_courses_soc_mac==320 |
+           GroupId_courses_soc_mac==325 |
+           GroupId_courses_soc_mac==326 |
+           GroupId_courses_soc_mac==327 |
+           GroupId_courses_soc_mac==328 |
+           GroupId_courses_soc_mac==329 |
+           GroupId_courses_soc_mac==330 |
+           GroupId_courses_soc_mac==579 |
+           GroupId_courses_soc_mac==580 |
+           GroupId_courses_soc_mac==581 |
+           GroupId_courses_soc_mac==605 |
+           GroupId_courses_soc_mac==606 |
+           GroupId_courses_soc_mac==642 |
+           GroupId_courses_soc_mac==643 |
+           GroupId_courses_soc_mac==708 |
+           GroupId_courses_soc_mac==784 |
+           GroupId_courses_soc_mac==785 |
+           GroupId_courses_soc_mac==786 |
+           GroupId_courses_soc_mac==787 |
+           GroupId_courses_soc_mac==792 |
+           GroupId_courses_soc_mac==793 |
+           GroupId_courses_soc_mac==708 |
+           GroupId_courses_soc_mac==709 |
+           GroupId_courses_soc_mac==784 |
+           GroupId_courses_soc_mac==785 |
+           GroupId_courses_soc_mac==786 |
+           GroupId_courses_soc_mac==787 |
+           GroupId_courses_soc_mac==792 |
+           GroupId_courses_soc_mac==793 |
+           GroupId_courses_soc_mac==814 |
+           GroupId_courses_soc_mac==815 |
+           GroupId_courses_soc_mac==816 |
+           GroupId_courses_soc_mac==817 |
+           GroupId_courses_soc_mac==825 |
+           GroupId_courses_soc_mac==826 |
+           GroupId_courses_soc_mac==827 |
+           GroupId_courses_soc_mac==828 |
+           GroupId_courses_soc_mac==832 |
+           GroupId_courses_soc_mac==833 |
+           GroupId_courses_soc_mac==834 |
+           GroupId_courses_soc_mac==835 |
+           GroupId_courses_soc_mac==836 |
+           GroupId_courses_soc_mac==837 |
+           GroupId_courses_soc_mac==838 |
+           GroupId_courses_soc_mac==839 |
+           GroupId_courses_soc_mac==840 |
+           GroupId_courses_soc_mac==847 |
+           GroupId_courses_soc_mac==848 |
+           GroupId_courses_soc_mac==849 |
+           GroupId_courses_soc_mac==850 |
+           GroupId_courses_soc_mac==851 |
+           GroupId_courses_soc_mac==852 |
+           GroupId_courses_soc_mac==853 |
+           GroupId_courses_soc_mac==854 |
+           GroupId_courses_soc_mac==855 |
+           GroupId_courses_soc_mac==856 |
+           GroupId_courses_soc_mac==857 |
+           GroupId_courses_soc_mac==858 |
+           GroupId_courses_soc_mac==1118 |
+           GroupId_courses_soc_mac==1119 |
+           GroupId_courses_soc_mac==1120 |
+           GroupId_courses_soc_mac==1121 |
+           GroupId_courses_soc_mac==1128 |
+           GroupId_courses_soc_mac==1129 |
+           GroupId_courses_soc_mac==1130 |
+           GroupId_courses_soc_mac==1180 |
+           GroupId_courses_soc_mac==1181 |
+           GroupId_courses_soc_mac==1182 |
+           GroupId_courses_soc_mac==1184 |
+           GroupId_courses_soc_mac==1245 |
+           GroupId_courses_soc_mac==1246 |
+           GroupId_courses_soc_mac==1247 |
+           GroupId_courses_soc_mac==1248 |
+           GroupId_courses_soc_mac==1297 |
+           GroupId_courses_soc_mac==1298 |
+           GroupId_courses_soc_mac==1299 |
+           GroupId_courses_soc_mac==1302 |
+           GroupId_courses_soc_mac==1343 |
+           GroupId_courses_soc_mac==1344 |
+           GroupId_courses_soc_mac==1345 |
+           GroupId_courses_soc_mac==1346 |
+           GroupId_courses_soc_mac==1443 |
+           GroupId_courses_soc_mac==1445 |
+           GroupId_courses_soc_mac==1446 |
+           GroupId_courses_soc_mac==1496 |
+           GroupId_courses_soc_mac==1497 |
+           GroupId_courses_soc_mac==1525 |
+           GroupId_courses_soc_mac==1526 |
+           GroupId_courses_soc_mac==1528 |
+           GroupId_courses_soc_mac==1562 |
+           GroupId_courses_soc_mac==1605 |
+           GroupId_courses_soc_mac==1675 |
+           GroupId_courses_soc_mac==1681 |
+           GroupId_courses_soc_mac==1682 |
+           GroupId_courses_soc_mac==1776 |
+           GroupId_courses_soc_mac==1782 |
+           GroupId_courses_soc_mac==1783 |
+           GroupId_courses_soc_mac==1784 |
+           GroupId_courses_soc_mac==1867 |
+           GroupId_courses_soc_mac==1868 |
+           GroupId_courses_soc_mac==1869 |
+           GroupId_courses_soc_mac==1948 |
+           GroupId_courses_soc_mac==1949 |
+           GroupId_courses_soc_mac==1959 |
+           GroupId_courses_soc_mac==1960 |
+           GroupId_courses_soc_mac==1966 |
+           GroupId_courses_soc_mac==1995 |
+           GroupId_courses_soc_mac==2011 |
+           GroupId_courses_soc_mac==2012 |
+           GroupId_courses_soc_mac==2013 |
+           GroupId_courses_soc_mac==2014 |
+           GroupId_courses_soc_mac==2015 |
+           GroupId_courses_soc_mac==2016 |
+           GroupId_courses_soc_mac==2017 |
+           GroupId_courses_soc_mac==2029 |
+           GroupId_courses_soc_mac==2087 |
+           GroupId_courses_soc_mac==2088 |
+           GroupId_courses_soc_mac==2090 |
+           GroupId_courses_soc_mac==2171 |
+           GroupId_courses_soc_mac==2172 |
+           GroupId_courses_soc_mac==2173 |
+           GroupId_courses_soc_mac==2174 |
+           GroupId_courses_soc_mac==2232 |
+           GroupId_courses_soc_mac==2233 |
+           GroupId_courses_soc_mac==2236 |
+           GroupId_courses_soc_mac==2237 |
+           GroupId_courses_soc_mac==2240 |
+           GroupId_courses_soc_mac==2346 |
+           GroupId_courses_soc_mac==2347 |
+           GroupId_courses_soc_mac==2348 |
+           GroupId_courses_soc_mac==2349 |
+           GroupId_courses_soc_mac==2421 |
+           GroupId_courses_soc_mac==2422 |
+           GroupId_courses_soc_mac==2423 |
+           GroupId_courses_soc_mac==2425 |
+           GroupId_courses_soc_mac==2491 |
+           GroupId_courses_soc_mac==2492 |
+           GroupId_courses_soc_mac==2548 |
+           GroupId_courses_soc_mac==2551 |
+           GroupId_courses_soc_mac==2565 |
+           GroupId_courses_soc_mac==2615 |
+           GroupId_courses_soc_mac==2637 |
+           GroupId_courses_soc_mac==2638 |
+           GroupId_courses_soc_mac==2639 |
+           GroupId_courses_soc_mac==2640 |
+           GroupId_courses_soc_mac==2703 |
+           GroupId_courses_soc_mac==2704 |
+           GroupId_courses_soc_mac==2705 |
+           GroupId_courses_soc_mac==2707 |
+           GroupId_courses_soc_mac==2773 |
+           GroupId_courses_soc_mac==2778 |
+           GroupId_courses_soc_mac==2791 |
+           GroupId_courses_soc_mac==2796 |
+           GroupId_courses_soc_mac==2867 |
+           GroupId_courses_soc_mac==2869 |
+           GroupId_courses_soc_mac==2870 |
+           GroupId_courses_soc_mac==2871 |
+           GroupId_courses_soc_mac==2927 |
+           GroupId_courses_soc_mac==2930 |
+           GroupId_courses_soc_mac==2932 |
+           GroupId_courses_soc_mac==2934 |
+           GroupId_courses_soc_mac==3009 |
+           GroupId_courses_soc_mac==3011 |
+           GroupId_courses_soc_mac==3013 |
+           GroupId_courses_soc_mac==3014 |
+           GroupId_courses_soc_mac==3078 |
+           GroupId_courses_soc_mac==3079 |
+           GroupId_courses_soc_mac==3080 |
+           GroupId_courses_soc_mac==3081 |
+           GroupId_courses_soc_mac==3164 |
+           GroupId_courses_soc_mac==3165 |
+           GroupId_courses_soc_mac==3166 |
+           GroupId_courses_soc_mac==3167 |
+           GroupId_courses_soc_mac==3245 |
+           GroupId_courses_soc_mac==3246 |
+           GroupId_courses_soc_mac==3247 |
+           GroupId_courses_soc_mac==3252 |
+           GroupId_courses_soc_mac==3334 |
+           GroupId_courses_soc_mac==3335 |
+           GroupId_courses_soc_mac==3336 |
+           GroupId_courses_soc_mac==3337 |
+           GroupId_courses_soc_mac==3415 |
+           GroupId_courses_soc_mac==3417 |
+           GroupId_courses_soc_mac==3419 |
+           GroupId_courses_soc_mac==3420 |
+           GroupId_courses_soc_mac==3504 |
+           GroupId_courses_soc_mac==3507 |
+           GroupId_courses_soc_mac==3508 |
+           GroupId_courses_soc_mac==3509 |
+           GroupId_courses_soc_mac==3615 |
+           GroupId_courses_soc_mac==3616 |
+           GroupId_courses_soc_mac==3617 |
+           GroupId_courses_soc_mac==3618 |
+           GroupId_courses_soc_mac==3675 |
+           GroupId_courses_soc_mac==3676 |
+           GroupId_courses_soc_mac==3677 |
+           GroupId_courses_soc_mac==3678 |
+           GroupId_courses_soc_mac==3756 |
+           GroupId_courses_soc_mac==3757 |
+           GroupId_courses_soc_mac==3758 |
+           GroupId_courses_soc_mac==3759 |
+           GroupId_courses_soc_mac==3760 |
+           GroupId_courses_soc_mac==3829 |
+           GroupId_courses_soc_mac==3830 |
+           GroupId_courses_soc_mac==3831 |
+           GroupId_courses_soc_mac==3832 |
+           GroupId_courses_soc_mac==3914 |
+           GroupId_courses_soc_mac==3915 |
+           GroupId_courses_soc_mac==3916 |
+           GroupId_courses_soc_mac==3917 |
+           GroupId_courses_soc_mac==4019 |
+           GroupId_courses_soc_mac==4020 |
+           GroupId_courses_soc_mac==4021 |
+           GroupId_courses_soc_mac==4022 |
+           GroupId_courses_soc_mac==4134 |
+           GroupId_courses_soc_mac==4135 |
+           GroupId_courses_soc_mac==4136 |
+           GroupId_courses_soc_mac==4137 |
+           GroupId_courses_soc_mac==4253 |
+           GroupId_courses_soc_mac==4254 |
+           GroupId_courses_soc_mac==4255 |
+           GroupId_courses_soc_mac==4256 |
+           GroupId_courses_soc_mac==4274 |
+           GroupId_courses_soc_mac==4277 |
+           GroupId_courses_soc_mac==4387 |
+           GroupId_courses_soc_mac==4388 |
+           GroupId_courses_soc_mac==4389 |
+           GroupId_courses_soc_mac==4390 |
+           GroupId_courses_soc_mac==4498 |
+           GroupId_courses_soc_mac==4499 |
+           GroupId_courses_soc_mac==4500 |
+           GroupId_courses_soc_mac==4501 |
+           GroupId_courses_soc_mac==4600 |
+           GroupId_courses_soc_mac==4601 |
+           GroupId_courses_soc_mac==4602 |
+           GroupId_courses_soc_mac==4603 |
+           GroupId_courses_soc_mac==4665 |
+           GroupId_courses_soc_mac==4666 |
+           GroupId_courses_soc_mac==4667 |
+           GroupId_courses_soc_mac==4668 |
+           GroupId_courses_soc_mac==4781 |
+           GroupId_courses_soc_mac==4782 |
+           GroupId_courses_soc_mac==4783 |
+           GroupId_courses_soc_mac==4784 |
+           GroupId_courses_soc_mac==4787 |
+           GroupId_courses_soc_mac==4889 |
+           GroupId_courses_soc_mac==4890 |
+           GroupId_courses_soc_mac==4891 |
+           GroupId_courses_soc_mac==4892 |
+           GroupId_courses_soc_mac==4973 |
+           GroupId_courses_soc_mac==4974 |
+           GroupId_courses_soc_mac==4975 |
+           GroupId_courses_soc_mac==4976 |
+           GroupId_courses_soc_mac==5031 |
+           GroupId_courses_soc_mac==5071 |
+           GroupId_courses_soc_mac==5072 |
+           GroupId_courses_soc_mac==5073 |
+           GroupId_courses_soc_mac==5074 |
+           GroupId_courses_soc_mac==5031)
 
+nrow(soc_mac_civil_11.2020_civil)
+
+colnames(soc_mac_civil_11.2020_civil)
+
+# library(dplyr)
+
+soc_mac_civil_11.2020_civil_am = soc_mac_civil_11.2020_civil %>%
+  select(personal_number,GroupId_courses_soc_mac,GroupName_courses_soc_mac,c(15:21,23:29,31:37,39:45,47:53,55:61))
+colnames(soc_mac_civil_11.2020_civil_am)[c(4:45)]<-paste(colnames(soc_mac_civil_11.2020_civil_am)[c(4:45)],"zscore",sep = "_")
+colnames(soc_mac_civil_11.2020_civil_am)
+
+soc_mac_civil_11.2020_civil_am <- soc_mac_civil_11.2020_civil_am %>% 
+  mutate_at(c(4:45), funs(c(scale(.))))
+
+soc_mac_civil_11.2020_civil_am<-as.data.frame(soc_mac_civil_11.2020_civil_am)
+#soc_mac_civil_11.2020_civil_am[c(4:45)][abs(soc_mac_civil_11.2020_civil_am[c(4:45)])>4]<-NA
+
+# library(dplyr)
+soc_mac_civil_11.2020_civil_am <- soc_mac_civil_11.2020_civil_am %>% 
+  mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac_zscore,
+                                                RAvg2_courses_soc_mac_zscore,
+                                                RAvg3_courses_soc_mac_zscore,
+                                                RAvg4_courses_soc_mac_zscore,
+                                                RAvg5_courses_soc_mac_zscore)))
+soc_mac_civil_11.2020_civil_am <- soc_mac_civil_11.2020_civil_am %>% 
+  mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac_zscore,
+                                                  RTeken2_courses_soc_mac_zscore,
+                                                  RTeken3_courses_soc_mac_zscore,
+                                                  RTeken4_courses_soc_mac_zscore,
+                                                  RTeken5_courses_soc_mac_zscore)))
+soc_mac_civil_11.2020_civil_am <- soc_mac_civil_11.2020_civil_am %>% 
+  mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac_zscore,
+                                                NPct2_courses_soc_mac_zscore)))
+
+soc_mac_civil_11.2020_civil_am <- soc_mac_civil_11.2020_civil_am %>% 
+  mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
+
+filtered_soc_mac_civil_am <- soc_mac_civil_am %>%
+  select(personal_number,am_courses_soc_mac,GroupName_courses_soc_mac)
 
 gibush_candidates_kakatz_11.2020_civil <-
-  merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
+  merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
 
 library(descr)
