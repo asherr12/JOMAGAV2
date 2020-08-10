@@ -1582,6 +1582,8 @@ class(gibush_candidates_kakatz_11.2020_civil)
 library(googledrive)
 drive_auth()
 # drive_find(n_max = 10,type = "csv")
+library(readr)
+locale("he")
 
 # use this*****************
 # https://stackoverflow.com/questions/30993185/set-a-timer-in-r-to-execute-a-program
@@ -1592,8 +1594,6 @@ for (i in 1:3) {
   timestamp()
   
   drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
-  library(readr)
-  locale("he")
   gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
   gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[-1]
   gibush_candidates_kakatz_11.2020_civil_final_scores_gd[5]<-gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade
@@ -1641,6 +1641,11 @@ drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwC
     Sys.sleep(sleepTime)
 }
 
+#**********************stop get and share scores***************************
+
+
+
+# stop sharing Google Drive with R
 drive_deauth()
 
 # gibush_candidates_kakatz_11.2020_civil_final_two_scores<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_two_scores.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
