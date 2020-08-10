@@ -1588,7 +1588,10 @@ locale("he")
 # use this*****************
 # https://stackoverflow.com/questions/30993185/set-a-timer-in-r-to-execute-a-program
 
-interval = 3
+
+#**********************get and share scores - loop starts***************************
+sum_na <- 44
+interval = 2
 for (i in 1:3) {
   startTime = Sys.time()
   timestamp()
@@ -1622,6 +1625,8 @@ write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users
 #drive_upload("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv",path="https://drive.google.com/drive/folders/1vkCCxKNhMo2OmDj4KdsW0n_f_ffPX7TS?usp=sharing", name="gibush_candidates_kakatz_11.2020_civil_final_scores",type = "spreadsheet",overwrite=T)
 drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
+sum_na <- sum(is.na(gibush_candidates_kakatz_11.2020_civil_final_scores_gd[6]))
+
   drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
     role = "writer",
     type = "user",
@@ -1640,6 +1645,7 @@ drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwC
   if (sleepTime > 0)
     Sys.sleep(sleepTime)
 }
+
 
 #**********************stop get and share scores***************************
 
