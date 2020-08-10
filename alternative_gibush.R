@@ -1584,6 +1584,7 @@ drive_auth()
 # drive_find(n_max = 10,type = "csv")
 library(readr)
 locale("he")
+library(sendmailR)
 
 # use this*****************
 # https://stackoverflow.com/questions/30993185/set-a-timer-in-r-to-execute-a-program
@@ -1625,21 +1626,36 @@ write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users
 #drive_upload("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv",path="https://drive.google.com/drive/folders/1vkCCxKNhMo2OmDj4KdsW0n_f_ffPX7TS?usp=sharing", name="gibush_candidates_kakatz_11.2020_civil_final_scores",type = "spreadsheet",overwrite=T)
 drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
-sum_na <- sum(is.na(gibush_candidates_kakatz_11.2020_civil_final_scores_gd[6]))
+new_sum_na <- sum(is.na(gibush_candidates_kakatz_11.2020_civil_final_scores_gd[6]))
+
+#add commands to send mails only if new_sum_na < sum_na *********************
+
+if(new_sum_na < sum_na) {
 
   drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
-    role = "writer",
-    type = "user",
-    emailAddress = "hazofimshimshoni@gmail.com",
-    emailMessage = "Hi Talia, please fill the missing data"
+              role = "writer",
+              type = "user",
+              emailAddress = "asherr1211@gmail.com",
+              emailMessage = "Hi Asher, this data was sent to Talia and to Miki"
   )
   
   drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
               role = "writer",
               type = "user",
               emailAddress = "asa092010@yahoo.com",
-              emailMessage = "Hi Miki, please fill the missing data"
+              emailMessage = "Hi Talia, please fill the missing data"
   )
+  
+  
+  drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+              role = "writer",
+              type = "user",
+              emailAddress = "asa092010@yahoo.com",
+              emailMessage = "Hi Miki, this file was sent to Talia"
+  )
+}
+  
+  sum_na <- new_sum_na
   
   sleepTime = startTime + interval - Sys.time()
   if (sleepTime > 0)
