@@ -1584,7 +1584,6 @@ drive_auth()
 # drive_find(n_max = 10,type = "csv")
 library(readr)
 locale("he")
-library(sendmailR)
 
 # use this*****************
 # https://stackoverflow.com/questions/30993185/set-a-timer-in-r-to-execute-a-program
