@@ -1591,8 +1591,8 @@ locale("he")
 
 #**********************get and share scores - loop starts***************************
 sum_na <- 44
-interval = 2
-for (i in 1:3) {
+interval = 2 # set the interval
+for (i in 1:3) { # set the n
   startTime = Sys.time()
   timestamp()
   
