@@ -1460,6 +1460,7 @@ write.csv(gibush_candidates_kakatz_07.2020_civil, file="C:/Users/Asher/Documents
 
 
 #predict FileGrade of new candidates 11.2020 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+# after updating soc_mac update 1467 code row and run code rows 1468-1487.
 
 library(readr)
 locale("he")
@@ -1475,9 +1476,9 @@ gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civi
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[2]==44] <- 76 #change to 1 after arranging the file.
 
 # soc_mac_civil
-gibush_candidates_kakatz_11.2020_civil <-
-  merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
+# gibush_candidates_kakatz_11.2020_civil <-
+#   merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+# gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
 
 library(descr)
 library(psych)
@@ -1551,19 +1552,15 @@ gibush_candidates_kakatz_11.2020_civil[25][gibush_candidates_kakatz_11.2020_civi
 gibush_candidates_kakatz_11.2020_civil[24][gibush_candidates_kakatz_11.2020_civil[2]==29] <- NA
 gibush_candidates_kakatz_11.2020_civil[25][gibush_candidates_kakatz_11.2020_civil[2]==29] <- NA
 
-# Ask Carmela the scores of the next 2 candidates.*********
-# When I'll have the real scores update accordingly************
-gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[2]==37] <- NA
-gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[2]==44] <- NA
-
 class(gibush_candidates_kakatz_11.2020_civil$final_mac_course_score)
-gibush_candidates_kakatz_11.2020_civil$final_mac_course_score <-
-  as.numeric(gibush_candidates_kakatz_11.2020_civil$final_mac_course_score)
+# gibush_candidates_kakatz_11.2020_civil$final_mac_course_score <-
+#   as.numeric(gibush_candidates_kakatz_11.2020_civil$final_mac_course_score)
 
 # predicted_FileGrade
 gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade <- round(predict(reg_FileGrade1, gibush_candidates_kakatz_11.2020_civil),2)
 freq(ordered(gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade),font=2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade))),2)
+options(digits = 2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade))),digits=2)
 
 gibush_candidates_kakatz_11.2020_civil$personality <- NA
 gibush_candidates_kakatz_11.2020_civil$command_exercise <- NA
@@ -1572,162 +1569,79 @@ gibush_candidates_kakatz_11.2020_civil$interview <- NA
 colnames(gibush_candidates_kakatz_11.2020_civil)
 class(gibush_candidates_kakatz_11.2020_civil)
 gibush_candidates_kakatz_11.2020_civil<-as.data.frame(gibush_candidates_kakatz_11.2020_civil)
-
-# personality
-# When I'll have the real scores update accordingly************
-
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==1] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==2] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==3] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==4] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==5] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==6] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==7] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==8] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==9] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==10] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==11] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==12] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==13] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==14] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==15] <- 5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==16] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==17] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==18] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==19] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==20] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==21] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==22] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==23] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==24] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==25] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==26] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==27] <- 5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==28] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==29] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==30] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==31] <- 5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==32] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==33] <- 3
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==34] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==35] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==36] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==38] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==39] <- 5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==40] <- 4
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==41] <- 5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==42] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==43] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[30][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 4
-
-# command_exercise
-# When I'll have the real scores update accordingly************
-
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==1] <- 2
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==2] <- 3
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==3] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==4] <- 5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==5] <- 4
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==6] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==7] <- 3.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==8] <- 5.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==9] <- 3.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==10] <- 2.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==11] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==12] <- 5.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==13] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==14] <- 3.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==15] <- 4
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==16] <- 5.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==17] <- 5.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==18] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==19] <- 3.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==20] <- 4.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==21] <- 4.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==22] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==23] <- 5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==24] <- 2.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==25] <- 4.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==26] <- 5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==27] <- 5.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==28] <- 4.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==29] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==30] <- 5.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==31] <- 4
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==32] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==33] <- 5.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==34] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==35] <- 3.75
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==36] <- 3.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 5.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==38] <- 4
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==39] <- 4.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==40] <- 4.24
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==41] <- 5.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==42] <- 5.25
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==43] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[31][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 3.75
+class(gibush_candidates_kakatz_11.2020_civil)
 
 
-# interview
-# When I'll have the real scores update accordingly************
+#**********************get and share scores***************************
 
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==1] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==2] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==3] <- 4
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==4] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==5] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==6] <- 5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==7] <- 4
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==8] <- 4
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==9] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==10] <- 4
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==11] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==12] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==13] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==14] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==15] <- 5.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==16] <- 3
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==17] <- 5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==18] <- 3
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==19] <- 5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==20] <- 3
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==21] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==22] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==23] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==24] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==25] <- 3
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==26] <- 5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==27] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==28] <- 2.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==29] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==30] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==31] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==32] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==33] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==34] <- 3
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==35] <- 3.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==36] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 4
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==38] <- 3
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==39] <- 5.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==40] <- 4.5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==41] <- 5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==42] <- 4
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==43] <- 5
-gibush_candidates_kakatz_11.2020_civil[32][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 3.5
 
-gibush_candidates_kakatz_11.2020_civil <- gibush_candidates_kakatz_11.2020_civil %>% 
-  mutate(alternative_weighted_score = round(0.05*apptitudes + .10*personality + .40*command_exercise + .45*interview,2))
+# https://www.youtube.com/watch?v=yjRrsha0TdQ
+# https://googledrive.tidyverse.org/reference/drive_auth.html
+# https://cran.r-project.org/web/packages/googledrive/googledrive.pdf
+#  The access can be removed, through my google account. preffered by drive_deauth() bellow.
+library(googledrive)
+drive_auth()
+# drive_find(n_max = 10,type = "csv")
 
-gibush_candidates_kakatz_11.2020_civil$gap <- gibush_candidates_kakatz_11.2020_civil$alternative_weighted_score-
-  gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade
+# use this*****************
+# https://stackoverflow.com/questions/30993185/set-a-timer-in-r-to-execute-a-program
 
-gibush_candidates_kakatz_11.2020_civil$gap_abs <- abs(gibush_candidates_kakatz_11.2020_civil$alternative_weighted_score-
-                                                        gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade)
+interval = 3
+for (i in 1:3) {
+  startTime = Sys.time()
+  timestamp()
+  
+  drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
+  library(readr)
+  locale("he")
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[-1]
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd[5]<-gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade
+  
+  gibush_candidates_kakatz_11.2020_civil$personality <-gibush_candidates_kakatz_11.2020_civil_final_scores_gd$"אישיות"
+  gibush_candidates_kakatz_11.2020_civil$command_exercise <-gibush_candidates_kakatz_11.2020_civil_final_scores_gd$"תרגיל פיקודי"
+  gibush_candidates_kakatz_11.2020_civil$interview <-gibush_candidates_kakatz_11.2020_civil_final_scores_gd$"ראיון"
+  gibush_candidates_kakatz_11.2020_civil <- gibush_candidates_kakatz_11.2020_civil %>% 
+    mutate(alternative_weighted_score = round(0.05*apptitudes + .10*personality + .40*command_exercise + .45*interview,2))
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd[6]<-gibush_candidates_kakatz_11.2020_civil$alternative_weighted_score
+  
+  gibush_candidates_kakatz_11.2020_civil$gap <- gibush_candidates_kakatz_11.2020_civil$alternative_weighted_score-
+    gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd[7]<-gibush_candidates_kakatz_11.2020_civil$gap
+  
+  gibush_candidates_kakatz_11.2020_civil$gap_abs <- abs(gibush_candidates_kakatz_11.2020_civil$alternative_weighted_score-
+                                                          gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade)
+  gibush_candidates_kakatz_11.2020_civil$gap_warning<-ifelse(round(gibush_candidates_kakatz_11.2020_civil$gap_abs,2)>.64,1,0)
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd[8]<-gibush_candidates_kakatz_11.2020_civil$gap_warning
+  class(gibush_candidates_kakatz_11.2020_civil_final_scores_gd)
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-as.data.frame(gibush_candidates_kakatz_11.2020_civil_final_scores_gd)
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd[8][gibush_candidates_kakatz_11.2020_civil_final_scores_gd[8] == 1] <- "יש"
+  gibush_candidates_kakatz_11.2020_civil_final_scores_gd[8][gibush_candidates_kakatz_11.2020_civil_final_scores_gd[8] == 0] <- "אין"
 
-gibush_candidates_kakatz_11.2020_civil$gap_warning<-ifelse(round(gibush_candidates_kakatz_11.2020_civil$gap_abs,2)>.64,1,0)
+write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+#drive_upload("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv",path="https://drive.google.com/drive/folders/1vkCCxKNhMo2OmDj4KdsW0n_f_ffPX7TS?usp=sharing", name="gibush_candidates_kakatz_11.2020_civil_final_scores",type = "spreadsheet",overwrite=T)
+drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+
+  drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+    role = "writer",
+    type = "user",
+    emailAddress = "hazofimshimshoni@gmail.com",
+    emailMessage = "Hi Talia, please fill the missing data"
+  )
+  
+  drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+              role = "writer",
+              type = "user",
+              emailAddress = "asa092010@yahoo.com",
+              emailMessage = "Hi Miki, please fill the missing data"
+  )
+  
+  sleepTime = startTime + interval - Sys.time()
+  if (sleepTime > 0)
+    Sys.sleep(sleepTime)
+}
+
+drive_deauth()
 
 # gibush_candidates_kakatz_11.2020_civil_final_two_scores<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_two_scores.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 # gibush_candidates_kakatz_11.2020_civil_final_two_scores<-gibush_candidates_kakatz_11.2020_civil_final_two_scores[-1]
@@ -1735,7 +1649,6 @@ gibush_candidates_kakatz_11.2020_civil$gap_warning<-ifelse(round(gibush_candidat
 #   merge(gibush_candidates_kakatz_11.2020_civil,gibush_candidates_kakatz_11.2020_civil_final_two_scores,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 
 # When I'll have the real scores update accordingly************
-
 gibush_candidates_kakatz_11.2020_civil$altenative_weighted_score_final<-NA
 gibush_candidates_kakatz_11.2020_civil$altenative_weighted_score_final_categorial<-NA
 
@@ -1788,45 +1701,8 @@ round(describe(as.numeric(unlist(gibush_candidates_kakatz_11.2020_civil_positive
 
 write.csv(gibush_candidates_kakatz_11.2020_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_new.csv")
 
-# https://www.youtube.com/watch?v=yjRrsha0TdQ
-# https://googledrive.tidyverse.org/reference/drive_auth.html
-# https://cran.r-project.org/web/packages/googledrive/googledrive.pdf
-#  The access can be removed, through my google account.
-library(googledrive)
-drive_auth()
-drive_find(n_max = 10,type = "csv")
-
-# add a loop with time to run the following commands
-
-# use this*****************
-# https://stackoverflow.com/questions/30993185/set-a-timer-in-r-to-execute-a-program
-
-interval = 7
-for (i in 1:3) {
-  startTime = Sys.time()
-  timestamp() #add before this line my code
-  sleepTime = startTime + interval - Sys.time()
-  if (sleepTime > 0)
-    Sys.sleep(sleepTime)
-}
 
 
-
-drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
-
-library(readr)
-locale("he")
-gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
-
-# gibush_candidates_kakatz_11.2020_civil_final_scores_gd[5]<-gibush_candidates_kakatz_11.2020_civil[31]
-
-
-# insert here a code that creates the rusults in the imported google sheet
-
-
-write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
-
-drive_upload("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv",path="https://drive.google.com/drive/folders/1vkCCxKNhMo2OmDj4KdsW0n_f_ffPX7TS?usp=sharing", name="gibush_candidates_kakatz_11.2020_civil_final_scores",type = "spreadsheet",overwrite=T)
 
 
 
