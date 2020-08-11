@@ -1593,11 +1593,6 @@ locale("he")
 sum_na <- 44 # run this command only for the first time (before the first candidate)
 n=0
 repeat {
-  n <- n+1
-  if (n == 4){   # set the n(n times the code should run + 1)
-    break
-  }
-  timestamp()
   
   drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
   gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
@@ -1659,7 +1654,13 @@ if(new_sum_na < sum_na) {
   
   sum_na <- new_sum_na
   
-Sys.sleep(300)
+  n <- n+1
+  if (n == 4){   # set the n(n times the code should run + 1)
+    break
+  }
+  timestamp()
+  
+Sys.sleep(120)
 
 }
 
