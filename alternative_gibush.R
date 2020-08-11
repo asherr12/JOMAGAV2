@@ -1590,10 +1590,13 @@ locale("he")
 
 
 #**********************get and share scores - loop starts***************************
-sum_na <- 44
-interval = 2 # set the interval
-for (i in 1:3) { # set the n
-  startTime = Sys.time()
+sum_na <- 44 # run this command only for the first time (before the first candidate)
+n=0
+repeat {
+  n <- n+1
+  if (n == 4){   # set the n(n times the code should run + 1)
+    break
+  }
   timestamp()
   
   drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
@@ -1635,14 +1638,14 @@ if(new_sum_na < sum_na) {
               role = "writer",
               type = "user",
               emailAddress = "asherr1211@gmail.com",
-              emailMessage = "Hi Asher, this data was sent to Talia and to Miki"
+              emailMessage = "Hi Asher. This file was sent to Talia and Miki"
   )
   
   drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
               role = "writer",
               type = "user",
-              emailAddress = "asa092010@yahoo.com",
-              emailMessage = "Hi Talia, please fill the missing data"
+              emailAddress = "hazofimshimshoni@gmail.com",
+              emailMessage = "Hi Talia. Please add data."
   )
   
   
@@ -1650,15 +1653,14 @@ if(new_sum_na < sum_na) {
               role = "writer",
               type = "user",
               emailAddress = "asa092010@yahoo.com",
-              emailMessage = "Hi Miki, this file was sent to Talia"
+              emailMessage = "Hi Miki. This file was sent to Talia. You also can add data."
   )
 }
   
   sum_na <- new_sum_na
   
-  sleepTime = startTime + interval - Sys.time()
-  if (sleepTime > 0)
-    Sys.sleep(sleepTime)
+Sys.sleep(300)
+
 }
 
 
