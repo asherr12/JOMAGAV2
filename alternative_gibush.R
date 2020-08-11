@@ -1592,12 +1592,12 @@ locale("he")
 #**********************get and share scores - loop starts***************************
 
 #run the following rows only once-when build the google drive file.
-drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
-gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
-gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[-1]
-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[2]<- gibush_candidates_kakatz_11.2020_civil$personal_number
-write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
-drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+# drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
+# gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+# gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[-1]
+# gibush_candidates_kakatz_11.2020_civil_final_scores_gd[2]<- gibush_candidates_kakatz_11.2020_civil$personal_number
+# write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+# drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
 
 sum_na <- 44 # run this command only for the first time (before the first candidate)
