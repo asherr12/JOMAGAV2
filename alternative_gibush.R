@@ -1531,6 +1531,10 @@ gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==43] <- 10
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==44] <- 376
 
+# mising course scores from Carmela
+gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[2]==43] <- 84
+gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[2]==44] <- 76
+
 # #final_mac_course_score
 # library(readr)
 # locale("he")
@@ -1570,6 +1574,8 @@ colnames(gibush_candidates_kakatz_11.2020_civil)
 class(gibush_candidates_kakatz_11.2020_civil)
 gibush_candidates_kakatz_11.2020_civil<-as.data.frame(gibush_candidates_kakatz_11.2020_civil)
 class(gibush_candidates_kakatz_11.2020_civil)
+gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(gibush_candidates_kakatz_11.2020_civil$order_num,na.last=F),]
+
 
 
 #**********************get and share scores***************************
@@ -1591,7 +1597,8 @@ locale("he")
 
 #**********************get and share scores - loop starts***************************
 
-#run the following rows only once-when build the google drive file.
+#run the following rows only once-when building the google drive file.
+
 # drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
 # gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 # gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[-1]
@@ -1599,9 +1606,11 @@ locale("he")
 # write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 # drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
+# in the begibnning, once send the empty file to Talia and Miki, buy running code rows 1615-1617, 1639-1640, 1655-1668
 
 sum_na <- 44 # run this command only for the first time (before the first candidate)
 n=0
+gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(order_num),]
 repeat {
   drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
   gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
@@ -1664,11 +1673,11 @@ if(new_sum_na < sum_na) {
   timestamp()
   
   n <- n+1
-  if (n == 3){   # set the n(n times the code should run + 1)
+  if (n == 20){   # set the n(n times the code should run + 1)
     break
   }
   
-Sys.sleep(5)  # set the time (in sec.)
+Sys.sleep(900)  # set the time (in sec.)
 
 }
 
