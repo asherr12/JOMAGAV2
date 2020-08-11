@@ -1660,7 +1660,7 @@ if(new_sum_na < sum_na) {
   }
   timestamp()
   
-Sys.sleep(120)
+Sys.sleep(120)  # set the time (in sec.)
 
 }
 
