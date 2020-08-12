@@ -1612,7 +1612,6 @@ locale("he")
 sum_na <- 44 # run this command only when the google sheet is empty (before the first candidate)
 n=0
 gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(gibush_candidates_kakatz_11.2020_civil$order_num,na.last=F),]
-colnames(gibush_candidates_kakatz_11.2020_civil)
 
 repeat {
   drive_auth(email = "asherr1211@gmail.com")
@@ -1650,7 +1649,7 @@ repeat {
 write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
-new_sum_na <- sum(is.na(gibush_candidates_kakatz_11.2020_civil_final_scores_gd[6]))
+new_sum_na <- sum(is.na(gibush_candidates_kakatz_11.2020_civil_final_scores_gd[7]))
 
 if(new_sum_na < sum_na) {
 
