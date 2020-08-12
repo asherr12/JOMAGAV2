@@ -1663,7 +1663,7 @@ if(new_sum_na < sum_na) {
   drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
               role = "writer",
               type = "user",
-              emailAddress = "hazofimshimshoni@gmail.com",
+              emailAddress = "talyashmueli@gmail.com",
               emailMessage = "Hi Talia. Please add data."
   )
   
@@ -1671,7 +1671,7 @@ if(new_sum_na < sum_na) {
   drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
               role = "writer",
               type = "user",
-              emailAddress = "asa092010@yahoo.com",
+              emailAddress = "Ramikey1@gmail.com",
               emailMessage = "Hi Miki. This file was sent to Talia. You also can add data."
   )
 }
