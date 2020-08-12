@@ -1609,7 +1609,7 @@ locale("he")
 
 # in the begibnning, once send the empty file to Talia and Miki, buy running code rows 1619-1621, 1643-1644, 1659-1672
 
-sum_na <- 44 # run this command only for the first time (before the first candidate)
+sum_na <- 44 # run this command only when the google sheet is empty (before the first candidate)
 n=0
 gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(order_num),]
 
@@ -1681,11 +1681,11 @@ if(new_sum_na < sum_na) {
   timestamp()
   
   n <- n+1
-  if (n == 20){   # set the n(n times the code should run + 1)
+  if (n == 3){   # set the n(n times the code should run)
     break
   }
   
-Sys.sleep(900)  # set the time (in sec.)
+Sys.sleep(600)  # set the time (in sec.)
 
 }
 
