@@ -1611,7 +1611,8 @@ locale("he")
 
 sum_na <- 44 # run this command only when the google sheet is empty (before the first candidate)
 n=0
-gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(order_num),]
+gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(gibush_candidates_kakatz_11.2020_civil$order_num,na.last=F),]
+colnames(gibush_candidates_kakatz_11.2020_civil)
 
 repeat {
   drive_auth(email = "asherr1211@gmail.com")
