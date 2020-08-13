@@ -1484,7 +1484,7 @@ describe(as.numeric(unlist(gibush_candidates_kakatz_11.2020_civil$am_courses_soc
 freq(ordered(round(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac,2)), plot = F,main=colnames(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac),font=2)
 freq(ordered(gibush_candidates_kakatz_11.2020_civil$GroupName_courses_soc_mac), plot = F,main=colnames(gibush_candidates_kakatz_11.2020_civil$GroupName_courses_soc_mac),font=2)
 
-gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==1] <- 1076 #change to 1 and p.n. to 2/3 after arranging the file.
+gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==1] <- 1076
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==2] <- 1034
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==3] <- 1570
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==4] <- 238
