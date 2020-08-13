@@ -1456,16 +1456,13 @@ round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2020_civil_positive
 
 write.csv(gibush_candidates_kakatz_07.2020_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2020_civil_final_scores_new.csv")
 
-
-
 #predict FileGrade of new candidates 11.2020 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-# after updating soc_mac, update 1466 code row and run code rows 1468-1486.
 
 library(readr)
 locale("he")
-gibush_candidates_kakatz_11.2020_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_new22.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+gibush_candidates_kakatz_11.2020_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[-1]
-colnames(gibush_candidates_kakatz_11.2020_civil)[2]<-"order_num" #change to 1 after arranging the file.
+# colnames(gibush_candidates_kakatz_11.2020_civil)[1]<-"order_num"
 colnames(gibush_candidates_kakatz_11.2020_civil)[14]<-"kaba"
 colnames(gibush_candidates_kakatz_11.2020_civil)[16]<-"apptitudes"
 colnames(gibush_candidates_kakatz_11.2020_civil)[24]<-"begin_mac_course_date"
@@ -1477,9 +1474,9 @@ gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civi
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[2]==44] <- 76 #change to 1 after arranging the file.
 
 # soc_mac_civil
-# gibush_candidates_kakatz_11.2020_civil <-
-#   merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-# gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
+gibush_candidates_kakatz_11.2020_civil <-
+  merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
 
 library(descr)
 library(psych)
