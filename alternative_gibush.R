@@ -1472,7 +1472,9 @@ colnames(gibush_candidates_kakatz_11.2020_civil)[26]<-"final_mac_course_score"
 class(gibush_candidates_kakatz_11.2020_civil$final_mac_course_score)
 #gibush_candidates_kakatz_11.2020_civil$final_mac_course_score<-as.numeric(gibush_candidates_kakatz_11.2020_civil$final_mac_course_score)
 
-# mising course scores from Carmela
+# mising course scores from Carmela/ERP
+gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==12] <- 84
+gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==18] <- 86
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 84
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 76
 
@@ -1600,15 +1602,14 @@ locale("he")
 
 #run the following rows only once-when building the google drive file.
 
-# drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
-# gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
-# gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[-1]
-# gibush_candidates_kakatz_11.2020_civil_final_scores_gd[2]<- gibush_candidates_kakatz_11.2020_civil$personal_number
-# write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
-# drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
+gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-gibush_candidates_kakatz_11.2020_civil_final_scores_gd[-1]
+gibush_candidates_kakatz_11.2020_civil_final_scores_gd[2]<- gibush_candidates_kakatz_11.2020_civil$personal_number
+write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
+drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
 # in the begibnning, once send the empty file to Talia and Miki, buy running code rows 1619-1621, 1643-1644, 1659-1672
-
 sum_na <- 44 # run this command only when the google sheet is empty (before the first candidate)
 n=0
 gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(gibush_candidates_kakatz_11.2020_civil$order_num,na.last=F),]
