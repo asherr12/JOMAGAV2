@@ -419,7 +419,9 @@ locale("he")
 soc_mac_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 soc_mac_civil<-soc_mac_civil[-1]
 colnames(soc_mac_civil)
+
 nrow(soc_mac_civil)
+
 soc_mac_civil <- soc_mac_civil %>%
   filter(GroupId_courses_soc_mac==147 |
            GroupId_courses_soc_mac==148 |
@@ -748,7 +750,7 @@ soc_mac_civil_am <- soc_mac_civil_am %>%
   mutate_at(c(4:45), funs(c(scale(.))))
 
 soc_mac_civil_am<-as.data.frame(soc_mac_civil_am)
-#soc_mac_civil_am[c(4:45)][abs(soc_mac_civil_am[c(4:45)])>4]<-NA
+# soc_mac_civil_am[c(4:45)][abs(soc_mac_civil_am[c(4:45)])>4]<-NA
 
 # library(dplyr)
 soc_mac_civil_am <- soc_mac_civil_am %>% 
@@ -1482,6 +1484,19 @@ gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civi
 gibush_candidates_kakatz_11.2020_civil <-
   merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
+
+# After adding megama candidates on TALI, delete the following 8 code rows.**********
+
+gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==16] <- 0.0504
+gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==20] <- -0.2446
+gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==27] <- 0.1511
+gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==40] <- -0.9361
+
+
+gibush_candidates_kakatz_11.2020_civil[28][gibush_candidates_kakatz_11.2020_civil[2]==16] <- "מכים מחלקה 4"
+gibush_candidates_kakatz_11.2020_civil[28][gibush_candidates_kakatz_11.2020_civil[2]==20] <- "מכים מחלקה 4"
+gibush_candidates_kakatz_11.2020_civil[28][gibush_candidates_kakatz_11.2020_civil[2]==27] <- "מכים מחלקה 4"
+gibush_candidates_kakatz_11.2020_civil[28][gibush_candidates_kakatz_11.2020_civil[2]==40] <- "מכים מחלקה 1"
 
 library(descr)
 library(psych)
