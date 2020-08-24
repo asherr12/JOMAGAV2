@@ -714,8 +714,7 @@ soc_mac_civil <- soc_mac_civil %>%
            GroupId_courses_soc_mac==5071 |
            GroupId_courses_soc_mac==5072 |
            GroupId_courses_soc_mac==5073 |
-           GroupId_courses_soc_mac==5074 |
-           GroupId_courses_soc_mac==5031)
+           GroupId_courses_soc_mac==5074)
 
 nrow(soc_mac_civil)
 
@@ -1464,7 +1463,7 @@ library(readr)
 locale("he")
 gibush_candidates_kakatz_11.2020_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[-1]
-# colnames(gibush_candidates_kakatz_11.2020_civil)[1]<-"order_num"
+colnames(gibush_candidates_kakatz_11.2020_civil)[1]<-"order_num"
 colnames(gibush_candidates_kakatz_11.2020_civil)[14]<-"kaba"
 colnames(gibush_candidates_kakatz_11.2020_civil)[16]<-"apptitudes"
 colnames(gibush_candidates_kakatz_11.2020_civil)[24]<-"begin_mac_course_date"
@@ -1481,6 +1480,12 @@ gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civi
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==44] <- 76
 
 # soc_mac_civil
+class(gibush_candidates_kakatz_11.2020_civil)
+gibush_candidates_kakatz_11.2020_civil<-as.data.frame(gibush_candidates_kakatz_11.2020_civil)
+class(gibush_candidates_kakatz_11.2020_civil)
+class(filtered_soc_mac_civil_am)
+
+
 gibush_candidates_kakatz_11.2020_civil <-
   merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
