@@ -1557,7 +1557,6 @@ gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==42] <- 1464
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==43] <- 10
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==44] <- 376
-gibush_candidates_kakatz_11.2020_civil$id <- NA
 
 # #final_mac_course_score
 # library(readr)
