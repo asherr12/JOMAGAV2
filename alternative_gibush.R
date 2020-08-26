@@ -745,6 +745,10 @@ soc_mac_civil_am = soc_mac_civil %>%
 colnames(soc_mac_civil_am)[c(4:45)]<-paste(colnames(soc_mac_civil_am)[c(4:45)],"zscore",sep = "_")
 colnames(soc_mac_civil_am)
 
+class(soc_mac_civil_am)
+soc_mac_civil_am<-as.data.frame(soc_mac_civil_am)
+class(soc_mac_civil_am)
+
 soc_mac_civil_am <- soc_mac_civil_am %>% 
   mutate_at(c(4:45), funs(c(scale(.))))
 
@@ -1489,7 +1493,8 @@ gibush_candidates_kakatz_11.2020_civil <-
   merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
 
-# After adding megama candidates on TALI, delete the following 8 code rows.**********
+# After getting the updated courses_soc file from Ronen and verifing that it includes the MEGAMA candidates, 
+# delete the following 8 code rows.**********
 
 gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==16] <- 0.0504
 gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==20] <- -0.2446
@@ -1552,6 +1557,7 @@ gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==42] <- 1464
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==43] <- 10
 gibush_candidates_kakatz_11.2020_civil[1][gibush_candidates_kakatz_11.2020_civil[2]==44] <- 376
+gibush_candidates_kakatz_11.2020_civil$id <- NA
 
 # #final_mac_course_score
 # library(readr)
@@ -1629,7 +1635,8 @@ locale("he")
 # drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
 # in the begibnning, once send the empty file to Talia and Miki, buy running code rows 1619-1621, 1643-1644, 1659-1672
-sum_na <- 44 # run this command only when the google sheet is empty (before the first candidate)
+sum_na <- 43 # run this command only when the google sheet is empty (before I receive from Talia the first candidate)
+# 1 candidate doesn't have am_courses_soc mac. hence 43 and not 44.
 n=0
 gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(gibush_candidates_kakatz_11.2020_civil$order_num,na.last=F),]
 
