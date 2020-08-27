@@ -1624,7 +1624,7 @@ locale("he")
 
 #**********************get and share scores - loop starts***************************
 
-#run the following rows only once-when building the google drive file.
+#run the following rows only once-when building the google sheet.
 
 # drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
 # gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
@@ -1633,9 +1633,33 @@ locale("he")
 # write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 # drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
-# in the begibnning, once send the empty file to Talia and Miki, buy running code rows 1619-1621, 1643-1644, 1659-1672
-sum_na <- 43 # run this command only when the google sheet is empty (before I receive from Talia the first candidate)
-# 1 candidate doesn't have am_courses_soc mac. hence 43 and not 44.
+# in the begibnning, once, share the google sheet to Talia and Miki, by running the next code rows.
+
+# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+#             role = "writer",
+#             type = "user",
+#             emailAddress = "asherr1211@gmail.com",
+#             emailMessage = "Hi Asher. This file was sent to Talia and Miki"
+# )
+# 
+# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+#             role = "writer",
+#             type = "user",
+#             emailAddress = "talyashmueli@gmail.com",
+#             emailMessage = "Hi Talia. Please add data."
+# )
+# 
+# 
+# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+#             role = "writer",
+#             type = "user",
+#             emailAddress = "Ramikey1@gmail.com",
+#             emailMessage = "Hi Miki. This file was sent to Talia. You also can add data."
+# )
+# }
+
+# End of code for sharing the google sheet
+
 n=0
 gibush_candidates_kakatz_11.2020_civil<-gibush_candidates_kakatz_11.2020_civil[order(gibush_candidates_kakatz_11.2020_civil$order_num,na.last=F),]
 
@@ -1675,35 +1699,7 @@ repeat {
 write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
-new_sum_na <- sum(is.na(gibush_candidates_kakatz_11.2020_civil_final_scores_gd[7]))
 
-if(new_sum_na < sum_na) {
-
-  drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
-              role = "writer",
-              type = "user",
-              emailAddress = "asherr1211@gmail.com",
-              emailMessage = "Hi Asher. This file was sent to Talia and Miki"
-  )
-  
-  drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
-              role = "writer",
-              type = "user",
-              emailAddress = "talyashmueli@gmail.com",
-              emailMessage = "Hi Talia. Please add data."
-  )
-  
-  
-  drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
-              role = "writer",
-              type = "user",
-              emailAddress = "Ramikey1@gmail.com",
-              emailMessage = "Hi Miki. This file was sent to Talia. You also can add data."
-  )
-}
-  
-  sum_na <- new_sum_na
-  
   timestamp()
   
   n <- n+1
