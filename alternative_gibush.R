@@ -1493,8 +1493,8 @@ gibush_candidates_kakatz_11.2020_civil <-
   merge(gibush_candidates_kakatz_11.2020_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_11.2020_civil$am_courses_soc_mac)
 
-# After getting the updated courses_soc file from Ronen and verifing that it includes the MEGAMA candidates, 
-# delete the following 8 code rows.**********
+# courses_soc file on TALI icludes candidates untill 01.2020. 
+# Hence I've got the data for the next 4 candidates maualy from MEGAMA. 
 
 gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==16] <- 0.0504
 gibush_candidates_kakatz_11.2020_civil[27][gibush_candidates_kakatz_11.2020_civil[2]==20] <- -0.2446
