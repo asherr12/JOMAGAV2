@@ -1654,7 +1654,13 @@ locale("he")
 #             emailAddress = "Ramikey1@gmail.com",
 #             emailMessage = "Hi Miki. This file was sent to Talia. You also can add data."
 # )
-# }
+
+# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+#             role = "writer",
+#             type = "user",
+#             emailAddress = "Lizhazan10@gmail.com",
+#             emailMessage = "Hi Liz. This file was sent to Talia. You also can add data."
+# )
 
 # End of code for sharing the google sheet
 
