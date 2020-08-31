@@ -1664,8 +1664,8 @@ locale("he")
 
 # End of code for sharing the google sheet
 
-n=0
-repeat {
+# n=0
+# repeat {
   drive_auth(email = "asherr1211@gmail.com")
   drive_download("gibush_candidates_kakatz_11.2020_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd",type = "csv",overwrite=T)
   gibush_candidates_kakatz_11.2020_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
@@ -1701,16 +1701,16 @@ repeat {
 write.csv(gibush_candidates_kakatz_11.2020_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 drive_update("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0", "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_11.2020_civil_final_scores_gd.csv")
 
-  timestamp()
-  
-  n <- n+1
-  if (n == 3){ # set the n(n times the code should run)
-    break
-  
-Sys.sleep(600)  # set the time (in sec.)
-
-  }
-}
+#   timestamp()
+#   
+#   n <- n+1
+#   if (n == 3){ # set the n(n times the code should run)
+#     break
+#   
+# Sys.sleep(600)  # set the time (in sec.)
+# 
+#   }
+# }
 
 
 #**********************stop get and share scores***************************
