@@ -1086,51 +1086,51 @@ round(freq(ordered(filtered_residual$residual_direction), plot = F,main=colnames
 
 # combine new and old predicroes
 
-JOMAG_predictores_criteria_merged_civil$final_apptitudes_new_dic<-ifelse(JOMAG_predictores_criteria_merged_civil$final_apptitudes_new< -0.028327486,0,1)
+# JOMAG_predictores_criteria_merged_civil$final_apptitudes_new_dic<-ifelse(JOMAG_predictores_criteria_merged_civil$final_apptitudes_new< -0.028327486,0,1)
+# 
+# JOMAG_predictores_criteria_merged_civil_qv<-JOMAG_predictores_criteria_merged_civil[which(!is.na(JOMAG_predictores_criteria_merged_civil$FileGrade)
+#                                                                                           & JOMAG_predictores_criteria_merged_civil$critria_count>1),]
+# 
+# library(dplyr)
+# filtered_field_criteria = filtered_residual %>%
+#   select(personal_number, final_mac_course_score, kaba, am_courses_soc_mac,FileGrade, predicted_FileGrade)
+# 
+# count_matching<-match(JOMAG_predictores_criteria_merged_civil_qv$personal_number,filtered_field_criteria$personal_number)
+# round(freq(ordered(count_matching), plot = F,main=colnames(count_matching),font=2),2)
+# JOMAG_predictores_criteria_merged_civil_qv$FileGrade<-NULL
+# JOMAG_predictores_criteria_merged_civil_qv_field<- merge(JOMAG_predictores_criteria_merged_civil_qv,filtered_field_criteria,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 
-JOMAG_predictores_criteria_merged_civil_qv<-JOMAG_predictores_criteria_merged_civil[which(!is.na(JOMAG_predictores_criteria_merged_civil$FileGrade)
-                                                                                          & JOMAG_predictores_criteria_merged_civil$critria_count>1),]
-
-library(dplyr)
-filtered_field_criteria = filtered_residual %>%
-  select(personal_number, final_mac_course_score, kaba, am_courses_soc_mac,FileGrade, predicted_FileGrade)
-
-count_matching<-match(JOMAG_predictores_criteria_merged_civil_qv$personal_number,filtered_field_criteria$personal_number)
-round(freq(ordered(count_matching), plot = F,main=colnames(count_matching),font=2),2)
-JOMAG_predictores_criteria_merged_civil_qv$FileGrade<-NULL
-JOMAG_predictores_criteria_merged_civil_qv_field<- merge(JOMAG_predictores_criteria_merged_civil_qv,filtered_field_criteria,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-
-round(freq(ordered(filtered_field_criteria$FileGrade), plot = F,main=colnames(filtered_field_criteria$FileGrade),font=2),2)
-round(freq(ordered(filtered_field_criteria$predicted_FileGrade), plot = F,main=colnames(filtered_field_criteria$predicted_FileGrade),font=2),2)
-round(freq(ordered(JOMAG_predictores_criteria_merged_civil_qv_field$FileGrade), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_qv_field$FileGrade),font=2),2)
-round(freq(ordered(JOMAG_predictores_criteria_merged_civil_qv_field$predicted_FileGrade), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_qv_field$predicted_FileGrade),font=2),2)
-round(freq(ordered(JOMAG_predictores_criteria_merged_civil_qv_field$final_mac_course_score), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_qv_field$final_mac_course_score),font=2),2)
-
-
-reg_tkufatitam <- lm(tkufatitam ~ final_apptitudes_new_dic
-                     + TsiunSofiAfter
-                     + SocioGrade
-                     + PersonalityGrade,
-                     data=JOMAG_predictores_criteria_merged_civil_qv_field)
-summary(reg_tkufatitam)
-
-
-#good*************************
-reg_tkufatitam <- lm(tkufatitam ~ TsiunSofiAfter
-                     + PersonalityGrade
-                     + am_courses_soc_mac,
-                     data=JOMAG_predictores_criteria_merged_civil_qv_field)
-summary(reg_tkufatitam)
-
-round(lm.beta(reg_tkufatitam),2)
-
+# round(freq(ordered(filtered_field_criteria$FileGrade), plot = F,main=colnames(filtered_field_criteria$FileGrade),font=2),2)
+# round(freq(ordered(filtered_field_criteria$predicted_FileGrade), plot = F,main=colnames(filtered_field_criteria$predicted_FileGrade),font=2),2)
+# round(freq(ordered(JOMAG_predictores_criteria_merged_civil_qv_field$FileGrade), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_qv_field$FileGrade),font=2),2)
+# round(freq(ordered(JOMAG_predictores_criteria_merged_civil_qv_field$predicted_FileGrade), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_qv_field$predicted_FileGrade),font=2),2)
+# round(freq(ordered(JOMAG_predictores_criteria_merged_civil_qv_field$final_mac_course_score), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_qv_field$final_mac_course_score),font=2),2)
+# 
+# 
+# reg_tkufatitam <- lm(tkufatitam ~ final_apptitudes_new_dic
+#                      + TsiunSofiAfter
+#                      + SocioGrade
+#                      + PersonalityGrade,
+#                      data=JOMAG_predictores_criteria_merged_civil_qv_field)
+# summary(reg_tkufatitam)
+# 
+# 
+# #good*************************
+# reg_tkufatitam <- lm(tkufatitam ~ TsiunSofiAfter
+#                      + PersonalityGrade
+#                      + am_courses_soc_mac,
+#                      data=JOMAG_predictores_criteria_merged_civil_qv_field)
+# summary(reg_tkufatitam)
+# 
+# round(lm.beta(reg_tkufatitam),2)
+# 
+# # R
+# R<-round(sqrt(0.1917),2)
 # R
-R<-round(sqrt(0.1917),2)
-R
-
-JOMAG_predictores_criteria_merged_civil_qv_field <- JOMAG_predictores_criteria_merged_civil_qv_field %>% 
-  mutate(predicted_with_field = .25*TsiunSofiAfter + .23*PersonalityGrade + .52*am_courses_soc_mac)%>%
-  mutate(predicted_without_field = .05*final_apptitudes_new + .31*TsiunSofiAfter_zscore + .32*SocioGrade_zscore + .32*PersonalityGrade_zscore)
+# 
+# JOMAG_predictores_criteria_merged_civil_qv_field <- JOMAG_predictores_criteria_merged_civil_qv_field %>% 
+#   mutate(predicted_with_field = .25*TsiunSofiAfter + .23*PersonalityGrade + .52*am_courses_soc_mac)%>%
+#   mutate(predicted_without_field = .05*final_apptitudes_new + .31*TsiunSofiAfter_zscore + .32*SocioGrade_zscore + .32*PersonalityGrade_zscore)
 
 
 # colnames(JOMAG_predictores_criteria_merged_civil_qv_field[1:1000])
