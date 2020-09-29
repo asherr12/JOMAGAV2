@@ -795,6 +795,8 @@ DAPAR_GIBUSH_MAGAV_civil<-DAPAR_GIBUSH_MAGAV_civil[-c(1,4,5)]
 colnames(DAPAR_GIBUSH_MAGAV_civil)[2]<-paste(colnames(DAPAR_GIBUSH_MAGAV_civil)[2],"DAPAR",sep="_")
 n_occur<-data.frame(table(DAPAR_GIBUSH_MAGAV_civil$id))
 n_occur[n_occur$Freq>1,]
+DAPAR_GIBUSH_MAGAV_civil$personal_number<-NULL
+
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar<- merge(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am ,DAPAR_GIBUSH_MAGAV_civil,by=c("id"), all.x=T, all.y=F,sort = FALSE)
 round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$dapar_copmlete), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$dapar_copmlete),font=2),2)
 
@@ -1662,6 +1664,14 @@ locale("he")
 #             emailMessage = "Hi Liz. This file was sent to Talia. You also can add data."
 # )
 
+# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+#             role = "writer",
+#             type = "user",
+#             emailAddress = "adi.einely@gmail.com",
+#             emailMessage = "Hi Adi. This file was sent to Talia. You also can add data."
+# )
+
+
 # End of code for sharing the google sheet
 
 # n=0
@@ -1797,6 +1807,22 @@ cor.test(as.numeric(presentation$kaba),as.numeric(presentation$final_apptitudes_
 cor.test(as.numeric(presentation$kaba),as.numeric(presentation$tkufatitam),use="pairwise.complete.obs",na.action = "na.exclude")
 cor.test(as.numeric(presentation$am_courses_soc_mac),as.numeric(presentation$tkufatitam),use="pairwise.complete.obs",na.action = "na.exclude")
 cor.test(as.numeric(presentation$final_mac_course_score),as.numeric(presentation$tkufatitam),use="pairwise.complete.obs",na.action = "na.exclude")
+
+
+# analysis for ISPA CONFERENCE
+colnames(filtered_residual)
+
+filtered_residual$FileGrade3_3.5<-ifelse(filtered_residual$FileGrade<3.5,3,3.5)
+filtered_residual$predicted_FileGrade3_3.5<-ifelse(filtered_residual$predicted_FileGrade<3.5,3,3.5)
+round(freq(ordered(filtered_residual$FileGrade3_3.5), plot = F,main=colnames(filtered_residual$FileGrade3_3.5),font=2),2)
+round(freq(ordered(filtered_residual$predicted_FileGrade3_3.5), plot = F,main=colnames(filtered_residual$predicted_FileGrade3_3.5),font=2),2)
+CrossTable(filtered_residual$predicted_FileGrade3_3.5,filtered_residual$FileGrade3_3.5,expected = T)
+
+filtered_residual$FileGrade4_4.5<-ifelse(filtered_residual$FileGrade<4.5,4,4.5)
+filtered_residual$predicted_FileGrade4_4.5<-ifelse(filtered_residual$predicted_FileGrade<4.5,4,4.5)
+round(freq(ordered(filtered_residual$FileGrade4_4.5), plot = F,main=colnames(filtered_residual$FileGrade4_4.5),font=2),2)
+round(freq(ordered(filtered_residual$predicted_FileGrade4_4.5), plot = F,main=colnames(filtered_residual$predicted_FileGrade4_4.5),font=2),2)
+CrossTable(filtered_residual$predicted_FileGrade4_4.5,filtered_residual$FileGrade4_4.5,expected = T)
 
 
 
