@@ -1809,22 +1809,33 @@ cor.test(as.numeric(presentation$am_courses_soc_mac),as.numeric(presentation$tku
 cor.test(as.numeric(presentation$final_mac_course_score),as.numeric(presentation$tkufatitam),use="pairwise.complete.obs",na.action = "na.exclude")
 
 
-# analysis for ISPA CONFERENCE
+# analysis for ISPA conference
+
 colnames(filtered_residual)
 
-filtered_residual$FileGrade3_3.5<-ifelse(filtered_residual$FileGrade<3.5,3,3.5)
-filtered_residual$predicted_FileGrade3_3.5<-ifelse(filtered_residual$predicted_FileGrade<3.5,3,3.5)
+round(freq(ordered(filtered_residual$FileGrade), plot = F,main=colnames(filtered_residual$FileGrade),font=2),2)
+round(freq(ordered(filtered_residual$predicted_FileGrade), plot = F,main=colnames(filtered_residual$predicted_FileGrade),font=2),2)
+
+
+
+filtered_residual$FileGrade3_3.5<-ifelse(filtered_residual$FileGrade==3.5,3.5,
+                                  ifelse(filtered_residual$FileGrade<3.5,3,NA))
+
+filtered_residual$predicted_FileGrade3_3.5<-ifelse(round(filtered_residual$predicted_FileGrade,1)>=3.5 & round(filtered_residual$predicted_FileGrade,1)<4,3.5,
+                                            ifelse(round(filtered_residual$predicted_FileGrade,1)<3.5,3,NA))
 round(freq(ordered(filtered_residual$FileGrade3_3.5), plot = F,main=colnames(filtered_residual$FileGrade3_3.5),font=2),2)
 round(freq(ordered(filtered_residual$predicted_FileGrade3_3.5), plot = F,main=colnames(filtered_residual$predicted_FileGrade3_3.5),font=2),2)
 CrossTable(filtered_residual$predicted_FileGrade3_3.5,filtered_residual$FileGrade3_3.5,expected = T)
 
-filtered_residual$FileGrade4_4.5<-ifelse(filtered_residual$FileGrade<4.5,4,4.5)
-filtered_residual$predicted_FileGrade4_4.5<-ifelse(filtered_residual$predicted_FileGrade<4.5,4,4.5)
+filtered_residual$FileGrade4_4.5<-ifelse(filtered_residual$FileGrade>=4.5,4.5,
+                                  ifelse(filtered_residual$FileGrade==4,4,NA))
+filtered_residual$predicted_FileGrade4_4.5<-ifelse(round(filtered_residual$predicted_FileGrade,1)>=4.5,4.5,
+                                            ifelse(round(filtered_residual$predicted_FileGrade,1)<4.5 & round(filtered_residual$predicted_FileGrade,1)>=4,4,NA))
 round(freq(ordered(filtered_residual$FileGrade4_4.5), plot = F,main=colnames(filtered_residual$FileGrade4_4.5),font=2),2)
 round(freq(ordered(filtered_residual$predicted_FileGrade4_4.5), plot = F,main=colnames(filtered_residual$predicted_FileGrade4_4.5),font=2),2)
 CrossTable(filtered_residual$predicted_FileGrade4_4.5,filtered_residual$FileGrade4_4.5,expected = T)
 
-
+write.csv(filtered_residual, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/filtered_residual.csv")
 
 #shiny app
 
