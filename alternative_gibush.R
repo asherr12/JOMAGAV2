@@ -1736,8 +1736,8 @@ drive_deauth()
 #   merge(gibush_candidates_kakatz_11.2020_civil,gibush_candidates_kakatz_11.2020_civil_final_two_scores,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 
 # When I'll have the real scores update accordingly************
-gibush_candidates_kakatz_11.2020_civil$altenative_weighted_score_final<-NA
-gibush_candidates_kakatz_11.2020_civil$altenative_weighted_score_final_categorial<-NA
+# gibush_candidates_kakatz_11.2020_civil$altenative_weighted_score_final<-NA
+# gibush_candidates_kakatz_11.2020_civil$altenative_weighted_score_final_categorial<-NA
 
 library(descr)
 library(psych)
