@@ -1858,7 +1858,10 @@ round(freq(ordered(gibush_candidates_kakatz_11.2020_civil$alternative_weighted_s
 round(freq(ordered(gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade4_4.5), plot = F,main=colnames(gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade4_4.5),font=2),2)
 CrossTable(gibush_candidates_kakatz_11.2020_civil$alternative_weighted_score4_4.5,gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade4_4.5,row.labels = T,format = c("SPSS"),cell.layout=T)
 
-
+round(describe(as.numeric(gibush_candidates_kakatz_11.2020_civil$alternative_weighted_score)),2)
+round(describe(as.numeric(gibush_candidates_kakatz_11.2020_civil$predicted_FileGrade)),2)
+round(describe(as.numeric(JOMAG_predictores_criteria_merged_civil$FileGrade)),2)
+               
 
 #shiny app
 
@@ -1897,7 +1900,7 @@ freq(ordered(JOMAG_predictores_criteria_merged_civil$mYachasimBefore2_zscore), p
 
 
 
-# round(describe(as.numeric(unlist(JOMAG_predictores_criteria_merged_civil$exercises))),2)
+round(describe(as.numeric(unlist(JOMAG_predictores_criteria_merged_civil$exercises))),2)
 colnames(JOMAG_predictores_criteria_merged_civil_qv[1:1000])
 colnames(JOMAG_predictores_criteria_merged_civil_qv[1001:ncol(JOMAG_predictores_criteria_merged_civil_qv)])
 colnames(JOMAG_predictores_criteria_merged_civil[1:1000])
