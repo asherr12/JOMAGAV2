@@ -173,7 +173,7 @@ class(mac_datets_and_scores$GibDate)
 head(mac_datets_and_scores$GibDate)
 
 # End of Tali code.
-# Begining of civil code.****************************
+# Beginning of civil code.****************************
 
 library(readr)
 locale("he")
