@@ -5,17 +5,253 @@
 
 # End of Tali code.
 # Beginning of civil code.****************************
-options(digits = 2)
+
+library(readr)
+locale("he")
+mac_datets_and_scores_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/mac_datets_and_scores_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+mac_datets_and_scores_civil<-mac_datets_and_scores_civil[-1]
+
+library(descr)
+library(psych)
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil$final_mac_course_score))),2)
+freq(ordered(round(mac_datets_and_scores_civil$final_mac_course_score,2)), plot = F,main=colnames(mac_datets_and_scores_civil$final_mac_course_score),font=2)
+
+library(readr)
+locale("he")
+JOMAG_predictores_criteria_merged_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/JOMAG_predictores_criteria_merged_civil_old.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+JOMAG_predictores_criteria_merged_civil<-JOMAG_predictores_criteria_merged_civil[-1]
+
+JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed <-NA
+JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed <-
+  as.numeric(ifelse(is.na(JOMAG_predictores_criteria_merged_civil$VaadaGrade),JOMAG_predictores_criteria_merged_civil$FileGrade,JOMAG_predictores_criteria_merged_civil$VaadaGrade))
+
+library(dplyr)
+filtered_FileGrade3=JOMAG_predictores_criteria_merged_civil %>%
+  filter(FileGrade==3 & VaadaGrade_completed==3.5)
+nrow(filtered_FileGrade3)
+
+filtered_FileGrade35=JOMAG_predictores_criteria_merged_civil %>%
+  filter(FileGrade==3.5 & VaadaGrade_completed==4.5)
+nrow(filtered_FileGrade35)
+
+JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed[JOMAG_predictores_criteria_merged_civil$FileGrade==3.5 & JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed==4.5] <- 4
+
+filtered_FileGrade5=JOMAG_predictores_criteria_merged_civil %>%
+  filter(FileGrade==5 & VaadaGrade_completed==4.5)
+nrow(filtered_FileGrade5)
+
+JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed[JOMAG_predictores_criteria_merged_civil$FileGrade==5 & JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed==4.5] <- 5
+
+filtered_FileGrade55=JOMAG_predictores_criteria_merged_civil %>%
+  filter(FileGrade==5.5 & VaadaGrade_completed==4.5)
+nrow(filtered_FileGrade55)
+
+JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed[JOMAG_predictores_criteria_merged_civil$FileGrade==5.5 & JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed==4.5] <- 5.5
+
+head(JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed)
+
+class(JOMAG_predictores_criteria_merged_civil$VaadaGrade_completed)
+
+JOMAG_predictores_criteria_merged_civil = JOMAG_predictores_criteria_merged_civil %>%
+  rowwise() %>%
+  mutate(gender_new = ifelse(!is.na(gender),gender,
+                             ifelse(!is.na(Sex),Sex,NA)))
+
+JOMAG_predictores_criteria_merged_civil$gender<-JOMAG_predictores_criteria_merged_civil$gender_new
+
+filtered_vars<-JOMAG_predictores_criteria_merged_civil %>%
+  select(personal_number,FileGrade,VaadaGrade_completed,officer,gender_new)
+mac_datets_and_scores_civil <-
+  merge(mac_datets_and_scores_civil,filtered_vars,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil$FileGrade))),2)
+freq(ordered(round(mac_datets_and_scores_civil$FileGrade,2)), plot = F,main=colnames(mac_datets_and_scores_civil$FileGrade),font=2)
+
+# filtered_mac_datets_and_scores_civil
+
+filtered_mac_datets_and_scores_civil_2014=mac_datets_and_scores_civil%>%
+  filter(end_mac_course_date<date.tkufatit_14 & date.tkufatit_14<GibDate)
+filtered_mac_datets_and_scores_civil_2014$tkufatit_date<-
+  filtered_mac_datets_and_scores_civil_2014$date.tkufatit_14
+filtered_mac_datets_and_scores_civil_2014$tkufatit<-
+  filtered_mac_datets_and_scores_civil_2014$tkufatit_14
+nrow(filtered_mac_datets_and_scores_civil_2014)
+colnames(filtered_mac_datets_and_scores_civil_2014)
+
+filtered_mac_datets_and_scores_civil_2015=mac_datets_and_scores_civil%>%
+  filter(end_mac_course_date<date.period.eval.2015 & date.period.eval.2015<GibDate)
+filtered_mac_datets_and_scores_civil_2015$tkufatit_date<-
+  filtered_mac_datets_and_scores_civil_2015$date.period.eval.2015
+filtered_mac_datets_and_scores_civil_2015$tkufatit<-
+  filtered_mac_datets_and_scores_civil_2015$final.score.2015
+nrow(filtered_mac_datets_and_scores_civil_2015)
+
+filtered_mac_datets_and_scores_civil_2017=mac_datets_and_scores_civil%>%
+  filter(end_mac_course_date<date.period.eval.2017 & date.period.eval.2017<GibDate)
+filtered_mac_datets_and_scores_civil_2017$tkufatit_date<-
+  filtered_mac_datets_and_scores_civil_2017$date.period.eval.2017
+filtered_mac_datets_and_scores_civil_2017$tkufatit<-
+  filtered_mac_datets_and_scores_civil_2017$final.score.2017
+nrow(filtered_mac_datets_and_scores_civil_2017)
+
+filtered_mac_datets_and_scores_civil_2018=mac_datets_and_scores_civil%>%
+  filter(end_mac_course_date<date.period.eval.2018 & date.period.eval.2018<GibDate)
+filtered_mac_datets_and_scores_civil_2018$tkufatit_date<-
+  filtered_mac_datets_and_scores_civil_2018$date.period.eval.2018
+filtered_mac_datets_and_scores_civil_2018$tkufatit<-
+  filtered_mac_datets_and_scores_civil_2018$final.score.2018
+nrow(filtered_mac_datets_and_scores_civil_2018)
+
+filtered_mac_datets_and_scores_civil<-rbind(filtered_mac_datets_and_scores_civil_2014,
+                                            filtered_mac_datets_and_scores_civil_2015,
+                                            filtered_mac_datets_and_scores_civil_2017,
+                                            filtered_mac_datets_and_scores_civil_2018)
+
+nrow(filtered_mac_datets_and_scores_civil)
+n_occur<-data.frame(table(filtered_mac_datets_and_scores_civil$personal_number))
+n_occur[n_occur$Freq>1,]
+colnames(filtered_mac_datets_and_scores_civil)
+library(data.table)
+class(filtered_mac_datets_and_scores_civil$tkufatit_date)
+head(filtered_mac_datets_and_scores_civil$tkufatit_date)
+filtered_mac_datets_and_scores_civil<-setDT(filtered_mac_datets_and_scores_civil)[,.SD[which.max(tkufatit_date)],keyby=personal_number]
+n_occur<-data.frame(table(filtered_mac_datets_and_scores_civil$personal_number))
+n_occur[n_occur$Freq>1,]
+
+JOMAG_predictores_criteria_merged_civil_qv<-JOMAG_predictores_criteria_merged_civil[which(!is.na(JOMAG_predictores_criteria_merged_civil$FileGrade)
+                                                                                          & JOMAG_predictores_criteria_merged_civil$critria_count>1),]
+
+filtered_mac_datets_and_scores_civil$matching<-match(as.numeric(filtered_mac_datets_and_scores_civil$personal_number),as.numeric(JOMAG_predictores_criteria_merged_civil$personal_number))
+filtered_mac_datets_and_scores_civil$matching_qv<-match(as.numeric(filtered_mac_datets_and_scores_civil$personal_number),as.numeric(JOMAG_predictores_criteria_merged_civil_qv$personal_number))
+
+library(descr)
+library(psych)
+#options(width = 71,max.print=30000)
+round(freq(ordered(as.numeric(unlist(filtered_mac_datets_and_scores_civil$matching))), plot = F,main=colnames(filtered_mac_datets_and_scores_civil$matching),font=2),2)
+round(freq(ordered(as.numeric(unlist(filtered_mac_datets_and_scores_civil$matching_qv))), plot = F,main=colnames(filtered_mac_datets_and_scores_civil$matching_qv),font=2),2)
+freq(ordered(filtered_mac_datets_and_scores_civil$tkufatit_date), plot = F,main=colnames(filtered_mac_datets_and_scores_civil$tkufatit_date),font=2)
+round(freq(ordered(as.numeric(unlist(filtered_mac_datets_and_scores_civil$tkufatit))), plot = F,main=colnames(filtered_mac_datets_and_scores_civil$tkufatit),font=2),2)
+
+round(describe(as.numeric(unlist(JOMAG_predictores_criteria_merged_civil_qv$VaadaGrade_completed))),2)
+
+#QA
+# library(dplyr)
+
+filtered_mac_datets_and_scores_civi=filtered_mac_datets_and_scores_civil%>%
+  select(personal_number,end_mac_course_date,tkufatit_date,GibDate)
+
+round(freq(ordered(filtered_mac_datets_and_scores_civil$end_mac_course_date), plot = F,main=colnames(filtered_mac_datets_and_scores_civil$end_mac_course_date),font=2),2)
+
+library(dplyr)
+filtered_tkufatit_date=filtered_mac_datets_and_scores_civil%>%
+  select(personal_number,tkufatit_date,tkufatit)
+mac_datets_and_scores_civil$personal_number<-as.numeric(mac_datets_and_scores_civil$personal_number)
+filtered_tkufatit_date$personal_number<-as.numeric(filtered_tkufatit_date$personal_number)
+mac_datets_and_scores_civil <- merge(mac_datets_and_scores_civil, filtered_tkufatit_date,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+mac_datets_and_scores_civil<-as.data.frame(mac_datets_and_scores_civil)
+
+library(descr)
+library(psych)
+#options(width = 71,max.print=30000)
+freq(ordered(mac_datets_and_scores_civil$tkufatit_date), plot = F,main=colnames(mac_datets_and_scores_civil$tkufatit_date),font=2)
+round(freq(ordered(as.numeric(unlist(mac_datets_and_scores_civil$tkufatit))), plot = F,main=colnames(mac_datets_and_scores_civil$tkufatit),font=2),2)
+
+library(readr)
+locale("he")
+# ranks_new_civil<-read_csv("C:/Users/Administrator.MAMADA-777/Documents/Junior officers MAGAV validation/ranks_new_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+ranks_new_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/ranks_new_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+ranks_new_civil<-ranks_new_civil[-1]
+colnames(ranks_new_civil)[3]<-"rank_new"
+colnames(ranks_new_civil)[4]<-"rank_new_date"
+colnames(ranks_new_civil)[5]<-"rank_new_final_date"
+class(ranks_new_civil$rank_new_date)
+head(ranks_new_civil$rank_new_date)
+ranks_new_civil$rank_new_date<-as.Date(as.character(ranks_new_civil$rank_new_date),format="%d/%m/%Y")
+ranks_new_civil$rank_new<-gsub('["]','',ranks_new_civil$rank_new)
+class(ranks_new_civil$rank_new_final_date)
+head(ranks_new_civil$rank_new_final_date)
+ranks_new_civil$rank_new_final_date<-as.Date(as.character(ranks_new_civil$rank_new_final_date),format="%d/%m/%Y")
+ranks_new_civil$rank_new_final_date<-gsub('["]','',ranks_new_civil$rank_new_final_date)
+
+# library(dplyr)
+filtered_GibDate<-mac_datets_and_scores_civil %>%
+  select(personal_number,GibDate)
+ranks_new_civil <-
+  merge(ranks_new_civil,filtered_GibDate,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+ranks_new_civil=ranks_new_civil %>%
+  filter(!is.na(GibDate)) %>%
+  filter(rank_new_date<GibDate) %>%
+  filter(rank_new=="סמר"|
+           rank_new=="סמש"|
+           rank_new=="רסב"|
+           rank_new=="רסל"|
+           rank_new=="רסמ"|
+           rank_new=="רסר"|
+           rank_new=="רשט"|
+           rank_new=="שוטר")
+
+n_occur<-data.frame(table(ranks_new_civil$id))
+n_occur[n_occur$Freq>1,]
+library (data.table)
+ranks_new_civil<-setDT(ranks_new_civil)[,.SD[which.max(rank_new_date)],keyby=id]
+n_occur<-data.frame(table(ranks_new_civil$id))
+n_occur[n_occur$Freq>1,]
+ranks_new_civil$GibDate<-NULL
+ranks_new_civil$id<-NULL
+
+mac_datets_and_scores_civil_ranks_new_civil <-
+  merge(mac_datets_and_scores_civil,ranks_new_civil,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+
+class(mac_datets_and_scores_civil_ranks_new_civil$GibDate)
+head(mac_datets_and_scores_civil_ranks_new_civil$GibDate)
+class(mac_datets_and_scores_civil_ranks_new_civil$rank_new_date)
+head(mac_datets_and_scores_civil_ranks_new_civil$rank_new_date)
+
+mac_datets_and_scores_civil_ranks_new_civil$GibDate_rank_new_date_gap<-
+  as.numeric(mac_datets_and_scores_civil_ranks_new_civil$GibDate-mac_datets_and_scores_civil_ranks_new_civil$rank_new_date)
+mac_datets_and_scores_civil_ranks_new_civil$keva<-ifelse((mac_datets_and_scores_civil_ranks_new_civil$rank_new=="סמר" & mac_datets_and_scores_civil_ranks_new_civil$GibDate_rank_new_date_gap>540) |
+                                                           mac_datets_and_scores_civil_ranks_new_civil$rank_new=="סמש" |
+                                                           mac_datets_and_scores_civil_ranks_new_civil$rank_new=="רסב" |
+                                                           mac_datets_and_scores_civil_ranks_new_civil$rank_new=="רסל"|
+                                                           mac_datets_and_scores_civil_ranks_new_civil$rank_new=="רסמ"|
+                                                           mac_datets_and_scores_civil_ranks_new_civil$rank_new=="רסר",
+                                                         2,ifelse(mac_datets_and_scores_civil_ranks_new_civil$rank_new=="סמר" & mac_datets_and_scores_civil_ranks_new_civil$GibDate_rank_new_date_gap<=540,
+                                                                  1,0))
+
+library(descr)
+library(psych)
+freq(ranks_new_civil$rank_new, plot = F,main=colnames(ranks_new_civil$rank_new),font=2)
+round(freq(ordered(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil$keva))), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil$keva),font=2),2)
+mac_datets_and_scores_civil_ranks_new_civil$keva[mac_datets_and_scores_civil_ranks_new_civil$keva==1] <- 0
+round(freq(ordered(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil$keva))), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil$keva),font=2),2)
+freq(mac_datets_and_scores_civil_ranks_new_civil$rank_new, plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil$rank_new),font=2)
+freq(mac_datets_and_scores_civil_ranks_new_civil$tkufatit_date, plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil$tkufatit_date),font=2)
+# write.csv(mac_datets_and_scores_civil_ranks_new_civil, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/mac_datets_and_scores_civil_ranks_new_civil_qa.csv")
+
+#kaba
+library(readr)
+locale("he")
+kaba_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/kaba_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+kaba_civil<-kaba_civil[-1]
+n_occur<-data.frame(table(kaba_civil$personal_number))
+n_occur[n_occur$Freq>1,]
+kaba_civil$id<-NULL
+
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil <-
+  merge(mac_datets_and_scores_civil_ranks_new_civil,kaba_civil,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+
+round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil$kaba), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil$kaba),font=2),2)
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil$kaba))),2)
+
 # soc_mac
 library(readr)
 locale("he")
 soc_mac_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 soc_mac_civil<-soc_mac_civil[-1]
 colnames(soc_mac_civil)
-nrow(soc_mac_civil)
-head(soc_mac_civil$RAvg5_courses_soc_mac)
 
-library(dplyr)
+nrow(soc_mac_civil)
+
 soc_mac_civil <- soc_mac_civil %>%
   filter(GroupId_courses_soc_mac==147 |
            GroupId_courses_soc_mac==148 |
@@ -332,7 +568,8 @@ nrow(soc_mac_civil)
 
 colnames(soc_mac_civil)
 
-library(dplyr)
+# library(dplyr)
+
 soc_mac_civil_am = soc_mac_civil %>%
   select(personal_number,GroupId_courses_soc_mac,GroupName_courses_soc_mac,c(15:21,23:29,31:37,39:45,47:53,55:61))
 colnames(soc_mac_civil_am)[c(4:45)]<-paste(colnames(soc_mac_civil_am)[c(4:45)],"zscore",sep = "_")
@@ -370,9 +607,143 @@ soc_mac_civil_am <- soc_mac_civil_am %>%
 
 filtered_soc_mac_civil_am <- soc_mac_civil_am %>%
   select(personal_number,am_courses_soc_mac,GroupName_courses_soc_mac)
-head(filtered_soc_mac_civil_am)
-filtered_soc_mac_civil_am$am_courses_soc_mac<-format(round(filtered_soc_mac_civil_am$am_courses_soc_mac,2), nsmall = 2)
 
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am <-
+  merge(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+
+library(descr)
+library(psych)
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am$am_courses_soc_mac))),2)
+freq(ordered(round(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am$am_courses_soc_mac,2)), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am$am_courses_soc_mac),font=2)
+round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am$GroupName_courses_soc_mac), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am$GroupName_courses_soc_mac),font=2),2)
+round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am$tkufatit), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am$tkufatit),font=2),2)
+
+#DAPAR
+
+DAPAR_GIBUSH_MAGAV_civil<-read.csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/DAPAR_GIBUSH_MAGAV_civil.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
+DAPAR_GIBUSH_MAGAV_civil<-DAPAR_GIBUSH_MAGAV_civil[-c(1,4,5)]
+colnames(DAPAR_GIBUSH_MAGAV_civil)[2]<-paste(colnames(DAPAR_GIBUSH_MAGAV_civil)[2],"DAPAR",sep="_")
+n_occur<-data.frame(table(DAPAR_GIBUSH_MAGAV_civil$id))
+n_occur[n_occur$Freq>1,]
+DAPAR_GIBUSH_MAGAV_civil$personal_number<-NULL
+
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar<- merge(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am ,DAPAR_GIBUSH_MAGAV_civil,by=c("id"), all.x=T, all.y=F,sort = FALSE)
+round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$dapar_copmlete), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$dapar_copmlete),font=2),2)
+
+#tenure
+
+colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)[8]<- "GiyusDate1"
+colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)[9]<- "GiyusDate2"
+
+class(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GibDate)
+head(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GibDate)
+soc_mac_civil$CreateDate_courses_soc_mac<-as.Date(as.character(soc_mac_civil$CreateDate_courses_soc_mac),format="%d/%m/%Y")
+class(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GiyusDate1)
+head(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GiyusDate1)
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GiyusDate1<-
+  as.Date(as.character(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GiyusDate1),format="%d/%m/%Y")
+class(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GiyusDate1)
+head(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GiyusDate1)
+
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$tenure <- 
+  mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GibDate-
+  mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$GiyusDate1
+round(freq(ordered(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$tenure), plot = F,main=colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$tenure),font=2),2)
+
+colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+
+nrow(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+
+colnames(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+
+# sadir/keva on FileGrade
+
+filtered_keva_FileGrade=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar %>%
+  filter(!is.na(keva) & !is.na(FileGrade))
+filtered_keva_FileGrade %>% 
+  group_by(keva) %>%  
+  summarise_at(vars(FileGrade),funs(mean(.,na.rm=TRUE),sd(.,na.rm=TRUE),n())) 
+
+# sadir/keva on VaadaGrade_completed
+
+filtered_keva_VaadaGrade_completed=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar %>%
+  filter(!is.na(keva) & !is.na(VaadaGrade_completed))
+filtered_keva_VaadaGrade_completed %>% 
+  group_by(keva) %>%  
+  summarise_at(vars(VaadaGrade_completed),funs(mean(.,na.rm=TRUE),sd(.,na.rm=TRUE),n())) 
+
+# Regression analysis
+
+library(QuantPsyc)  # lm.beta
+library(car)  # vif, durbinWatsonTest
+library(MASS)  # studres
+library(lmSupport)  #lm.sumSquares
+library(perturb)  # colldiag
+library(regtools)  # pairwise
+
+#**********prefered
+reg_FileGrade1 <- lm(FileGrade ~ final_mac_course_score
+                     + kaba
+                     + am_courses_soc_mac,
+                     data=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar)
+summary(reg_FileGrade1)
+
+# standardised coefficients
+round(lm.beta(reg_FileGrade1),2)
+
+# R
+R<-round(sqrt(0.09933),2)
+R
+
+# predicted_FileGrade
+mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$predicted_FileGrade <- 
+  round(predict(reg_FileGrade1, mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar),2)
+
+library(dplyr)
+
+filtered_residual=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar %>%
+  filter(!is.na(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$predicted_FileGrade)
+         & !is.na(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$FileGrade))
+
+nrow(filtered_residual)
+round(freq(ordered(filtered_residual$gender_new), plot = F,main=colnames(filtered_residual$gender_new),font=2),2)
+
+
+filtered_residual$residual = round(resid(reg_FileGrade1),2)
+filtered_residual$residual_abs = abs(round(resid(reg_FileGrade1),2))
+
+plot(predict(reg_FileGrade1),filtered_residual$FileGrade,
+     xlab="Predicted_FileGrade",ylab="FileGrade",col="blue")
+abline(a=0,b=1)
+
+plot(predict(reg_FileGrade1),resid(reg_FileGrade1),
+     xlab="Predicted_FileGrade",ylab="Residuals (errors)",col="blue")
+abline(a=0,b=0)
+
+cor.test(as.numeric(filtered_residual$predicted_FileGrade),as.numeric(filtered_residual$FileGrade),use="pairwise.complete.obs")
+
+cor.test(as.numeric(filtered_residual$residual_abs),as.numeric(filtered_residual$FileGrade),use="pairwise.complete.obs")
+
+filtered_residual$residual_direction<-ifelse(filtered_residual$residual<0,1,2)
+
+filtered_residual_negative=filtered_residual %>%
+  filter(residual_direction==1)
+filtered_residual_positive=filtered_residual %>%
+  filter(residual_direction==2)
+
+round(describe(as.numeric(unlist(filtered_residual_negative$residual))),2)
+round(describe(as.numeric(unlist(filtered_residual_positive$residual))),2)
+
+library(descr)
+library(psych)
+round(freq(ordered(filtered_residual$residual), plot = F,main=colnames(filtered_residual$residual),font=2),2)
+round(freq(ordered(filtered_residual$residual_abs), plot = F,main=colnames(filtered_residual$residual_abs),font=2),2)
+round(describe(as.numeric(unlist(filtered_residual$residual_abs))),2)
+round(freq(ordered(filtered_residual$predicted_FileGrade), plot = F,main=colnames(filtered_residual$predicted_FileGrade),font=2),2)
+round(describe(as.numeric(unlist(filtered_residual$predicted_FileGrade))),2)
+round(freq(ordered(filtered_residual$FileGrade), plot = F,main=colnames(filtered_residual$FileGrade),font=2),2)
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$FileGrade))),2)
+round(freq(ordered(filtered_residual$residual_direction), plot = F,main=colnames(filtered_residual$residual_direction),font=2),2)
 
 #predict FileGrade of new candidates 03.2021 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
@@ -402,18 +773,18 @@ merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am,by=c("per
 gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac)
 
 # courses_soc file on TALI includes candidates until 01.2020. 
-# Hence I've got the data for the next 4 candidates manually from MEGAMA. 
+# Hence I've got the data for the next 4 candidates manually from MEGAMA. test-not real scores
 
-# gibush_candidates_kakatz_03.2021_civil[27][gibush_candidates_kakatz_03.2021_civil[2]==16] <- 0.0504
-# gibush_candidates_kakatz_03.2021_civil[27][gibush_candidates_kakatz_03.2021_civil[2]==20] <- -0.2446
-# gibush_candidates_kakatz_03.2021_civil[27][gibush_candidates_kakatz_03.2021_civil[2]==27] <- 0.1511
-# gibush_candidates_kakatz_03.2021_civil[27][gibush_candidates_kakatz_03.2021_civil[2]==40] <- -0.9361
-# 
-# 
-# gibush_candidates_kakatz_03.2021_civil[28][gibush_candidates_kakatz_03.2021_civil[2]==16] <- "מכים מחלקה 4"
-# gibush_candidates_kakatz_03.2021_civil[28][gibush_candidates_kakatz_03.2021_civil[2]==20] <- "מכים מחלקה 4"
-# gibush_candidates_kakatz_03.2021_civil[28][gibush_candidates_kakatz_03.2021_civil[2]==27] <- "מכים מחלקה 4"
-# gibush_candidates_kakatz_03.2021_civil[28][gibush_candidates_kakatz_03.2021_civil[2]==40] <- "מכים מחלקה 1"
+gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==16] <- 0.0504
+gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==20] <- -0.2446
+gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==27] <- 0.1511
+gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==32] <- -0.9361
+
+
+gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==16] <- "מכים מחלקה 4"
+gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==20] <- "מכים מחלקה 4"
+gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==27] <- "מכים מחלקה 4"
+gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==40] <- "מכים מחלקה 1"
 
 library(descr)
 library(psych)
