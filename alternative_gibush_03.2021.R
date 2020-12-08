@@ -914,36 +914,39 @@ locale("he")
 
 # in the beginning, once, share the Google sheet with Talia and Miki, by running the next code rows.
 
-# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "asherr1211@gmail.com",
 #             emailMessage = "Hi Asher. This file was sent to Talia and Miki"
 # )
-# 
-# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+
+
+# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "talyashmueli@gmail.com",
 #             emailMessage = "Hi Talia. Please add data."
 # )
-# 
-# 
-# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+ 
+
+# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "Ramikey1@gmail.com",
 #             emailMessage = "Hi Miki. This file was sent to Talia. You also can add data."
 # )
 
-# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+
+# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "Lizhazan10@gmail.com",
 #             emailMessage = "Hi Liz. This file was sent to Talia. You also can add data."
 # )
 
-# drive_share("https://docs.google.com/spreadsheets/d/1n0pmKCYDixljzyBJuh_YuyshwCZVlY-7v7Uq7HgptHc/edit#gid=0",
+
+# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "adi.einely@gmail.com",
