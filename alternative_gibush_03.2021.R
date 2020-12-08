@@ -544,7 +544,11 @@ soc_mac_civil <- soc_mac_civil %>%
            GroupId_courses_soc_mac==5071 |
            GroupId_courses_soc_mac==5072 |
            GroupId_courses_soc_mac==5073 |
-           GroupId_courses_soc_mac==5074)
+           GroupId_courses_soc_mac==5074 |
+           GroupId_courses_soc_mac==5118 |
+           GroupId_courses_soc_mac==5117 |
+           GroupId_courses_soc_mac==5118 |
+           GroupId_courses_soc_mac==5120)
 
 nrow(soc_mac_civil)
 
@@ -583,24 +587,23 @@ soc_mac_civil_am <- soc_mac_civil_am %>%
   mutate_at(c(4:45), funs(c(scale(.))))
 
 soc_mac_civil_am<-as.data.frame(soc_mac_civil_am)
-# soc_mac_civil_am[c(4:45)][abs(soc_mac_civil_am[c(4:45)])>4]<-NA
 
 # library(dplyr)
 soc_mac_civil_am <- soc_mac_civil_am %>% 
   mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac_zscore,
-                                                RAvg2_courses_soc_mac_zscore,
-                                                RAvg3_courses_soc_mac_zscore,
-                                                RAvg4_courses_soc_mac_zscore,
-                                                RAvg5_courses_soc_mac_zscore)))
+                                                  RAvg2_courses_soc_mac_zscore,
+                                                  RAvg3_courses_soc_mac_zscore,
+                                                  RAvg4_courses_soc_mac_zscore,
+                                                  RAvg5_courses_soc_mac_zscore)))
 soc_mac_civil_am <- soc_mac_civil_am %>% 
   mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac_zscore,
-                                                  RTeken2_courses_soc_mac_zscore,
-                                                  RTeken3_courses_soc_mac_zscore,
-                                                  RTeken4_courses_soc_mac_zscore,
-                                                  RTeken5_courses_soc_mac_zscore)))
+                                                    RTeken2_courses_soc_mac_zscore,
+                                                    RTeken3_courses_soc_mac_zscore,
+                                                    RTeken4_courses_soc_mac_zscore,
+                                                    RTeken5_courses_soc_mac_zscore)))
 soc_mac_civil_am <- soc_mac_civil_am %>% 
   mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac_zscore,
-                                                NPct2_courses_soc_mac_zscore)))
+                                                  NPct2_courses_soc_mac_zscore)))
 
 soc_mac_civil_am <- soc_mac_civil_am %>% 
   mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
@@ -758,32 +761,58 @@ colnames(gibush_candidates_kakatz_03.2021_civil)[8]<-"final_mac_course_score"
 colnames(gibush_candidates_kakatz_03.2021_civil)[12]<-"apptitudes"
 
 # soc_mac_civil
-class(gibush_candidates_kakatz_03.2021_civil)
-gibush_candidates_kakatz_03.2021_civil<-as.data.frame(gibush_candidates_kakatz_03.2021_civil)
-class(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score)
-
-class(filtered_soc_mac_civil_am)
-class(gibush_candidates_kakatz_03.2021_civil$personal_number)
-class(filtered_soc_mac_civil_am$personal_number)
-
-gibush_candidates_kakatz_03.2021_civil <- 
-merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-
-gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac)
+# class(gibush_candidates_kakatz_03.2021_civil)
+# gibush_candidates_kakatz_03.2021_civil<-as.data.frame(gibush_candidates_kakatz_03.2021_civil)
+# class(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score)
+# 
+# class(filtered_soc_mac_civil_am)
+# class(gibush_candidates_kakatz_03.2021_civil$personal_number)
+# class(filtered_soc_mac_civil_am$personal_number)
+# 
+# gibush_candidates_kakatz_03.2021_civil <- 
+# merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+# 
+# gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac)
 
 # courses_soc file on TALI includes candidates until 01.2020. 
-# Hence I've got the data for the next 4 candidates manually from MEGAMA. test-not real scores
+# Hence I've got the data for the candidates manually from MEGAMA.
 
-# gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==16] <- 0.0504
-# gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==20] <- -0.2446
-# gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==27] <- 0.1511
-# gibush_candidates_kakatz_03.2021_civil[13][gibush_candidates_kakatz_03.2021_civil[2]==32] <- -0.9361
-# 
-# 
-# gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==16] <- "מכים מחלקה 4"
-# gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==20] <- "מכים מחלקה 4"
-# gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==27] <- "מכים מחלקה 4"
-# gibush_candidates_kakatz_03.2021_civil[14][gibush_candidates_kakatz_03.2021_civil[2]==40] <- "מכים מחלקה 1"
+# soc_mac_civil_03.2021
+library(readr)
+locale("he")
+soc_mac_civil_am_03.2021<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+colnames(soc_mac_civil_am_03.2021)
+
+nrow(soc_mac_civil_am_03.2021)
+
+class(soc_mac_civil_am_03.2021)
+
+soc_mac_civil_am_03.2021<-as.data.frame(soc_mac_civil_am_03.2021)
+
+soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+  mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
+                                                RAvg2_courses_soc_mac,
+                                                RAvg3_courses_soc_mac,
+                                                RAvg4_courses_soc_mac,
+                                                RAvg5_courses_soc_mac)))
+soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+  mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
+                                                  RTeken2_courses_soc_mac,
+                                                  RTeken3_courses_soc_mac,
+                                                  RTeken4_courses_soc_mac,
+                                                  RTeken5_courses_soc_mac)))
+soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+  mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
+                                                NPct2_courses_soc_mac)))
+
+soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+  mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
+
+filtered_soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
+  select(order_num,am_courses_soc_mac,GroupName_courses_soc_mac)
+
+gibush_candidates_kakatz_03.2021_civil <-
+  merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am_03.2021,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 
 library(descr)
 library(psych)
@@ -878,10 +907,10 @@ locale("he")
 #run the following rows only once-when creating the Google sheet.
 #save it as a google sheet.
 # Set sharing settings of the file in Google drive.
-drive_download("gibush_candidates_kakatz_03.2021_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd",type = "csv",overwrite=T)
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[-1]gibush_candidates_kakatz_03.2021_civil_final_scores_gd[2]<- gibush_candidates_kakatz_03.2021_civil$personal_number
-write.csv(gibush_candidates_kakatz_03.2021_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
+# drive_download("gibush_candidates_kakatz_03.2021_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd",type = "csv",overwrite=T)
+# gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
+# gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[-1]gibush_candidates_kakatz_03.2021_civil_final_scores_gd[2]<- gibush_candidates_kakatz_03.2021_civil$personal_number
+# write.csv(gibush_candidates_kakatz_03.2021_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
 
 # in the beginning, once, share the Google sheet with Talia and Miki, by running the next code rows.
 
@@ -955,12 +984,12 @@ gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final<-gibush_c
 gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final_categorial<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd$"ציון גיבוש סופי מעוגל"
   
 write.csv(gibush_candidates_kakatz_03.2021_civil_final_scores_gd, file="C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
-drive_update("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing")
+drive_update("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing","C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
 
 #   timestamp()
 #   
 #   n <- n+1
-#   if (n == 3){ # set the n(n times the code should run)
+#   if (n == 3){ # set thetimes the code should r n(n un)
 #     break
 #   
 # Sys.sleep(600)  # set the time (in sec.)
