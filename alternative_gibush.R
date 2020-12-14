@@ -937,6 +937,7 @@ logitofficer <- glm(officer ~ final_mac_course_score
                     family=binomial(link="logit"))
 summary(logitofficer)
 
+
 # Regression analysis
 
 library(QuantPsyc)  # lm.beta
@@ -1479,7 +1480,7 @@ colnames(gibush_candidates_kakatz_11.2020_civil)[26]<-"final_mac_course_score"
 class(gibush_candidates_kakatz_11.2020_civil$final_mac_course_score)
 #gibush_candidates_kakatz_11.2020_civil$final_mac_course_score<-as.numeric(gibush_candidates_kakatz_11.2020_civil$final_mac_course_score)
 
-# mising course scores from Carmela/ERP
+# missing course scores from Carmela/ERP
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==12] <- 84
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==18] <- 86
 gibush_candidates_kakatz_11.2020_civil[26][gibush_candidates_kakatz_11.2020_civil[1]==37] <- 84
@@ -1951,4 +1952,6 @@ JOMAG_predictores_criteria_merged_civil<-read_csv("C:/Users/Administrator.MAMADA
 JOMAG_predictores_criteria_merged_civil<-JOMAG_predictores_criteria_merged_civil[-1]
 JOMAG_predictores_criteria_merged_civil_qv<-read_csv("C:/Users/Administrator.MAMADA-777/Documents/Junior officers MAGAV validation/JOMAG_predictores_criteria_merged_civil_qv_old.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 JOMAG_predictores_criteria_merged_civil_qv<-JOMAG_predictores_criteria_merged_civil_qv[-1]
+
+write.csv(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar, file="C:/Users/Asher/Documents/Machine learninig/mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar_ml.csv")
 

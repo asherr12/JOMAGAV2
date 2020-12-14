@@ -567,24 +567,44 @@ soc_mac_civil<-setDT(soc_mac_civil)[,.SD[which.max(CreateDate_courses_soc_mac)],
 n_occur<-data.frame(table(soc_mac_civil$personal_number))
 n_occur[n_occur$Freq>1,]
 
-soc_mac_civil$id<-NULL
+colnames(soc_mac_civil)
+colnames(soc_mac_civil)[12]<-"order_num"
+nrow(soc_mac_civil)
+
+# soc_mac_civil_03.2021
+library(readr)
+locale("he")
+soc_mac_civil_am_03.2021<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+colnames(soc_mac_civil_am_03.2021)
+
+nrow(soc_mac_civil_am_03.2021)
+
+class(soc_mac_civil_am_03.2021)
+soc_mac_civil_am_03.2021<-as.data.frame(soc_mac_civil_am_03.2021)
+
+#disconnect dplyr
+library(plyr)
+soc_mac_civil<-rbind.fill(soc_mac_civil,soc_mac_civil_am_03.2021)
+
 nrow(soc_mac_civil)
 
 colnames(soc_mac_civil)
 
-# library(dplyr)
-
+library(dplyr)
 soc_mac_civil_am = soc_mac_civil %>%
-  select(personal_number,GroupId_courses_soc_mac,GroupName_courses_soc_mac,c(15:21,23:29,31:37,39:45,47:53,55:61))
-colnames(soc_mac_civil_am)[c(4:45)]<-paste(colnames(soc_mac_civil_am)[c(4:45)],"zscore",sep = "_")
+  select(personal_number,GroupId_courses_soc_mac,GroupName_courses_soc_mac,order_num,c(16,24,32,40,48,22,30,38,46,54,56,60))
 colnames(soc_mac_civil_am)
+colnames(soc_mac_civil_am)[c(5:16)]<-paste(colnames(soc_mac_civil_am)[c(5:16)],"zscore",sep = "_")
+colnames(soc_mac_civil_am)
+
+nrow(soc_mac_civil_am)
 
 class(soc_mac_civil_am)
 soc_mac_civil_am<-as.data.frame(soc_mac_civil_am)
 class(soc_mac_civil_am)
 
 soc_mac_civil_am <- soc_mac_civil_am %>% 
-  mutate_at(c(4:45), funs(c(scale(.))))
+  mutate_at(c(5:16), funs(c(scale(.))))
 
 soc_mac_civil_am<-as.data.frame(soc_mac_civil_am)
 
@@ -609,7 +629,7 @@ soc_mac_civil_am <- soc_mac_civil_am %>%
   mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
 
 filtered_soc_mac_civil_am <- soc_mac_civil_am %>%
-  select(personal_number,am_courses_soc_mac,GroupName_courses_soc_mac)
+  select(personal_number,order_num,am_courses_soc_mac,GroupName_courses_soc_mac)
 
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am <-
   merge(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
@@ -778,80 +798,54 @@ colnames(gibush_candidates_kakatz_03.2021_civil)[12]<-"apptitudes"
 # Hence I've got the data for the candidates manually from MEGAMA.
 
 # soc_mac_civil_03.2021
-library(readr)
-locale("he")
-soc_mac_civil_am_03.2021<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
-colnames(soc_mac_civil_am_03.2021)
+# library(readr)
+# locale("he")
+# soc_mac_civil_am_03.2021<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+# colnames(soc_mac_civil_am_03.2021)
+# 
+# nrow(soc_mac_civil_am_03.2021)
+# 
+# class(soc_mac_civil_am_03.2021)
+# 
+# colnames(soc_mac_civil_am_03.2021)
+# 
+# soc_mac_civil_am <- soc_mac_civil_am %>% 
+#   mutate_at(c(4:45), funs(c(scale(.))))
+# 
+# 
+# soc_mac_civil_am_03.2021<-as.data.frame(soc_mac_civil_am_03.2021)
+# library(dplyr)
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+#   mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
+#                                                 RAvg2_courses_soc_mac,
+#                                                 RAvg3_courses_soc_mac,
+#                                                 RAvg4_courses_soc_mac,
+#                                                 RAvg5_courses_soc_mac)))
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+#   mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
+#                                                   RTeken2_courses_soc_mac,
+#                                                   RTeken3_courses_soc_mac,
+#                                                   RTeken4_courses_soc_mac,
+#                                                   RTeken5_courses_soc_mac)))
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+#   mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
+#                                                 NPct2_courses_soc_mac)))
 
-nrow(soc_mac_civil_am_03.2021)
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+#   mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
 
-class(soc_mac_civil_am_03.2021)
+# filtered_soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
+#   select(order_num,am_courses_soc_mac,GroupName_courses_soc_mac)
 
-soc_mac_civil_am_03.2021<-as.data.frame(soc_mac_civil_am_03.2021)
-
-soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
-  mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
-                                                RAvg2_courses_soc_mac,
-                                                RAvg3_courses_soc_mac,
-                                                RAvg4_courses_soc_mac,
-                                                RAvg5_courses_soc_mac)))
-soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
-  mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
-                                                  RTeken2_courses_soc_mac,
-                                                  RTeken3_courses_soc_mac,
-                                                  RTeken4_courses_soc_mac,
-                                                  RTeken5_courses_soc_mac)))
-soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
-  mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
-                                                NPct2_courses_soc_mac)))
-
-soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
-  mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
-
-filtered_soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
-  select(order_num,am_courses_soc_mac,GroupName_courses_soc_mac)
-
+filtered_soc_mac_civil_am$personal_number<-NULL
 gibush_candidates_kakatz_03.2021_civil <-
-  merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am_03.2021,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
+  merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 
 library(descr)
 library(psych)
 describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac)))
 freq(ordered(round(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac,2)), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac),font=2)
 freq(ordered(gibush_candidates_kakatz_03.2021_civil$GroupName_courses_soc_mac), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$GroupName_courses_soc_mac),font=2)
-
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==1] <- 1076
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==2] <- 1034
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==3] <- 1570
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==4] <- 238
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==5] <- 1604
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==6] <- 1928
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==7] <- 124
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==8] <- 1156
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==9] <- 492
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==10] <- 1370
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==11] <- 156
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==12] <- 1756
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==13] <- 358
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==14] <- 982
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==15] <- 66
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==16] <- 722
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==17] <- 10
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==18] <- 1050
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==19] <- 1150
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==20] <- 916
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==21] <- 310
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==22] <- 1326
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==23] <- 248
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==24] <- 410
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==25] <- 444
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==26] <- 1178
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==27] <- 692
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==28] <- 1322
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==29] <- 1142
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==30] <- 1654
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==31] <- 484
-gibush_candidates_kakatz_03.2021_civil[1][gibush_candidates_kakatz_03.2021_civil[2]==32] <- 1722
 
 class(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score)
 # gibush_candidates_kakatz_03.2021_civil$final_mac_course_score <-
@@ -907,6 +901,7 @@ locale("he")
 #run the following rows only once-when creating the Google sheet.
 #save it as a google sheet.
 # Set sharing settings of the file in Google drive.
+# Change notification rules in the Google sheet on Tools.
 # drive_download("gibush_candidates_kakatz_03.2021_civil_final_scores****",path = "C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd",type = "csv",overwrite=T)
 # gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
 # gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[-1]gibush_candidates_kakatz_03.2021_civil_final_scores_gd[2]<- gibush_candidates_kakatz_03.2021_civil$personal_number
@@ -918,7 +913,7 @@ locale("he")
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "asherr1211@gmail.com",
-#             emailMessage = "Hi Asher. This file was sent to Talia and Miki"
+#             emailMessage = "Hi Asher. This file was Shared with Talia and Miki"
 # )
 
 
@@ -934,7 +929,7 @@ locale("he")
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "Ramikey1@gmail.com",
-#             emailMessage = "Hi Miki. This file was sent to Talia. You also can add data."
+#             emailMessage = "Hi Miki. This file was Shared with Talia. You also can add data."
 # )
 
 
@@ -942,7 +937,7 @@ locale("he")
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "Lizhazan10@gmail.com",
-#             emailMessage = "Hi Liz. This file was sent to Talia. You also can add data."
+#             emailMessage = "Hi Liz. This file was Shared with Talia. You also can add data."
 # )
 
 
@@ -950,7 +945,15 @@ locale("he")
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "adi.einely@gmail.com",
-#             emailMessage = "Hi Adi. This file was sent to Talia. You also can add data."
+#             emailMessage = "Hi Adi. This file was Shared with Talia. You also can add data."
+# )
+
+# Sharing withe Bar Sorero
+# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
+#             role = "writer",
+#             type = "user",
+#             emailAddress = "adi.einely@gmail.com",
+#             emailMessage = "Hi Bar. This file was Shared with Talia. You also can add data."
 # )
 
 
@@ -1163,7 +1166,12 @@ mode<-function(X)
   names (temp)[temp==max(temp)]
 }
 mode(ranks_new_civil_combined$GibDate_rank_new_date_gap)
-round(describe(as.numeric(unlist(tifkud_civil$tifkud))),2)
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$kaba))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$kaba))),2)
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$final_mac_course_score))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score))),2)
+round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$am_courses_soc_mac))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac))),2)
 
 
 freq(ordered(JOMAG_predictores_criteria_merged_civil_officers$tifkud), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_officers$tifkud),font=2)
