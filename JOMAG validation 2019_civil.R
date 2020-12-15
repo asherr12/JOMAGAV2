@@ -4944,7 +4944,7 @@ sd(tifkud_civil$tifkud)
 # 
 # blue_officers$blue_date<-as.Date(unlist(blue_officers$blue_date),format="%d/%m/%Y")
 # 
-# JOMAG_predictores_criteria_merged_civil_officers <- merge(JOMAG_predictores_criteria_merged_civil_officers, blue_officers,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+# JOMAG_predictors_criteria_merged_civil_officers <- merge(JOMAG_predictores_criteria_merged_civil_officers, blue_officers,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 
 # Logistic regression analysis
 
