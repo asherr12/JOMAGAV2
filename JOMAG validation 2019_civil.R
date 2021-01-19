@@ -2799,7 +2799,7 @@ JOMAG_predictores_criteria_merged_civil_qv$mSofiAfter2_restricted<-JOMAG_predict
 round(describe (as.numeric(JOMAG_predictores_criteria_merged_civil_qv$mSofiAfter2_restricted)),2)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
-# Avarage number of repeated criteria (for n in range restriction Excel file).
+# Average number of repeated criteria (for n in range restriction Excel file).
 
 round(freq(ordered(JOMAG_predictores_criteria_merged_civil_qv$tkufatit_nna), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_qv$tkufatit_nna),font=2),2)
 notna_tkufatit_average<-(6*1+35*2+42*3+74*4)/(6+35+42+74)
