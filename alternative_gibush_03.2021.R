@@ -246,7 +246,7 @@ round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kab
 # soc_mac
 library(readr)
 locale("he")
-soc_mac_civil<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+soc_mac_civil<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_civil.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 soc_mac_civil<-soc_mac_civil[-1]
 colnames(soc_mac_civil)
 
@@ -574,7 +574,7 @@ nrow(soc_mac_civil)
 # soc_mac_civil_03.2021
 library(readr)
 locale("he")
-soc_mac_civil_am_03.2021<-read_csv("C:/Users/Asher/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+soc_mac_civil_am_03.2021<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 colnames(soc_mac_civil_am_03.2021)
 
 nrow(soc_mac_civil_am_03.2021)
@@ -582,7 +582,7 @@ nrow(soc_mac_civil_am_03.2021)
 class(soc_mac_civil_am_03.2021)
 soc_mac_civil_am_03.2021<-as.data.frame(soc_mac_civil_am_03.2021)
 
-#disconnect dplyr
+detach("package:dplyr", unload=TRUE)
 library(plyr)
 soc_mac_civil<-rbind.fill(soc_mac_civil,soc_mac_civil_am_03.2021)
 
@@ -608,7 +608,7 @@ soc_mac_civil_am <- soc_mac_civil_am %>%
 
 soc_mac_civil_am<-as.data.frame(soc_mac_civil_am)
 
-# library(dplyr)
+library(dplyr)
 soc_mac_civil_am <- soc_mac_civil_am %>% 
   mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac_zscore,
                                                   RAvg2_courses_soc_mac_zscore,
