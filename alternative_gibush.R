@@ -738,7 +738,7 @@ nrow(soc_mac_civil)
 
 colnames(soc_mac_civil)
 
-# library(dplyr)
+library(dplyr)
 
 soc_mac_civil_am = soc_mac_civil %>%
   select(personal_number,GroupId_courses_soc_mac,GroupName_courses_soc_mac,c(15:21,23:29,31:37,39:45,47:53,55:61))
