@@ -867,7 +867,6 @@ gibush_candidates_kakatz_07.2021_civil<-gibush_candidates_kakatz_07.2021_civil[o
 
 #**********************get and share scores***************************
 
-
 # https://www.youtube.com/watch?v=yjRrsha0TdQ
 # https://googledrive.tidyverse.org/reference/drive_auth.html
 # https://cran.r-project.org/web/packages/googledrive/googledrive.pdf
