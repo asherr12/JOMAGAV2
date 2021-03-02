@@ -253,101 +253,101 @@ nrow(soc_mac_civil)
 
 soc_mac_civil <- soc_mac_civil %>%
   filter(GroupId_courses_soc_mac==147 |
-           GroupId_courses_soc_mac==148 |
-           GroupId_courses_soc_mac==149 |
-           GroupId_courses_soc_mac==150 |
-           GroupId_courses_soc_mac==151 |
-           GroupId_courses_soc_mac==178 |
-           GroupId_courses_soc_mac==179 |
-           GroupId_courses_soc_mac==182 |
-           GroupId_courses_soc_mac==183 |
-           GroupId_courses_soc_mac==184 |
-           GroupId_courses_soc_mac==200 |
-           GroupId_courses_soc_mac==201 |
-           GroupId_courses_soc_mac==202 |
-           GroupId_courses_soc_mac==211 |
-           GroupId_courses_soc_mac==212 |
-           GroupId_courses_soc_mac==213 |
-           GroupId_courses_soc_mac==216 |
-           GroupId_courses_soc_mac==217 |
-           GroupId_courses_soc_mac==218 |
-           GroupId_courses_soc_mac==222 |
-           GroupId_courses_soc_mac==223 |
-           GroupId_courses_soc_mac==224 |
-           GroupId_courses_soc_mac==301 |
-           GroupId_courses_soc_mac==302 |
-           GroupId_courses_soc_mac==303 |
-           GroupId_courses_soc_mac==304 |
-           GroupId_courses_soc_mac==307 |
-           GroupId_courses_soc_mac==308 |
-           GroupId_courses_soc_mac==309 |
-           GroupId_courses_soc_mac==310 |
-           GroupId_courses_soc_mac==311 |
-           GroupId_courses_soc_mac==312 |
-           GroupId_courses_soc_mac==318 |
-           GroupId_courses_soc_mac==319 |
-           GroupId_courses_soc_mac==320 |
-           GroupId_courses_soc_mac==325 |
-           GroupId_courses_soc_mac==326 |
-           GroupId_courses_soc_mac==327 |
-           GroupId_courses_soc_mac==328 |
-           GroupId_courses_soc_mac==329 |
-           GroupId_courses_soc_mac==330 |
-           GroupId_courses_soc_mac==579 |
-           GroupId_courses_soc_mac==580 |
-           GroupId_courses_soc_mac==581 |
-           GroupId_courses_soc_mac==605 |
-           GroupId_courses_soc_mac==606 |
-           GroupId_courses_soc_mac==642 |
-           GroupId_courses_soc_mac==643 |
-           GroupId_courses_soc_mac==708 |
-           GroupId_courses_soc_mac==784 |
-           GroupId_courses_soc_mac==785 |
-           GroupId_courses_soc_mac==786 |
-           GroupId_courses_soc_mac==787 |
-           GroupId_courses_soc_mac==792 |
-           GroupId_courses_soc_mac==793 |
-           GroupId_courses_soc_mac==708 |
-           GroupId_courses_soc_mac==709 |
-           GroupId_courses_soc_mac==784 |
-           GroupId_courses_soc_mac==785 |
-           GroupId_courses_soc_mac==786 |
-           GroupId_courses_soc_mac==787 |
-           GroupId_courses_soc_mac==792 |
-           GroupId_courses_soc_mac==793 |
-           GroupId_courses_soc_mac==814 |
-           GroupId_courses_soc_mac==815 |
-           GroupId_courses_soc_mac==816 |
-           GroupId_courses_soc_mac==817 |
-           GroupId_courses_soc_mac==825 |
-           GroupId_courses_soc_mac==826 |
-           GroupId_courses_soc_mac==827 |
-           GroupId_courses_soc_mac==828 |
-           GroupId_courses_soc_mac==832 |
-           GroupId_courses_soc_mac==833 |
-           GroupId_courses_soc_mac==834 |
-           GroupId_courses_soc_mac==835 |
-           GroupId_courses_soc_mac==836 |
-           GroupId_courses_soc_mac==837 |
-           GroupId_courses_soc_mac==838 |
-           GroupId_courses_soc_mac==839 |
-           GroupId_courses_soc_mac==840 |
-           GroupId_courses_soc_mac==847 |
-           GroupId_courses_soc_mac==848 |
-           GroupId_courses_soc_mac==849 |
-           GroupId_courses_soc_mac==850 |
-           GroupId_courses_soc_mac==851 |
-           GroupId_courses_soc_mac==852 |
-           GroupId_courses_soc_mac==853 |
-           GroupId_courses_soc_mac==854 |
-           GroupId_courses_soc_mac==855 |
-           GroupId_courses_soc_mac==856 |
-           GroupId_courses_soc_mac==857 |
-           GroupId_courses_soc_mac==858 |
-           GroupId_courses_soc_mac==1118 |
-           GroupId_courses_soc_mac==1119 |
-           GroupId_courses_soc_mac==1120 |
-           GroupId_courses_soc_mac==1121 |
+         GroupId_courses_soc_mac==148 |
+         GroupId_courses_soc_mac==149 |
+         GroupId_courses_soc_mac==150 |
+         GroupId_courses_soc_mac==151 |
+         GroupId_courses_soc_mac==178 |
+         GroupId_courses_soc_mac==179 |
+         GroupId_courses_soc_mac==182 |
+         GroupId_courses_soc_mac==183 |
+         GroupId_courses_soc_mac==184 |
+         GroupId_courses_soc_mac==200 |
+         GroupId_courses_soc_mac==201 |
+         GroupId_courses_soc_mac==202 |
+         GroupId_courses_soc_mac==211 |
+         GroupId_courses_soc_mac==212 |
+         GroupId_courses_soc_mac==213 |
+         GroupId_courses_soc_mac==216 |
+         GroupId_courses_soc_mac==217 |
+         GroupId_courses_soc_mac==218 |
+         GroupId_courses_soc_mac==222 |
+         GroupId_courses_soc_mac==223 |
+         GroupId_courses_soc_mac==224 |
+         GroupId_courses_soc_mac==301 |
+         GroupId_courses_soc_mac==302 |
+         GroupId_courses_soc_mac==303 |
+         GroupId_courses_soc_mac==304 |
+         GroupId_courses_soc_mac==307 |
+         GroupId_courses_soc_mac==308 |
+         GroupId_courses_soc_mac==309 |
+         GroupId_courses_soc_mac==310 |
+         GroupId_courses_soc_mac==311 |
+         GroupId_courses_soc_mac==312 |
+         GroupId_courses_soc_mac==318 |
+         GroupId_courses_soc_mac==319 |
+         GroupId_courses_soc_mac==320 |
+         GroupId_courses_soc_mac==325 |
+         GroupId_courses_soc_mac==326 |
+         GroupId_courses_soc_mac==327 |
+         GroupId_courses_soc_mac==328 |
+         GroupId_courses_soc_mac==329 |
+         GroupId_courses_soc_mac==330 |
+         GroupId_courses_soc_mac==579 |
+         GroupId_courses_soc_mac==580 |
+         GroupId_courses_soc_mac==581 |
+         GroupId_courses_soc_mac==605 |
+         GroupId_courses_soc_mac==606 |
+         GroupId_courses_soc_mac==642 |
+         GroupId_courses_soc_mac==643 |
+         GroupId_courses_soc_mac==708 |
+         GroupId_courses_soc_mac==784 |
+         GroupId_courses_soc_mac==785 |
+         GroupId_courses_soc_mac==786 |
+         GroupId_courses_soc_mac==787 |
+         GroupId_courses_soc_mac==792 |
+         GroupId_courses_soc_mac==793 |
+         GroupId_courses_soc_mac==708 |
+         GroupId_courses_soc_mac==709 |
+         GroupId_courses_soc_mac==784 |
+         GroupId_courses_soc_mac==785 |
+         GroupId_courses_soc_mac==786 |
+         GroupId_courses_soc_mac==787 |
+         GroupId_courses_soc_mac==792 |
+         GroupId_courses_soc_mac==793 |
+         GroupId_courses_soc_mac==814 |
+         GroupId_courses_soc_mac==815 |
+         GroupId_courses_soc_mac==816 |
+         GroupId_courses_soc_mac==817 |
+         GroupId_courses_soc_mac==825 |
+         GroupId_courses_soc_mac==826 |
+         GroupId_courses_soc_mac==827 |
+         GroupId_courses_soc_mac==828 |
+         GroupId_courses_soc_mac==832 |
+         GroupId_courses_soc_mac==833 |
+         GroupId_courses_soc_mac==834 |
+         GroupId_courses_soc_mac==835 |
+         GroupId_courses_soc_mac==836 |
+         GroupId_courses_soc_mac==837 |
+         GroupId_courses_soc_mac==838 |
+         GroupId_courses_soc_mac==839 |
+         GroupId_courses_soc_mac==840 |
+         GroupId_courses_soc_mac==847 |
+         GroupId_courses_soc_mac==848 |
+         GroupId_courses_soc_mac==849 |
+         GroupId_courses_soc_mac==850 |
+         GroupId_courses_soc_mac==851 |
+         GroupId_courses_soc_mac==852 |
+         GroupId_courses_soc_mac==853 |
+         GroupId_courses_soc_mac==854 |
+         GroupId_courses_soc_mac==855 |
+         GroupId_courses_soc_mac==856 |
+         GroupId_courses_soc_mac==857 |
+         GroupId_courses_soc_mac==858 |
+         GroupId_courses_soc_mac==1118 |
+         GroupId_courses_soc_mac==1119 |
+         GroupId_courses_soc_mac==1120 |
+         GroupId_courses_soc_mac==1121 |
            GroupId_courses_soc_mac==1128 |
            GroupId_courses_soc_mac==1129 |
            GroupId_courses_soc_mac==1130 |
@@ -547,7 +547,13 @@ soc_mac_civil <- soc_mac_civil %>%
            GroupId_courses_soc_mac==5118 |
            GroupId_courses_soc_mac==5117 |
            GroupId_courses_soc_mac==5118 |
-           GroupId_courses_soc_mac==5120)
+           GroupId_courses_soc_mac==5120 |
+           GroupId_courses_soc_mac==5202 |
+           GroupId_courses_soc_mac==5205 |
+           GroupId_courses_soc_mac==5208 |
+           GroupId_courses_soc_mac==5210 |
+           GroupId_courses_soc_mac==5265)
+           
 
 nrow(soc_mac_civil)
 
@@ -567,6 +573,7 @@ n_occur<-data.frame(table(soc_mac_civil$personal_number))
 n_occur[n_occur$Freq>1,]
 
 colnames(soc_mac_civil)
+head(soc_mac_civil$id)
 colnames(soc_mac_civil)[12]<-"order_num"
 nrow(soc_mac_civil)
 
@@ -759,27 +766,25 @@ locale("he")
 gibush_candidates_kakatz_07.2021_civil<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_with_am.csv",locale = locale(date_names = "he", encoding = "UTF-8"))
 #gibush_candidates_kakatz_07.2021_civil<-gibush_candidates_kakatz_07.2021_civil[-1]
 colnames(gibush_candidates_kakatz_07.2021_civil)
-# colnames(gibush_candidates_kakatz_07.2021_civil)[1]<-"order_num"
-# colnames(gibush_candidates_kakatz_07.2021_civil)[2]<-"personal_number"
-colnames(gibush_candidates_kakatz_07.2021_civil)[13]<-"kaba"
-colnames(gibush_candidates_kakatz_07.2021_civil)[12]<-"final_mac_course_score"
 colnames(gibush_candidates_kakatz_07.2021_civil)[12]<-"apptitudes"
+colnames(gibush_candidates_kakatz_07.2021_civil)[13]<-"final_mac_course_score"
+colnames(gibush_candidates_kakatz_07.2021_civil)[14]<-"kaba"
 
-soc_mac_civil
-class(gibush_candidates_kakatz_07.2021_civil)
-gibush_candidates_kakatz_07.2021_civil<-as.data.frame(gibush_candidates_kakatz_07.2021_civil)
-class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
+# soc_mac_civil
+# class(gibush_candidates_kakatz_07.2021_civil)
+# gibush_candidates_kakatz_07.2021_civil<-as.data.frame(gibush_candidates_kakatz_07.2021_civil)
+# class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
+# 
+# class(filtered_soc_mac_civil_am)
+# class(gibush_candidates_kakatz_07.2021_civil$personal_number)
+# class(filtered_soc_mac_civil_am$personal_number)
+# 
+# gibush_candidates_kakatz_07.2021_civil <-
+# merge(gibush_candidates_kakatz_07.2021_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+#
+# gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
 
-class(filtered_soc_mac_civil_am)
-class(gibush_candidates_kakatz_07.2021_civil$personal_number)
-class(filtered_soc_mac_civil_am$personal_number)
-
-gibush_candidates_kakatz_07.2021_civil <-
-merge(gibush_candidates_kakatz_07.2021_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-
-gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
-
-# courses_soc file on TALI includes candidates until 01.2020. 
+# courses_soc file on TALI includes candidates until 01.2020.
 # Hence I've got the data for the candidates manually from MEGAMA.
 
 # soc_mac_civil_03.2021
@@ -787,82 +792,78 @@ gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-as.numeric(gibush_can
 # locale("he")
 # soc_mac_civil_am_03.2021<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
 # colnames(soc_mac_civil_am_03.2021)
-# 
+#
 # nrow(soc_mac_civil_am_03.2021)
-# 
+#
 # class(soc_mac_civil_am_03.2021)
-# 
+#
 # colnames(soc_mac_civil_am_03.2021)
-# 
-# soc_mac_civil_am <- soc_mac_civil_am %>% 
+#
+# soc_mac_civil_am <- soc_mac_civil_am %>%
 #   mutate_at(c(4:45), funs(c(scale(.))))
-# 
-# 
+#
+#
 # soc_mac_civil_am_03.2021<-as.data.frame(soc_mac_civil_am_03.2021)
 # library(dplyr)
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
 #   mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
 #                                                 RAvg2_courses_soc_mac,
 #                                                 RAvg3_courses_soc_mac,
 #                                                 RAvg4_courses_soc_mac,
 #                                                 RAvg5_courses_soc_mac)))
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
 #   mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
 #                                                   RTeken2_courses_soc_mac,
 #                                                   RTeken3_courses_soc_mac,
 #                                                   RTeken4_courses_soc_mac,
 #                                                   RTeken5_courses_soc_mac)))
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
 #   mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
 #                                                 NPct2_courses_soc_mac)))
 
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>% 
+# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
 #   mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
 
 # filtered_soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
 #   select(order_num,am_courses_soc_mac,GroupName_courses_soc_mac)
 
-filtered_soc_mac_civil_am$personal_number<-NULL
-gibush_candidates_kakatz_03.2021_civil <-
-  merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
-
+# filtered_soc_mac_civil_am$personal_number<-NULL
+# gibush_candidates_kakatz_03.2021_civil <-
+#   merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 library(descr)
 library(psych)
-describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac)))
-freq(ordered(round(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac,2)), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac),font=2)
-freq(ordered(gibush_candidates_kakatz_03.2021_civil$GroupName_courses_soc_mac), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$GroupName_courses_soc_mac),font=2)
+describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)))
+freq(ordered(round(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac,2)), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac),font=2)
+freq(ordered(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac),font=2)
+colnames(gibush_candidates_kakatz_07.2021_civil)
+class(gibush_candidates_kakatz_07.2021_civil$apptitudes)
+class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
+class(gibush_candidates_kakatz_07.2021_civil$kaba)
+gibush_candidates_kakatz_07.2021_civil$kaba<-as.numeric(gibush_candidates_kakatz_07.2021_civil$kaba)
+class(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
+gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
 
-class(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score)
-# gibush_candidates_kakatz_03.2021_civil$final_mac_course_score <-
-#   as.numeric(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score)
+# gibush_candidates_kakatz_07.2021_civil$final_mac_course_score <-
+#   as.numeric(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
 
 # predicted_FileGrade
-gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade <- format(round(predict(reg_FileGrade1, gibush_candidates_kakatz_03.2021_civil),2), nsmall = 2)
-freq(ordered(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade),font=2)
+gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade <- format(round(predict(reg_FileGrade1, gibush_candidates_kakatz_07.2021_civil),2), nsmall = 2)
+freq(ordered(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade),font=2)
 options(digits = 2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade))),digits=2)
-class(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade))),digits=2)
+class(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade)
 options(digits = 3)
-gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade<-as.numeric(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade)
-class(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade)
-gibush_candidates_kakatz_03.2021_civil$personality <- NA
-gibush_candidates_kakatz_03.2021_civil$command_exercise <- NA
-gibush_candidates_kakatz_03.2021_civil$interview <- NA
+gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade<-as.numeric(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade)
+class(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade)
+gibush_candidates_kakatz_07.2021_civil$personality <- NA
+gibush_candidates_kakatz_07.2021_civil$command_exercise <- NA
+gibush_candidates_kakatz_07.2021_civil$interview <- NA
 
-colnames(gibush_candidates_kakatz_03.2021_civil)
-class(gibush_candidates_kakatz_03.2021_civil)
-gibush_candidates_kakatz_03.2021_civil<-as.data.frame(gibush_candidates_kakatz_03.2021_civil)
-class(gibush_candidates_kakatz_03.2021_civil)
-gibush_candidates_kakatz_03.2021_civil<-gibush_candidates_kakatz_03.2021_civil[order(gibush_candidates_kakatz_03.2021_civil$order_num,na.last=F),]
-# gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-gibush_candidates_kakatz_03.2021_civil
-# gibush_candidates_kakatz_03.2021_civil_final_scores_gd[c(1,3:11,13:14)]<-NULL
-# colnames(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)[1]<-"מסד"
-# colnames(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)[2]<-"כשרים"
-# colnames(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)[3]<-"ציון מנובא"
-# colnames(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)[4]<-"אישיות"
-# colnames(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)[5]<-"תרגיל פיקודי"
-# colnames(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)[5]<-"ראיון"
-# write.csv(gibush_candidates_kakatz_03.2021_civil_final_scores_gd, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
+colnames(gibush_candidates_kakatz_07.2021_civil)
+class(gibush_candidates_kakatz_07.2021_civil)
+gibush_candidates_kakatz_07.2021_civil<-as.data.frame(gibush_candidates_kakatz_07.2021_civil)
+class(gibush_candidates_kakatz_07.2021_civil)
+gibush_candidates_kakatz_07.2021_civil<-gibush_candidates_kakatz_07.2021_civil[order(gibush_candidates_kakatz_07.2021_civil$order_num,na.last=F),]
 
 #**********************get and share scores***************************
 
@@ -872,7 +873,7 @@ gibush_candidates_kakatz_03.2021_civil<-gibush_candidates_kakatz_03.2021_civil[o
 # https://cran.r-project.org/web/packages/googledrive/googledrive.pdf
 #  The access can be removed, through my google account. preferred by drive_deauth() bellow.
 library(googledrive)
-drive_auth(email = "USERr1211@gmail.com")
+drive_auth(email = "asherr1211@gmail.com") #verify e-mail address
 # drive_find(n_max = 10,type = "csv")
 library(readr)
 locale("he")
@@ -883,26 +884,27 @@ locale("he")
 
 #**********************get and share scores - loop starts***************************
 
-#run the following rows only once-when creating the Google sheet.
-#save it as a google sheet.
+#run the following commands only once-when creating the Google sheet 
+# (copy it from previous Google sheets, update the number of candidates)
+#save it as a Google sheet.
 # Set sharing settings of the file in Google drive.
 # Change notification rules in the Google sheet on Tools.
-# drive_download("gibush_candidates_kakatz_03.2021_civil_final_scores****",path = "C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd",type = "csv",overwrite=T)
-# gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
-# gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[-1]gibush_candidates_kakatz_03.2021_civil_final_scores_gd[2]<- gibush_candidates_kakatz_03.2021_civil$personal_number
-# write.csv(gibush_candidates_kakatz_03.2021_civil_final_scores_gd, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
+# drive_download("gibush_candidates_kakatz_07.2021_civil_final_scores****",path = "C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd",type = "csv",overwrite=T)
+# gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
+# gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]gibush_candidates_kakatz_07.2021_civil_final_scores_gd[2]<- gibush_candidates_kakatz_07.2021_civil$personal_number
+# write.csv(gibush_candidates_kakatz_07.2021_civil_final_scores_gd, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
 
 # in the beginning, once, share the Google sheet with Talia and Miki, by running the next code rows.
 
-# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
+# drive_share("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
-#             emailAddress = "USERr1211@gmail.com",
+#             emailAddress = "asherr1211@gmail.com", #verify e-mail address
 #             emailMessage = "Hi USER. This file was Shared with Talia and Miki"
 # )
 
 
-# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
+# drive_share("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "talyashmueli@gmail.com",
@@ -910,7 +912,7 @@ locale("he")
 # )
 
 
-# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
+# drive_share("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "Ramikey1@gmail.com",
@@ -918,7 +920,7 @@ locale("he")
 # )
 
 
-# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
+# drive_share("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "Lizhazan10@gmail.com",
@@ -926,7 +928,7 @@ locale("he")
 # )
 
 
-# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
+# drive_share("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "adi.einely@gmail.com",
@@ -934,7 +936,7 @@ locale("he")
 # )
 
 # Sharing withe Bar Sorero
-# drive_share("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing",
+# drive_share("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
 #             emailAddress = "adi.einely@gmail.com",
@@ -944,42 +946,47 @@ locale("he")
 
 # End of code for sharing the google sheet
 
+# https://github.com/tidyverse/googlesheets4/issues/26
+# devtools::install_github("r-lib/gargle")
+
 # n=0
 # repeat {
+library(gargle)# restart R before
 library(googledrive)
 library(dplyr)
 library(readr)
 locale("he")
-drive_auth(email = "USERr1211@gmail.com")
-drive_download("gibush_candidates_kakatz_03.2021_civil_final_scores****",path = "C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd",type = "csv",overwrite=T)
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[-1]
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[6]<-gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade
-gibush_candidates_kakatz_03.2021_civil$personality <-gibush_candidates_kakatz_03.2021_civil_final_scores_gd$"אישיות"
-gibush_candidates_kakatz_03.2021_civil$command_exercise <-gibush_candidates_kakatz_03.2021_civil_final_scores_gd$"תרגיל פיקודי"
-gibush_candidates_kakatz_03.2021_civil$interview <-gibush_candidates_kakatz_03.2021_civil_final_scores_gd$"ראיון"
-gibush_candidates_kakatz_03.2021_civil <- gibush_candidates_kakatz_03.2021_civil %>% 
+drive_auth(email = "asherr1211@gmail.com")
+drive_download("gibush_candidates_kakatz_07.2021_civil_final_scores****",path = "C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd",type = "csv",overwrite=T)
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]
+write_excel_csv(gibush_candidates_kakatz_07.2021_civil_final_scores_gd,"C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[6]<-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
+gibush_candidates_kakatz_07.2021_civil$personality <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"אישיות"
+gibush_candidates_kakatz_07.2021_civil$command_exercise <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"תרגיל פיקודי"
+gibush_candidates_kakatz_07.2021_civil$interview <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ראיון"
+gibush_candidates_kakatz_07.2021_civil <- gibush_candidates_kakatz_07.2021_civil %>% 
   mutate(alternative_weighted_score = format(round(0.05*apptitudes + .10*personality + .40*command_exercise + .45*interview,2), nsmall = 2))
-class(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score)
+class(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
 options(digits = 3)
-gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score<-as.numeric(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score)
-class(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score)
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[7]<-gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score
-gibush_candidates_kakatz_03.2021_civil$gap <- gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score-gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[8]<-gibush_candidates_kakatz_03.2021_civil$gap
-gibush_candidates_kakatz_03.2021_civil$gap_abs <- abs(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score-
-                                                        gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade)
-gibush_candidates_kakatz_03.2021_civil$gap_warning<-ifelse(round(gibush_candidates_kakatz_03.2021_civil$gap_abs,2)>.64,1,0)
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[9]<-gibush_candidates_kakatz_03.2021_civil$gap_warning
-class(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd<-as.data.frame(gibush_candidates_kakatz_03.2021_civil_final_scores_gd)
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_03.2021_civil_final_scores_gd[9] == 1] <- "יש"
-gibush_candidates_kakatz_03.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_03.2021_civil_final_scores_gd[9] == 0] <- "אין"
-gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd$"ציון גיבוש סופי"
-gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final_categorial<-gibush_candidates_kakatz_03.2021_civil_final_scores_gd$"ציון גיבוש סופי מעוגל"
+gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score<-as.numeric(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
+class(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[7]<-gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score
+gibush_candidates_kakatz_07.2021_civil$gap <- gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8]<-gibush_candidates_kakatz_07.2021_civil$gap
+gibush_candidates_kakatz_07.2021_civil$gap_abs <- abs(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score-
+                                                        gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade)
+gibush_candidates_kakatz_07.2021_civil$gap_warning<-ifelse(round(gibush_candidates_kakatz_07.2021_civil$gap_abs,2)>.64,1,0)
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9]<-gibush_candidates_kakatz_07.2021_civil$gap_warning
+class(gibush_candidates_kakatz_07.2021_civil_final_scores_gd)
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-as.data.frame(gibush_candidates_kakatz_07.2021_civil_final_scores_gd)
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 1] <- "יש"
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 0] <- "אין"
+gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ציון גיבוש סופי"
+gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final_categorial<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ציון גיבוש סופי מעוגל"
 
-write.csv(gibush_candidates_kakatz_03.2021_civil_final_scores_gd, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
-drive_update("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSacHHfDWit_Zz4dsvHo/edit?usp=sharing","C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_gd.csv")
+write.csv(gibush_candidates_kakatz_07.2021_civil_final_scores_gd, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
+drive_update("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing","C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
 
 #   timestamp()
 #   
@@ -998,64 +1005,64 @@ drive_update("https://docs.google.com/spreadsheets/d/1fSNTu2PxKGeabiAWh5GTaAqzSa
 # stop sharing Google Drive with R
 drive_deauth()
 
-# gibush_candidates_kakatz_03.2021_civil_final_two_scores<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_two_scores.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
-# gibush_candidates_kakatz_03.2021_civil_final_two_scores<-gibush_candidates_kakatz_03.2021_civil_final_two_scores[-1]
-# gibush_candidates_kakatz_03.2021_civil <-
-#   merge(gibush_candidates_kakatz_03.2021_civil,gibush_candidates_kakatz_03.2021_civil_final_two_scores,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
+# gibush_candidates_kakatz_07.2021_civil_final_two_scores<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_two_scores.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+# gibush_candidates_kakatz_07.2021_civil_final_two_scores<-gibush_candidates_kakatz_07.2021_civil_final_two_scores[-1]
+# gibush_candidates_kakatz_07.2021_civil <-
+#   merge(gibush_candidates_kakatz_07.2021_civil,gibush_candidates_kakatz_07.2021_civil_final_two_scores,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 
 # When I'll have the real scores update accordingly************
-# gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final<-NA
-# gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final_categorial<-NA
+# gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final<-NA
+# gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final_categorial<-NA
 
 library(descr)
 library(psych)
 options(width = 71,max.print=30000)
 
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade),font=2),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score))),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade),font=2),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score))),2)
 
 
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$apptitudes))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$personality))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$command_exercise))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$interview))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$apptitudes))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$personality))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$command_exercise))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$interview))),2)
 
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade))),2)
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score),font=2),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score))),2)
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final),font=2),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final))),2)
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final_categorial), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final_categorial),font=2),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade))),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score),font=2),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score))),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final),font=2),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final))),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final_categorial), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final_categorial),font=2),2)
 
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$gap), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$gap),font=2),2)
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$gap_abs), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$gap_abs),font=2),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$gap_abs))),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$gap), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$gap),font=2),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$gap_abs), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$gap_abs),font=2),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$gap_abs))),2)
 
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$gap_warning), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$gap_warning),font=2),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$gap_warning), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$gap_warning),font=2),2)
 
-cor.test(as.numeric(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score),as.numeric(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
-cor.test(as.numeric(gibush_candidates_kakatz_03.2021_civil$altenative_weighted_score_final),as.numeric(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
+cor.test(as.numeric(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score),as.numeric(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
+cor.test(as.numeric(gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final),as.numeric(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade),use="pairwise.complete.obs",na.action = "na.exclude")
 
-gibush_candidates_kakatz_03.2021_civil$gap_direction<-ifelse(gibush_candidates_kakatz_03.2021_civil$gap<0,1,2)
+gibush_candidates_kakatz_07.2021_civil$gap_direction<-ifelse(gibush_candidates_kakatz_07.2021_civil$gap<0,1,2)
 
-gibush_candidates_kakatz_03.2021_civil_negative=gibush_candidates_kakatz_03.2021_civil %>%
+gibush_candidates_kakatz_07.2021_civil_negative=gibush_candidates_kakatz_07.2021_civil %>%
   filter(gap_direction==1)
-gibush_candidates_kakatz_03.2021_civil_positive=gibush_candidates_kakatz_03.2021_civil %>%
+gibush_candidates_kakatz_07.2021_civil_positive=gibush_candidates_kakatz_07.2021_civil %>%
   filter(gap_direction==2)
 
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil_negative$gap))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil_positive$gap))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil_negative$gap))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil_positive$gap))),2)
 
 # library(formattable)
 
-# formattable(gibush_candidates_kakatz_03.2021_civil, list(
+# formattable(gibush_candidates_kakatz_07.2021_civil, list(
 #   warning = formatter("span", style = x ~ ifelse(x == 1, style(color = "red", font.weight = "bold"), NA))))
 # 
 # col.rownames="Darkblue"
-# col.data=ifelse(gibush_candidates_kakatz_03.2021_civil$warning==1,'red','black')
+# col.data=ifelse(gibush_candidates_kakatz_07.2021_civil$warning==1,'red','black')
 
-write.csv(gibush_candidates_kakatz_03.2021_civil, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_03.2021_civil_final_scores_new.csv")
+write.csv(gibush_candidates_kakatz_07.2021_civil, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_new.csv")
 
 
 
@@ -1104,7 +1111,7 @@ CrossTable(filtered_residual$FileGrade4_4.5,filtered_residual$predicted_FileGrad
 write.csv(filtered_residual, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/filtered_residual.csv")
 
 # analysis for ISPA conference
-# gibush_candidates_kakatz_03.2021_civil
+# gibush_candidates_kakatz_07.2021_civil
 
 round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score),font=2),2)
 round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade),font=2),2)
