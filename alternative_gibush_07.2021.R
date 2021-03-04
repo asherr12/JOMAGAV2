@@ -787,49 +787,49 @@ colnames(gibush_candidates_kakatz_07.2021_civil)[14]<-"kaba"
 # courses_soc file on TALI includes candidates until 01.2020.
 # Hence I've got the data for the candidates manually from MEGAMA.
 
-# soc_mac_civil_03.2021
+# soc_mac_civil_07.2021
 # library(readr)
 # locale("he")
-# soc_mac_civil_am_03.2021<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_03.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
-# colnames(soc_mac_civil_am_03.2021)
+# soc_mac_civil_am_07.2021<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_07.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+# colnames(soc_mac_civil_am_07.2021)
 #
-# nrow(soc_mac_civil_am_03.2021)
+# nrow(soc_mac_civil_am_07.2021)
 #
-# class(soc_mac_civil_am_03.2021)
+# class(soc_mac_civil_am_07.2021)
 #
-# colnames(soc_mac_civil_am_03.2021)
+# colnames(soc_mac_civil_am_07.2021)
 #
 # soc_mac_civil_am <- soc_mac_civil_am %>%
 #   mutate_at(c(4:45), funs(c(scale(.))))
 #
 #
-# soc_mac_civil_am_03.2021<-as.data.frame(soc_mac_civil_am_03.2021)
+# soc_mac_civil_am_07.2021<-as.data.frame(soc_mac_civil_am_07.2021)
 # library(dplyr)
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
+# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
 #   mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
 #                                                 RAvg2_courses_soc_mac,
 #                                                 RAvg3_courses_soc_mac,
 #                                                 RAvg4_courses_soc_mac,
 #                                                 RAvg5_courses_soc_mac)))
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
+# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
 #   mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
 #                                                   RTeken2_courses_soc_mac,
 #                                                   RTeken3_courses_soc_mac,
 #                                                   RTeken4_courses_soc_mac,
 #                                                   RTeken5_courses_soc_mac)))
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
+# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
 #   mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
 #                                                 NPct2_courses_soc_mac)))
 
-# soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
+# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
 #   mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
 
-# filtered_soc_mac_civil_am_03.2021 <- soc_mac_civil_am_03.2021 %>%
+# filtered_soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
 #   select(order_num,am_courses_soc_mac,GroupName_courses_soc_mac)
 
 # filtered_soc_mac_civil_am$personal_number<-NULL
-# gibush_candidates_kakatz_03.2021_civil <-
-#   merge(gibush_candidates_kakatz_03.2021_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
+# gibush_candidates_kakatz_07.2021_civil <-
+#   merge(gibush_candidates_kakatz_07.2021_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
 library(descr)
 library(psych)
 describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)))
@@ -1112,27 +1112,27 @@ write.csv(filtered_residual, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alterna
 # analysis for ISPA conference
 # gibush_candidates_kakatz_07.2021_civil
 
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score),font=2),2)
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade),font=2),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score),font=2),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade),font=2),2)
 
-gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score3_3.5<-ifelse(round(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score,1)>=3.5 & round(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score,1)<4,3.5,
-                                                                               ifelse(round(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade,1)<3.5,3,"NA"))
-gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade3_3.5<-ifelse(round(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade,1)>=3.5 & round(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade,1)<4,3.5,
-                                                                        ifelse(round(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade,1)<3.5,3,"NA"))
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score3_3.5), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score3_3.5),font=2),2)
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade3_3.5), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade3_3.5),font=2),2)
-CrossTable(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score3_3.5,gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade3_3.5,row.labels = T,format = c("SPSS"),cell.layout=T)
+gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score3_3.5<-ifelse(round(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score,1)>=3.5 & round(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score,1)<4,3.5,
+                                                                               ifelse(round(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade,1)<3.5,3,"NA"))
+gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade3_3.5<-ifelse(round(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade,1)>=3.5 & round(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade,1)<4,3.5,
+                                                                        ifelse(round(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade,1)<3.5,3,"NA"))
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score3_3.5), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score3_3.5),font=2),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade3_3.5), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade3_3.5),font=2),2)
+CrossTable(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score3_3.5,gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade3_3.5,row.labels = T,format = c("SPSS"),cell.layout=T)
 
-gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score4_4.5<-ifelse(round(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score,1)>=4.5,4.5,
-                                                                               ifelse(round(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score,1)<4.5 & round(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score,1)>=4,4,"NA"))
-gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade4_4.5<-ifelse(round(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade,1)>=4.5,4.5,
-                                                                        ifelse(round(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade,1)<4.5 & round(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade,1)>=4,4,"NA"))
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score4_4.5), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score4_4.5),font=2),2)
-round(freq(ordered(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade4_4.5), plot = F,main=colnames(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade4_4.5),font=2),2)
-CrossTable(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score4_4.5,gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade4_4.5,row.labels = T,format = c("SPSS"),cell.layout=T)
+gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score4_4.5<-ifelse(round(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score,1)>=4.5,4.5,
+                                                                               ifelse(round(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score,1)<4.5 & round(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score,1)>=4,4,"NA"))
+gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade4_4.5<-ifelse(round(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade,1)>=4.5,4.5,
+                                                                        ifelse(round(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade,1)<4.5 & round(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade,1)>=4,4,"NA"))
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score4_4.5), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score4_4.5),font=2),2)
+round(freq(ordered(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade4_4.5), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade4_4.5),font=2),2)
+CrossTable(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score4_4.5,gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade4_4.5,row.labels = T,format = c("SPSS"),cell.layout=T)
 
-round(describe(as.numeric(gibush_candidates_kakatz_03.2021_civil$alternative_weighted_score)),2)
-round(describe(as.numeric(gibush_candidates_kakatz_03.2021_civil$predicted_FileGrade)),2)
+round(describe(as.numeric(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)),2)
+round(describe(as.numeric(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade)),2)
 round(describe(as.numeric(JOMAG_predictores_criteria_merged_civil$FileGrade)),2)
 
 
@@ -1162,11 +1162,11 @@ mode<-function(X)
 }
 mode(ranks_new_civil_combined$GibDate_rank_new_date_gap)
 round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$kaba))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$kaba))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$kaba))),2)
 round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$final_mac_course_score))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$final_mac_course_score))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score))),2)
 round(describe(as.numeric(unlist(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$am_courses_soc_mac))),2)
-round(describe(as.numeric(unlist(gibush_candidates_kakatz_03.2021_civil$am_courses_soc_mac))),2)
+round(describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac))),2)
 
 
 freq(ordered(JOMAG_predictores_criteria_merged_civil_officers$tifkud), plot = F,main=colnames(JOMAG_predictores_criteria_merged_civil_officers$tifkud),font=2)
@@ -1212,7 +1212,7 @@ CrossTable(JOMAG_predictores_criteria_merged_civil$officer,JOMAG_predictores_cri
 write.csv(JOMAG_predictores_criteria_merged_civil_qv, file="C:/Users/Administrator.MAMADA-777/Documents/Junior officers MAGAV validation/JOMAG_predictores_criteria_merged_civil_qv.csv")
 write.csv(JOMAG_predictores_criteria_merged_civil, file="C:/Users/Administrator.MAMADA-777/Documents/Junior officers MAGAV validation/JOMAG_predictores_criteria_merged_civil.csv")
 write.csv(JOMAG_predictores_criteria_merged_civil_qv, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/JOMAG_predictores_criteria_merged_civil_qv.csv")
-write.csv(gibush_candidates_kakatz_03.2021_civil, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/gibush_candidates_kakatz_03.2021_civil_new22.csv")
+write.csv(gibush_candidates_kakatz_07.2021_civil, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/gibush_candidates_kakatz_07.2021_civil_new22.csv")
 
 # https://www.r-bloggers.com/hebrew-using-hebrew-in-r/
 library(readr)
