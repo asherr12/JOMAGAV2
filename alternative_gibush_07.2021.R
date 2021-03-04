@@ -893,8 +893,8 @@ locale("he")
 # gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]gibush_candidates_kakatz_07.2021_civil_final_scores_gd[2]<- gibush_candidates_kakatz_07.2021_civil$personal_number
 # write.csv(gibush_candidates_kakatz_07.2021_civil_final_scores_gd, file="C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
 
-# in the beginning, once, share the Google sheet with Talia and Miki, by running the next code rows.
-
+# In the beginning, once, share the Google sheet with Talia and Miki, by running the next code rows.
+# Share the link by WhatsApp.*************
 # drive_share("https://docs.google.com/spreadsheets/d/1R4YS7ZIzkvR_K3z_i9XbHaUiT6aoS0JQ8JOyzwdccH0/edit?usp=sharing",
 #             role = "writer",
 #             type = "user",
