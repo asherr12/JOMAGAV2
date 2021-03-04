@@ -582,7 +582,7 @@ nrow(soc_mac_civil)
 
 colnames(soc_mac_civil)
 
-library(dplyr)
+# library(dplyr)
 
 soc_mac_civil_am = soc_mac_civil %>%
   select(personal_number,GroupId_courses_soc_mac,GroupName_courses_soc_mac,c(16:22,24:30,32:38,40:46,48:54,56:62))
@@ -714,7 +714,7 @@ R
 mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$predicted_FileGrade <- 
   round(predict(reg_FileGrade1, mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar),2)
 
-library(dplyr)
+#library(dplyr)
 
 filtered_residual=mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar %>%
   filter(!is.na(mac_datets_and_scores_civil_ranks_new_civil_kaba_civil_soc_mac_civil_am_dapar$predicted_FileGrade)
@@ -770,18 +770,19 @@ colnames(gibush_candidates_kakatz_07.2021_civil)
 colnames(gibush_candidates_kakatz_07.2021_civil)[12]<-"apptitudes"
 colnames(gibush_candidates_kakatz_07.2021_civil)[13]<-"final_mac_course_score"
 colnames(gibush_candidates_kakatz_07.2021_civil)[14]<-"kaba"
+gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac<-NULL
 
 # soc_mac_civil
-class(gibush_candidates_kakatz_07.2021_civil)
-gibush_candidates_kakatz_07.2021_civil<-as.data.frame(gibush_candidates_kakatz_07.2021_civil)
-class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
-
-class(filtered_soc_mac_civil_am)
-class(gibush_candidates_kakatz_07.2021_civil$personal_number)
-class(filtered_soc_mac_civil_am$personal_number)
-
-gibush_candidates_kakatz_07.2021_civil <-
-merge(gibush_candidates_kakatz_07.2021_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+# class(gibush_candidates_kakatz_07.2021_civil)
+# gibush_candidates_kakatz_07.2021_civil<-as.data.frame(gibush_candidates_kakatz_07.2021_civil)
+# class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
+# 
+# class(filtered_soc_mac_civil_am)
+# class(gibush_candidates_kakatz_07.2021_civil$personal_number)
+# class(filtered_soc_mac_civil_am$personal_number)
+# 
+# gibush_candidates_kakatz_07.2021_civil <-
+# merge(gibush_candidates_kakatz_07.2021_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
 
 # gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
 
