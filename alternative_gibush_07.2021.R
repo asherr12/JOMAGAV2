@@ -770,7 +770,6 @@ colnames(gibush_candidates_kakatz_07.2021_civil)
 colnames(gibush_candidates_kakatz_07.2021_civil)[12]<-"apptitudes"
 colnames(gibush_candidates_kakatz_07.2021_civil)[13]<-"final_mac_course_score"
 colnames(gibush_candidates_kakatz_07.2021_civil)[14]<-"kaba"
-gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac<-NULL
 
 # soc_mac_civil
 # class(gibush_candidates_kakatz_07.2021_civil)
@@ -843,10 +842,6 @@ class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
 class(gibush_candidates_kakatz_07.2021_civil$kaba)
 gibush_candidates_kakatz_07.2021_civil$kaba<-as.numeric(gibush_candidates_kakatz_07.2021_civil$kaba)
 class(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
-gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
-
-# gibush_candidates_kakatz_07.2021_civil$final_mac_course_score <-
-#   as.numeric(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
 
 # predicted_FileGrade
 gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade <- format(round(predict(reg_FileGrade1, gibush_candidates_kakatz_07.2021_civil),2), nsmall = 2)
@@ -962,7 +957,7 @@ drive_download("gibush_candidates_kakatz_07.2021_civil_final_scores****",path = 
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]
 write_excel_csv(gibush_candidates_kakatz_07.2021_civil_final_scores_gd,"C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[6]<-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[5]<-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
 gibush_candidates_kakatz_07.2021_civil$personality <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"אישיות"
 gibush_candidates_kakatz_07.2021_civil$command_exercise <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"תרגיל פיקודי"
 gibush_candidates_kakatz_07.2021_civil$interview <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ראיון"
@@ -972,17 +967,17 @@ class(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
 options(digits = 3)
 gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score<-as.numeric(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
 class(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[7]<-gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[6]<-gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score
 gibush_candidates_kakatz_07.2021_civil$gap <- gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8]<-gibush_candidates_kakatz_07.2021_civil$gap
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[7]<-gibush_candidates_kakatz_07.2021_civil$gap
 gibush_candidates_kakatz_07.2021_civil$gap_abs <- abs(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score-
                                                         gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade)
 gibush_candidates_kakatz_07.2021_civil$gap_warning<-ifelse(round(gibush_candidates_kakatz_07.2021_civil$gap_abs,2)>.64,1,0)
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9]<-gibush_candidates_kakatz_07.2021_civil$gap_warning
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8]<-gibush_candidates_kakatz_07.2021_civil$gap_warning
 class(gibush_candidates_kakatz_07.2021_civil_final_scores_gd)
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-as.data.frame(gibush_candidates_kakatz_07.2021_civil_final_scores_gd)
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 1] <- "יש"
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 0] <- "אין"
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 1] <- "יש"
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 0] <- "אין"
 gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ציון גיבוש סופי"
 gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final_categorial<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ציון גיבוש סופי מעוגל"
 
