@@ -771,28 +771,12 @@ colnames(gibush_candidates_kakatz_07.2021_civil)[12]<-"apptitudes"
 colnames(gibush_candidates_kakatz_07.2021_civil)[13]<-"final_mac_course_score"
 colnames(gibush_candidates_kakatz_07.2021_civil)[14]<-"kaba"
 
-# soc_mac_civil
-# class(gibush_candidates_kakatz_07.2021_civil)
-# gibush_candidates_kakatz_07.2021_civil<-as.data.frame(gibush_candidates_kakatz_07.2021_civil)
-# class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
-# 
-# class(filtered_soc_mac_civil_am)
-# class(gibush_candidates_kakatz_07.2021_civil$personal_number)
-# class(filtered_soc_mac_civil_am$personal_number)
-# 
-# gibush_candidates_kakatz_07.2021_civil <-
-# merge(gibush_candidates_kakatz_07.2021_civil,filtered_soc_mac_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-
-# gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-as.numeric(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
-
-# courses_soc file on TALI includes candidates until 01.2020.
-# Hence I've got the data for the candidates manually from MEGAMA.
-
 # soc_mac_civil_11.2020
 library(readr)
 locale("he")
-# soc_mac_civil_am_07.2021<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_07.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
-# colnames(soc_mac_civil_am_07.2021)
+# Encoding: UTF-8 or ISO 8859-8 or Windows-1255
+# courses_soc_mac_112020_civil_am<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_07.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+# colnames(courses_soc_mac_112020_civil_am)
 
 courses_soc_mac_112020_civil<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_112020_civil.csv",locale = locale(date_names = "he", encoding = "UTF-8"))
 colnames(courses_soc_mac_112020_civil)
@@ -803,7 +787,7 @@ nrow(courses_soc_mac_112020_civil)
 
 library(dplyr)
 courses_soc_mac_112020_civil <- courses_soc_mac_112020_civil %>%
-  filter(GroupId==147 |
+    filter(GroupId==147 |
            GroupId==148 |
            GroupId==149 |
            GroupId==150 |
@@ -1155,14 +1139,22 @@ library(psych)
 freq(ordered(round(filtered_courses_soc_mac_112020_civil$Tzyun8,2)), plot = F,main=colnames(filtered_courses_soc_mac_112020_civil$Tzyun8),font=2)
 filtered_courses_soc_mac_112020_civil[10:16]<-NULL
 
+CreateDate_courses_soc_mac<-read.csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/CreateDate_courses_soc_mac.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
+
+filtered_courses_soc_mac_112020_civil <-
+  merge(filtered_courses_soc_mac_112020_civil,CreateDate_courses_soc_mac,by=c("GroupId"), all.x=T, all.y=F,sort = FALSE)
+class(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
+head(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
+filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac<-as.Date(as.character(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac),format="%d/%m/%Y")
+class(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
+head(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
 n_occur<-data.frame(table(filtered_courses_soc_mac_112020_civil$personal_number))
 n_occur[n_occur$Freq>1,]
-colnames(n_occur)[1]<-"personal_number"
+library(data.table)
+filtered_courses_soc_mac_112020_civil<-setDT(filtered_courses_soc_mac_112020_civil)[,.SD[which.max(CreateDate_courses_soc_mac)],keyby=personal_number]
+n_occur<-data.frame(table(filtered_courses_soc_mac_112020_civil$personal_number))
+n_occur[n_occur$Freq>1,]
 
-filtered_courses_soc_mac_112020_civil<-merge(filtered_courses_soc_mac_112020_civil,n_occur,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-filtered_courses_soc_mac_112020_civil <- filtered_courses_soc_mac_112020_civil %>%
-  filter(Freq==1)
-filtered_courses_soc_mac_112020_civil$Freq<-NULL  
 colnames(filtered_courses_soc_mac_112020_civil)[3]<-"RAvg1_courses_soc_mac"
 colnames(filtered_courses_soc_mac_112020_civil)[4]<-"RAvg2_courses_soc_mac"
 colnames(filtered_courses_soc_mac_112020_civil)[5]<-"RAvg3_courses_soc_mac"
@@ -1190,82 +1182,86 @@ length(GroupId)
 for (i in 1:length(GroupId)) {
 for (j in 1:length(GroupId[[i]]$RAvg1_courses_soc_mac)){
 GroupId[[i]]$RAvg1_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg1_courses_soc_mac)
-GroupId[[i]]$RTeken1_courses_soc_mac[j]<-(GroupId[[i]]$RAvg1_courses_soc_mac[j]-
+GroupId[[i]]$RTeken1_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg1_courses_soc_mac[j]-
 mean(GroupId[[i]]$RAvg1_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg1_courses_soc_mac)
+sd(GroupId[[i]]$RAvg1_courses_soc_mac)*10+70,0)
 
 GroupId[[i]]$RAvg2_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg2_courses_soc_mac)
-GroupId[[i]]$RTeken2_courses_soc_mac[j]<-(GroupId[[i]]$RAvg2_courses_soc_mac[j]-
+GroupId[[i]]$RTeken2_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg2_courses_soc_mac[j]-
 mean(GroupId[[i]]$RAvg2_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg2_courses_soc_mac)
+sd(GroupId[[i]]$RAvg2_courses_soc_mac)*10+70,0)
 
 GroupId[[i]]$RAvg3_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg3_courses_soc_mac)
-GroupId[[i]]$RTeken3_courses_soc_mac[j]<-(GroupId[[i]]$RAvg3_courses_soc_mac[j]-
+GroupId[[i]]$RTeken3_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg3_courses_soc_mac[j]-
 mean(GroupId[[i]]$RAvg3_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg3_courses_soc_mac)
+sd(GroupId[[i]]$RAvg3_courses_soc_mac)*10+70,0)
 
 GroupId[[i]]$RAvg4_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg4_courses_soc_mac)
-GroupId[[i]]$RTeken4_courses_soc_mac[j]<-(GroupId[[i]]$RAvg4_courses_soc_mac[j]-
+GroupId[[i]]$RTeken4_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg4_courses_soc_mac[j]-
 mean(GroupId[[i]]$RAvg4_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg4_courses_soc_mac)
+sd(GroupId[[i]]$RAvg4_courses_soc_mac)*10+70,0)
 
 GroupId[[i]]$RAvg5_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg5_courses_soc_mac)
-GroupId[[i]]$RTeken5_courses_soc_mac[j]<-(GroupId[[i]]$RAvg5_courses_soc_mac[j]-
+GroupId[[i]]$RTeken5_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg5_courses_soc_mac[j]-
 mean(GroupId[[i]]$RAvg5_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg5_courses_soc_mac)
+sd(GroupId[[i]]$RAvg5_courses_soc_mac)*10+70,0)
 }
 }
 
-# Ask Ronen how the Teken scores are computed*************
-#Arrived here********
+GroupId_df<-c()
+for (i in 1:length(GroupId)) {
+  GroupId_df_temp<-as.data.frame(GroupId[[i]])
+  GroupId_df<-rbind(GroupId_df,GroupId_df_temp)
+}
 
-# Combine df's in a loop
+class(GroupId_df)
 
-GroupId_df<-as.data.frame(GroupId[[1]])
+courses_soc_mac_112020_civil_am<-GroupId_df
 
+nrow(courses_soc_mac_112020_civil_am)
 
-# nrow(soc_mac_civil_am_07.2021)
-#
-# class(soc_mac_civil_am_07.2021)
-#
-# colnames(soc_mac_civil_am_07.2021)
-#
-# soc_mac_civil_am <- soc_mac_civil_am %>%
-#   mutate_at(c(4:45), funs(c(scale(.))))
-#
-#
-# soc_mac_civil_am_07.2021<-as.data.frame(soc_mac_civil_am_07.2021)
-# library(dplyr)
-# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
-#   mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
-#                                                 RAvg2_courses_soc_mac,
-#                                                 RAvg3_courses_soc_mac,
-#                                                 RAvg4_courses_soc_mac,
-#                                                 RAvg5_courses_soc_mac)))
-# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
-#   mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
-#                                                   RTeken2_courses_soc_mac,
-#                                                   RTeken3_courses_soc_mac,
-#                                                   RTeken4_courses_soc_mac,
-#                                                   RTeken5_courses_soc_mac)))
-# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
-#   mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
-#                                                 NPct2_courses_soc_mac)))
+class(courses_soc_mac_112020_civil_am)
 
-# soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
-#   mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
+colnames(courses_soc_mac_112020_civil_am)
 
-# filtered_soc_mac_civil_am_07.2021 <- soc_mac_civil_am_07.2021 %>%
-#   select(order_num,am_courses_soc_mac,GroupName_courses_soc_mac)
+courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+  mutate_at(c(3:9,11:15), funs(c(scale(.))))
 
-# filtered_soc_mac_civil_am$personal_number<-NULL
-# gibush_candidates_kakatz_07.2021_civil <-
-#   merge(gibush_candidates_kakatz_07.2021_civil,filtered_soc_mac_civil_am,by=c("order_num"), all.x=T, all.y=F,sort = FALSE)
+courses_soc_mac_112020_civil_am<-as.data.frame(courses_soc_mac_112020_civil_am)
+
+library(dplyr)
+courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+  mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
+                                                RAvg2_courses_soc_mac,
+                                                RAvg3_courses_soc_mac,
+                                                RAvg4_courses_soc_mac,
+                                                RAvg5_courses_soc_mac)))
+courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+  mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
+                                                  RTeken2_courses_soc_mac,
+                                                  RTeken3_courses_soc_mac,
+                                                  RTeken4_courses_soc_mac,
+                                                  RTeken5_courses_soc_mac)))
+courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+  mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
+                                                NPct2_courses_soc_mac)))
+
+courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>% 
+  mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
+
+filtered_courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+  select(personal_number,GroupId,am_courses_soc_mac)
+
+gibush_candidates_kakatz_07.2021_civil <-
+  merge(gibush_candidates_kakatz_07.2021_civil,filtered_courses_soc_mac_112020_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+
 library(descr)
 library(psych)
+gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac
 describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)))
 freq(ordered(round(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac,2)), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac),font=2)
-freq(ordered(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac),font=2)
+# freq(ordered(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac),font=2)
+freq(ordered(gibush_candidates_kakatz_07.2021_civil$GroupId), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$GroupId),font=2)
 colnames(gibush_candidates_kakatz_07.2021_civil)
 class(gibush_candidates_kakatz_07.2021_civil$apptitudes)
 class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
@@ -1388,9 +1384,9 @@ locale("he")
 drive_auth(email = "asherr1211@gmail.com")
 drive_download("gibush_candidates_kakatz_07.2021_civil_final_scores****",path = "C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd",type = "csv",overwrite=T)
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]
+# gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]
 write_excel_csv(gibush_candidates_kakatz_07.2021_civil_final_scores_gd,"C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[5]<-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[6]<-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
 gibush_candidates_kakatz_07.2021_civil$personality <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"אישיות"
 gibush_candidates_kakatz_07.2021_civil$command_exercise <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"תרגיל פיקודי"
 gibush_candidates_kakatz_07.2021_civil$interview <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ראיון"
@@ -1400,17 +1396,17 @@ class(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
 options(digits = 3)
 gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score<-as.numeric(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
 class(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score)
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[6]<-gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[7]<-gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score
 gibush_candidates_kakatz_07.2021_civil$gap <- gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[7]<-gibush_candidates_kakatz_07.2021_civil$gap
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8]<-gibush_candidates_kakatz_07.2021_civil$gap
 gibush_candidates_kakatz_07.2021_civil$gap_abs <- abs(gibush_candidates_kakatz_07.2021_civil$alternative_weighted_score-
                                                         gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade)
 gibush_candidates_kakatz_07.2021_civil$gap_warning<-ifelse(round(gibush_candidates_kakatz_07.2021_civil$gap_abs,2)>.64,1,0)
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8]<-gibush_candidates_kakatz_07.2021_civil$gap_warning
 class(gibush_candidates_kakatz_07.2021_civil_final_scores_gd)
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-as.data.frame(gibush_candidates_kakatz_07.2021_civil_final_scores_gd)
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 1] <- "יש"
-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[8][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 0] <- "אין"
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 1] <- "יש"
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9][gibush_candidates_kakatz_07.2021_civil_final_scores_gd[9] == 0] <- "אין"
 gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ציון גיבוש סופי"
 gibush_candidates_kakatz_07.2021_civil$altenative_weighted_score_final_categorial<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"ציון גיבוש סופי מעוגל"
 
