@@ -764,7 +764,7 @@ round(freq(ordered(filtered_residual$residual_direction), plot = F,main=colnames
 library(readr)
 locale("he")
 # Encoding: UTF-8 or ISO 8859-8 or Windows-1255
-gibush_candidates_kakatz_07.2021_civil<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_with_am.csv",locale = locale(date_names = "he", encoding = "UTF-8"))
+gibush_candidates_kakatz_07.2021_civil<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_with_am_civil.csv",locale = locale(date_names = "he", encoding = "Windows-1255"))
 #gibush_candidates_kakatz_07.2021_civil<-gibush_candidates_kakatz_07.2021_civil[-1]
 colnames(gibush_candidates_kakatz_07.2021_civil)
 colnames(gibush_candidates_kakatz_07.2021_civil)[12]<-"apptitudes"
@@ -772,492 +772,492 @@ colnames(gibush_candidates_kakatz_07.2021_civil)[13]<-"final_mac_course_score"
 colnames(gibush_candidates_kakatz_07.2021_civil)[14]<-"kaba"
 
 # soc_mac_civil_11.2020
-library(readr)
-locale("he")
-# Encoding: UTF-8 or ISO 8859-8 or Windows-1255
-# courses_soc_mac_112020_civil_am<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_07.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+# library(readr)
+# locale("he")
+# # Encoding: UTF-8 or ISO 8859-8 or Windows-1255
+# # courses_soc_mac_112020_civil_am<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_megama_civil_07.2021.csv",locale = locale(date_names = "he", encoding = "ISO-8859-8"))
+# # colnames(courses_soc_mac_112020_civil_am)
+# 
+# courses_soc_mac_112020_civil<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_112020_civil.csv",locale = locale(date_names = "he", encoding = "UTF-8"))
+# colnames(courses_soc_mac_112020_civil)
+# courses_soc_mac_112020_civil[11:13]<-NULL
+# colnames(courses_soc_mac_112020_civil)
+# 
+# nrow(courses_soc_mac_112020_civil)
+# 
+# library(dplyr)
+# courses_soc_mac_112020_civil <- courses_soc_mac_112020_civil %>%
+#     filter(GroupId==147 |
+#            GroupId==148 |
+#            GroupId==149 |
+#            GroupId==150 |
+#            GroupId==151 |
+#            GroupId==178 |
+#            GroupId==179 |
+#            GroupId==182 |
+#            GroupId==183 |
+#            GroupId==184 |
+#            GroupId==200 |
+#            GroupId==201 |
+#            GroupId==202 |
+#            GroupId==211 |
+#            GroupId==212 |
+#            GroupId==213 |
+#            GroupId==216 |
+#            GroupId==217 |
+#            GroupId==218 |
+#            GroupId==222 |
+#            GroupId==223 |
+#            GroupId==224 |
+#            GroupId==301 |
+#            GroupId==302 |
+#            GroupId==303 |
+#            GroupId==304 |
+#            GroupId==307 |
+#            GroupId==308 |
+#            GroupId==309 |
+#            GroupId==310 |
+#            GroupId==311 |
+#            GroupId==312 |
+#            GroupId==318 |
+#            GroupId==319 |
+#            GroupId==320 |
+#            GroupId==325 |
+#            GroupId==326 |
+#            GroupId==327 |
+#            GroupId==328 |
+#            GroupId==329 |
+#            GroupId==330 |
+#            GroupId==579 |
+#            GroupId==580 |
+#            GroupId==581 |
+#            GroupId==605 |
+#            GroupId==606 |
+#            GroupId==642 |
+#            GroupId==643 |
+#            GroupId==708 |
+#            GroupId==784 |
+#            GroupId==785 |
+#            GroupId==786 |
+#            GroupId==787 |
+#            GroupId==792 |
+#            GroupId==793 |
+#            GroupId==708 |
+#            GroupId==709 |
+#            GroupId==784 |
+#            GroupId==785 |
+#            GroupId==786 |
+#            GroupId==787 |
+#            GroupId==792 |
+#            GroupId==793 |
+#            GroupId==814 |
+#            GroupId==815 |
+#            GroupId==816 |
+#            GroupId==817 |
+#            GroupId==825 |
+#            GroupId==826 |
+#            GroupId==827 |
+#            GroupId==828 |
+#            GroupId==832 |
+#            GroupId==833 |
+#            GroupId==834 |
+#            GroupId==835 |
+#            GroupId==836 |
+#            GroupId==837 |
+#            GroupId==838 |
+#            GroupId==839 |
+#            GroupId==840 |
+#            GroupId==847 |
+#            GroupId==848 |
+#            GroupId==849 |
+#            GroupId==850 |
+#            GroupId==851 |
+#            GroupId==852 |
+#            GroupId==853 |
+#            GroupId==854 |
+#            GroupId==855 |
+#            GroupId==856 |
+#            GroupId==857 |
+#            GroupId==858 |
+#            GroupId==1118 |
+#            GroupId==1119 |
+#            GroupId==1120 |
+#            GroupId==1121 |
+#            GroupId==1128 |
+#            GroupId==1129 |
+#            GroupId==1130 |
+#            GroupId==1180 |
+#            GroupId==1181 |
+#            GroupId==1182 |
+#            GroupId==1184 |
+#            GroupId==1245 |
+#            GroupId==1246 |
+#            GroupId==1247 |
+#            GroupId==1248 |
+#            GroupId==1297 |
+#            GroupId==1298 |
+#            GroupId==1299 |
+#            GroupId==1302 |
+#            GroupId==1343 |
+#            GroupId==1344 |
+#            GroupId==1345 |
+#            GroupId==1346 |
+#            GroupId==1443 |
+#            GroupId==1445 |
+#            GroupId==1446 |
+#            GroupId==1496 |
+#            GroupId==1497 |
+#            GroupId==1525 |
+#            GroupId==1526 |
+#            GroupId==1528 |
+#            GroupId==1562 |
+#            GroupId==1605 |
+#            GroupId==1675 |
+#            GroupId==1681 |
+#            GroupId==1682 |
+#            GroupId==1776 |
+#            GroupId==1782 |
+#            GroupId==1783 |
+#            GroupId==1784 |
+#            GroupId==1867 |
+#            GroupId==1868 |
+#            GroupId==1869 |
+#            GroupId==1948 |
+#            GroupId==1949 |
+#            GroupId==1959 |
+#            GroupId==1960 |
+#            GroupId==1966 |
+#            GroupId==1995 |
+#            GroupId==2011 |
+#            GroupId==2012 |
+#            GroupId==2013 |
+#            GroupId==2014 |
+#            GroupId==2015 |
+#            GroupId==2016 |
+#            GroupId==2017 |
+#            GroupId==2029 |
+#            GroupId==2087 |
+#            GroupId==2088 |
+#            GroupId==2090 |
+#            GroupId==2171 |
+#            GroupId==2172 |
+#            GroupId==2173 |
+#            GroupId==2174 |
+#            GroupId==2232 |
+#            GroupId==2233 |
+#            GroupId==2236 |
+#            GroupId==2237 |
+#            GroupId==2240 |
+#            GroupId==2346 |
+#            GroupId==2347 |
+#            GroupId==2348 |
+#            GroupId==2349 |
+#            GroupId==2421 |
+#            GroupId==2422 |
+#            GroupId==2423 |
+#            GroupId==2425 |
+#            GroupId==2491 |
+#            GroupId==2492 |
+#            GroupId==2548 |
+#            GroupId==2551 |
+#            GroupId==2565 |
+#            GroupId==2615 |
+#            GroupId==2637 |
+#            GroupId==2638 |
+#            GroupId==2639 |
+#            GroupId==2640 |
+#            GroupId==2703 |
+#            GroupId==2704 |
+#            GroupId==2705 |
+#            GroupId==2707 |
+#            GroupId==2773 |
+#            GroupId==2778 |
+#            GroupId==2791 |
+#            GroupId==2796 |
+#            GroupId==2867 |
+#            GroupId==2869 |
+#            GroupId==2870 |
+#            GroupId==2871 |
+#            GroupId==2927 |
+#            GroupId==2930 |
+#            GroupId==2932 |
+#            GroupId==2934 |
+#            GroupId==3009 |
+#            GroupId==3011 |
+#            GroupId==3013 |
+#            GroupId==3014 |
+#            GroupId==3078 |
+#            GroupId==3079 |
+#            GroupId==3080 |
+#            GroupId==3081 |
+#            GroupId==3164 |
+#            GroupId==3165 |
+#            GroupId==3166 |
+#            GroupId==3167 |
+#            GroupId==3245 |
+#            GroupId==3246 |
+#            GroupId==3247 |
+#            GroupId==3252 |
+#            GroupId==3334 |
+#            GroupId==3335 |
+#            GroupId==3336 |
+#            GroupId==3337 |
+#            GroupId==3415 |
+#            GroupId==3417 |
+#            GroupId==3419 |
+#            GroupId==3420 |
+#            GroupId==3504 |
+#            GroupId==3507 |
+#            GroupId==3508 |
+#            GroupId==3509 |
+#            GroupId==3615 |
+#            GroupId==3616 |
+#            GroupId==3617 |
+#            GroupId==3618 |
+#            GroupId==3675 |
+#            GroupId==3676 |
+#            GroupId==3677 |
+#            GroupId==3678 |
+#            GroupId==3756 |
+#            GroupId==3757 |
+#            GroupId==3758 |
+#            GroupId==3759 |
+#            GroupId==3760 |
+#            GroupId==3829 |
+#            GroupId==3830 |
+#            GroupId==3831 |
+#            GroupId==3832 |
+#            GroupId==3914 |
+#            GroupId==3915 |
+#            GroupId==3916 |
+#            GroupId==3917 |
+#            GroupId==4019 |
+#            GroupId==4020 |
+#            GroupId==4021 |
+#            GroupId==4022 |
+#            GroupId==4134 |
+#            GroupId==4135 |
+#            GroupId==4136 |
+#            GroupId==4137 |
+#            GroupId==4253 |
+#            GroupId==4254 |
+#            GroupId==4255 |
+#            GroupId==4256 |
+#            GroupId==4274 |
+#            GroupId==4277 |
+#            GroupId==4387 |
+#            GroupId==4388 |
+#            GroupId==4389 |
+#            GroupId==4390 |
+#            GroupId==4498 |
+#            GroupId==4499 |
+#            GroupId==4500 |
+#            GroupId==4501 |
+#            GroupId==4600 |
+#            GroupId==4601 |
+#            GroupId==4602 |
+#            GroupId==4603 |
+#            GroupId==4665 |
+#            GroupId==4666 |
+#            GroupId==4667 |
+#            GroupId==4668 |
+#            GroupId==4781 |
+#            GroupId==4782 |
+#            GroupId==4783 |
+#            GroupId==4784 |
+#            GroupId==4787 |
+#            GroupId==4889 |
+#            GroupId==4890 |
+#            GroupId==4891 |
+#            GroupId==4892 |
+#            GroupId==4973 |
+#            GroupId==4974 |
+#            GroupId==4975 |
+#            GroupId==4976 |
+#            GroupId==5031 |
+#            GroupId==5071 |
+#            GroupId==5072 |
+#            GroupId==5073 |
+#            GroupId==5074 |
+#            GroupId==5118 |
+#            GroupId==5117 |
+#            GroupId==5118 |
+#            GroupId==5120 |
+#            GroupId==5202 |
+#            GroupId==5205 |
+#            GroupId==5208 |
+#            GroupId==5210 |
+#            GroupId==5265 |
+#            GroupId==21813 |
+#            GroupId==21814 |
+#            GroupId==21815 |
+#            GroupId==21816)
+# 
+# nrow(courses_soc_mac_112020_civil)
+# 
+# library(dplyr)
+# filtered_courses_soc_mac_112020_civil<-courses_soc_mac_112020_civil %>%
+#   select(GroupId,personal_number,Tzyun)
+# 
+# library(data.table)
+# max<-setDT(filtered_courses_soc_mac_112020_civil)[, .N, personal_number]
+# n=max(max$N)
+# 
+# for(i in 1:n){
+#   filtered_courses_soc_mac_112020_civil <- cbind(filtered_courses_soc_mac_112020_civil, data.frame(new=character(),stringsAsFactors=FALSE))
+# }
+# 
+# try(
+#   for(i in 1:nrow(filtered_courses_soc_mac_112020_civil)){
+#     for (j in 4:ncol(filtered_courses_soc_mac_112020_civil)) {
+#       if(filtered_courses_soc_mac_112020_civil[(i),]$personal_number==filtered_courses_soc_mac_112020_civil[(i+1),]$personal_number){
+#         filtered_courses_soc_mac_112020_civil[i,j]<-filtered_courses_soc_mac_112020_civil[(i+1),]$Tzyun
+#         filtered_courses_soc_mac_112020_civil <- filtered_courses_soc_mac_112020_civil[-(i+1),]
+#       }
+#     }
+#   }, silent=TRUE)
+# 
+# nrow(filtered_courses_soc_mac_112020_civil)
+# 
+# number<-ncol(filtered_courses_soc_mac_112020_civil)
+# 
+# filtered_courses_soc_mac_112020_civil[,number]<-NULL
+# 
+# features <- c(sprintf("Tzyun%1d", seq(1,(ncol(filtered_courses_soc_mac_112020_civil)-2))))
+# 
+# colnames(filtered_courses_soc_mac_112020_civil)[3:ncol(filtered_courses_soc_mac_112020_civil)] <- features
+# 
+# class(filtered_courses_soc_mac_112020_civil)
+# 
+# filtered_courses_soc_mac_112020_civil<-as.data.frame(filtered_courses_soc_mac_112020_civil)
+# class(filtered_courses_soc_mac_112020_civil$Tzyun8)
+# filtered_courses_soc_mac_112020_civil$Tzyun8<-as.numeric(filtered_courses_soc_mac_112020_civil$Tzyun8)
+# class(filtered_courses_soc_mac_112020_civil$Tzyun8)
+# 
+# library(descr)
+# library(psych)
+# freq(ordered(round(filtered_courses_soc_mac_112020_civil$Tzyun8,2)), plot = F,main=colnames(filtered_courses_soc_mac_112020_civil$Tzyun8),font=2)
+# filtered_courses_soc_mac_112020_civil[10:16]<-NULL
+# 
+# CreateDate_courses_soc_mac<-read.csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/CreateDate_courses_soc_mac.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
+# 
+# filtered_courses_soc_mac_112020_civil <-
+#   merge(filtered_courses_soc_mac_112020_civil,CreateDate_courses_soc_mac,by=c("GroupId"), all.x=T, all.y=F,sort = FALSE)
+# class(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
+# head(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
+# filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac<-as.Date(as.character(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac),format="%d/%m/%Y")
+# class(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
+# head(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
+# n_occur<-data.frame(table(filtered_courses_soc_mac_112020_civil$personal_number))
+# n_occur[n_occur$Freq>1,]
+# library(data.table)
+# filtered_courses_soc_mac_112020_civil<-setDT(filtered_courses_soc_mac_112020_civil)[,.SD[which.max(CreateDate_courses_soc_mac)],keyby=personal_number]
+# n_occur<-data.frame(table(filtered_courses_soc_mac_112020_civil$personal_number))
+# n_occur[n_occur$Freq>1,]
+# 
+# colnames(filtered_courses_soc_mac_112020_civil)[3]<-"RAvg1_courses_soc_mac"
+# colnames(filtered_courses_soc_mac_112020_civil)[4]<-"RAvg2_courses_soc_mac"
+# colnames(filtered_courses_soc_mac_112020_civil)[5]<-"RAvg3_courses_soc_mac"
+# colnames(filtered_courses_soc_mac_112020_civil)[6]<-"RAvg4_courses_soc_mac"
+# colnames(filtered_courses_soc_mac_112020_civil)[7]<-"RAvg5_courses_soc_mac"
+# colnames(filtered_courses_soc_mac_112020_civil)[8]<-"NPct1_courses_soc_mac"
+# colnames(filtered_courses_soc_mac_112020_civil)[9]<-"NPct2_courses_soc_mac"
+# filtered_courses_soc_mac_112020_civil$RTeken1_courses_soc_mac<-NA
+# filtered_courses_soc_mac_112020_civil$RTeken2_courses_soc_mac<-NA
+# filtered_courses_soc_mac_112020_civil$RTeken3_courses_soc_mac<-NA
+# filtered_courses_soc_mac_112020_civil$RTeken4_courses_soc_mac<-NA
+# filtered_courses_soc_mac_112020_civil$RTeken5_courses_soc_mac<-NA
+# filtered_courses_soc_mac_112020_civil$NPct1_courses_soc_mac<-
+# round(as.numeric(filtered_courses_soc_mac_112020_civil$NPct1_courses_soc_mac))
+# filtered_courses_soc_mac_112020_civil$NPct2_courses_soc_mac<-
+# round(as.numeric(filtered_courses_soc_mac_112020_civil$NPct2_courses_soc_mac))
+# 
+# GroupId <- filtered_courses_soc_mac_112020_civil %>%
+#   group_split (GroupId)
+# class(GroupId)
+# GroupId<-as.list(GroupId)
+# class(GroupId)
+# length(GroupId)
+# 
+# for (i in 1:length(GroupId)) {
+# for (j in 1:length(GroupId[[i]]$RAvg1_courses_soc_mac)){
+# GroupId[[i]]$RAvg1_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg1_courses_soc_mac)
+# GroupId[[i]]$RTeken1_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg1_courses_soc_mac[j]-
+# mean(GroupId[[i]]$RAvg1_courses_soc_mac))/
+# sd(GroupId[[i]]$RAvg1_courses_soc_mac)*10+70,0)
+# 
+# GroupId[[i]]$RAvg2_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg2_courses_soc_mac)
+# GroupId[[i]]$RTeken2_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg2_courses_soc_mac[j]-
+# mean(GroupId[[i]]$RAvg2_courses_soc_mac))/
+# sd(GroupId[[i]]$RAvg2_courses_soc_mac)*10+70,0)
+# 
+# GroupId[[i]]$RAvg3_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg3_courses_soc_mac)
+# GroupId[[i]]$RTeken3_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg3_courses_soc_mac[j]-
+# mean(GroupId[[i]]$RAvg3_courses_soc_mac))/
+# sd(GroupId[[i]]$RAvg3_courses_soc_mac)*10+70,0)
+# 
+# GroupId[[i]]$RAvg4_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg4_courses_soc_mac)
+# GroupId[[i]]$RTeken4_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg4_courses_soc_mac[j]-
+# mean(GroupId[[i]]$RAvg4_courses_soc_mac))/
+# sd(GroupId[[i]]$RAvg4_courses_soc_mac)*10+70,0)
+# 
+# GroupId[[i]]$RAvg5_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg5_courses_soc_mac)
+# GroupId[[i]]$RTeken5_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg5_courses_soc_mac[j]-
+# mean(GroupId[[i]]$RAvg5_courses_soc_mac))/
+# sd(GroupId[[i]]$RAvg5_courses_soc_mac)*10+70,0)
+# }
+# }
+# 
+# GroupId_df<-c()
+# for (i in 1:length(GroupId)) {
+#   GroupId_df_temp<-as.data.frame(GroupId[[i]])
+#   GroupId_df<-rbind(GroupId_df,GroupId_df_temp)
+# }
+# 
+# class(GroupId_df)
+# 
+# courses_soc_mac_112020_civil_am<-GroupId_df
+# 
+# nrow(courses_soc_mac_112020_civil_am)
+# 
+# class(courses_soc_mac_112020_civil_am)
+# 
 # colnames(courses_soc_mac_112020_civil_am)
-
-courses_soc_mac_112020_civil<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/courses_soc_mac_112020_civil.csv",locale = locale(date_names = "he", encoding = "UTF-8"))
-colnames(courses_soc_mac_112020_civil)
-courses_soc_mac_112020_civil[11:13]<-NULL
-colnames(courses_soc_mac_112020_civil)
-
-nrow(courses_soc_mac_112020_civil)
-
-library(dplyr)
-courses_soc_mac_112020_civil <- courses_soc_mac_112020_civil %>%
-    filter(GroupId==147 |
-           GroupId==148 |
-           GroupId==149 |
-           GroupId==150 |
-           GroupId==151 |
-           GroupId==178 |
-           GroupId==179 |
-           GroupId==182 |
-           GroupId==183 |
-           GroupId==184 |
-           GroupId==200 |
-           GroupId==201 |
-           GroupId==202 |
-           GroupId==211 |
-           GroupId==212 |
-           GroupId==213 |
-           GroupId==216 |
-           GroupId==217 |
-           GroupId==218 |
-           GroupId==222 |
-           GroupId==223 |
-           GroupId==224 |
-           GroupId==301 |
-           GroupId==302 |
-           GroupId==303 |
-           GroupId==304 |
-           GroupId==307 |
-           GroupId==308 |
-           GroupId==309 |
-           GroupId==310 |
-           GroupId==311 |
-           GroupId==312 |
-           GroupId==318 |
-           GroupId==319 |
-           GroupId==320 |
-           GroupId==325 |
-           GroupId==326 |
-           GroupId==327 |
-           GroupId==328 |
-           GroupId==329 |
-           GroupId==330 |
-           GroupId==579 |
-           GroupId==580 |
-           GroupId==581 |
-           GroupId==605 |
-           GroupId==606 |
-           GroupId==642 |
-           GroupId==643 |
-           GroupId==708 |
-           GroupId==784 |
-           GroupId==785 |
-           GroupId==786 |
-           GroupId==787 |
-           GroupId==792 |
-           GroupId==793 |
-           GroupId==708 |
-           GroupId==709 |
-           GroupId==784 |
-           GroupId==785 |
-           GroupId==786 |
-           GroupId==787 |
-           GroupId==792 |
-           GroupId==793 |
-           GroupId==814 |
-           GroupId==815 |
-           GroupId==816 |
-           GroupId==817 |
-           GroupId==825 |
-           GroupId==826 |
-           GroupId==827 |
-           GroupId==828 |
-           GroupId==832 |
-           GroupId==833 |
-           GroupId==834 |
-           GroupId==835 |
-           GroupId==836 |
-           GroupId==837 |
-           GroupId==838 |
-           GroupId==839 |
-           GroupId==840 |
-           GroupId==847 |
-           GroupId==848 |
-           GroupId==849 |
-           GroupId==850 |
-           GroupId==851 |
-           GroupId==852 |
-           GroupId==853 |
-           GroupId==854 |
-           GroupId==855 |
-           GroupId==856 |
-           GroupId==857 |
-           GroupId==858 |
-           GroupId==1118 |
-           GroupId==1119 |
-           GroupId==1120 |
-           GroupId==1121 |
-           GroupId==1128 |
-           GroupId==1129 |
-           GroupId==1130 |
-           GroupId==1180 |
-           GroupId==1181 |
-           GroupId==1182 |
-           GroupId==1184 |
-           GroupId==1245 |
-           GroupId==1246 |
-           GroupId==1247 |
-           GroupId==1248 |
-           GroupId==1297 |
-           GroupId==1298 |
-           GroupId==1299 |
-           GroupId==1302 |
-           GroupId==1343 |
-           GroupId==1344 |
-           GroupId==1345 |
-           GroupId==1346 |
-           GroupId==1443 |
-           GroupId==1445 |
-           GroupId==1446 |
-           GroupId==1496 |
-           GroupId==1497 |
-           GroupId==1525 |
-           GroupId==1526 |
-           GroupId==1528 |
-           GroupId==1562 |
-           GroupId==1605 |
-           GroupId==1675 |
-           GroupId==1681 |
-           GroupId==1682 |
-           GroupId==1776 |
-           GroupId==1782 |
-           GroupId==1783 |
-           GroupId==1784 |
-           GroupId==1867 |
-           GroupId==1868 |
-           GroupId==1869 |
-           GroupId==1948 |
-           GroupId==1949 |
-           GroupId==1959 |
-           GroupId==1960 |
-           GroupId==1966 |
-           GroupId==1995 |
-           GroupId==2011 |
-           GroupId==2012 |
-           GroupId==2013 |
-           GroupId==2014 |
-           GroupId==2015 |
-           GroupId==2016 |
-           GroupId==2017 |
-           GroupId==2029 |
-           GroupId==2087 |
-           GroupId==2088 |
-           GroupId==2090 |
-           GroupId==2171 |
-           GroupId==2172 |
-           GroupId==2173 |
-           GroupId==2174 |
-           GroupId==2232 |
-           GroupId==2233 |
-           GroupId==2236 |
-           GroupId==2237 |
-           GroupId==2240 |
-           GroupId==2346 |
-           GroupId==2347 |
-           GroupId==2348 |
-           GroupId==2349 |
-           GroupId==2421 |
-           GroupId==2422 |
-           GroupId==2423 |
-           GroupId==2425 |
-           GroupId==2491 |
-           GroupId==2492 |
-           GroupId==2548 |
-           GroupId==2551 |
-           GroupId==2565 |
-           GroupId==2615 |
-           GroupId==2637 |
-           GroupId==2638 |
-           GroupId==2639 |
-           GroupId==2640 |
-           GroupId==2703 |
-           GroupId==2704 |
-           GroupId==2705 |
-           GroupId==2707 |
-           GroupId==2773 |
-           GroupId==2778 |
-           GroupId==2791 |
-           GroupId==2796 |
-           GroupId==2867 |
-           GroupId==2869 |
-           GroupId==2870 |
-           GroupId==2871 |
-           GroupId==2927 |
-           GroupId==2930 |
-           GroupId==2932 |
-           GroupId==2934 |
-           GroupId==3009 |
-           GroupId==3011 |
-           GroupId==3013 |
-           GroupId==3014 |
-           GroupId==3078 |
-           GroupId==3079 |
-           GroupId==3080 |
-           GroupId==3081 |
-           GroupId==3164 |
-           GroupId==3165 |
-           GroupId==3166 |
-           GroupId==3167 |
-           GroupId==3245 |
-           GroupId==3246 |
-           GroupId==3247 |
-           GroupId==3252 |
-           GroupId==3334 |
-           GroupId==3335 |
-           GroupId==3336 |
-           GroupId==3337 |
-           GroupId==3415 |
-           GroupId==3417 |
-           GroupId==3419 |
-           GroupId==3420 |
-           GroupId==3504 |
-           GroupId==3507 |
-           GroupId==3508 |
-           GroupId==3509 |
-           GroupId==3615 |
-           GroupId==3616 |
-           GroupId==3617 |
-           GroupId==3618 |
-           GroupId==3675 |
-           GroupId==3676 |
-           GroupId==3677 |
-           GroupId==3678 |
-           GroupId==3756 |
-           GroupId==3757 |
-           GroupId==3758 |
-           GroupId==3759 |
-           GroupId==3760 |
-           GroupId==3829 |
-           GroupId==3830 |
-           GroupId==3831 |
-           GroupId==3832 |
-           GroupId==3914 |
-           GroupId==3915 |
-           GroupId==3916 |
-           GroupId==3917 |
-           GroupId==4019 |
-           GroupId==4020 |
-           GroupId==4021 |
-           GroupId==4022 |
-           GroupId==4134 |
-           GroupId==4135 |
-           GroupId==4136 |
-           GroupId==4137 |
-           GroupId==4253 |
-           GroupId==4254 |
-           GroupId==4255 |
-           GroupId==4256 |
-           GroupId==4274 |
-           GroupId==4277 |
-           GroupId==4387 |
-           GroupId==4388 |
-           GroupId==4389 |
-           GroupId==4390 |
-           GroupId==4498 |
-           GroupId==4499 |
-           GroupId==4500 |
-           GroupId==4501 |
-           GroupId==4600 |
-           GroupId==4601 |
-           GroupId==4602 |
-           GroupId==4603 |
-           GroupId==4665 |
-           GroupId==4666 |
-           GroupId==4667 |
-           GroupId==4668 |
-           GroupId==4781 |
-           GroupId==4782 |
-           GroupId==4783 |
-           GroupId==4784 |
-           GroupId==4787 |
-           GroupId==4889 |
-           GroupId==4890 |
-           GroupId==4891 |
-           GroupId==4892 |
-           GroupId==4973 |
-           GroupId==4974 |
-           GroupId==4975 |
-           GroupId==4976 |
-           GroupId==5031 |
-           GroupId==5071 |
-           GroupId==5072 |
-           GroupId==5073 |
-           GroupId==5074 |
-           GroupId==5118 |
-           GroupId==5117 |
-           GroupId==5118 |
-           GroupId==5120 |
-           GroupId==5202 |
-           GroupId==5205 |
-           GroupId==5208 |
-           GroupId==5210 |
-           GroupId==5265 |
-           GroupId==21813 |
-           GroupId==21814 |
-           GroupId==21815 |
-           GroupId==21816)
-
-nrow(courses_soc_mac_112020_civil)
-
-library(dplyr)
-filtered_courses_soc_mac_112020_civil<-courses_soc_mac_112020_civil %>%
-  select(GroupId,personal_number,Tzyun)
-
-library(data.table)
-max<-setDT(filtered_courses_soc_mac_112020_civil)[, .N, personal_number]
-n=max(max$N)
-
-for(i in 1:n){
-  filtered_courses_soc_mac_112020_civil <- cbind(filtered_courses_soc_mac_112020_civil, data.frame(new=character(),stringsAsFactors=FALSE))
-}
-
-try(
-  for(i in 1:nrow(filtered_courses_soc_mac_112020_civil)){
-    for (j in 4:ncol(filtered_courses_soc_mac_112020_civil)) {
-      if(filtered_courses_soc_mac_112020_civil[(i),]$personal_number==filtered_courses_soc_mac_112020_civil[(i+1),]$personal_number){
-        filtered_courses_soc_mac_112020_civil[i,j]<-filtered_courses_soc_mac_112020_civil[(i+1),]$Tzyun
-        filtered_courses_soc_mac_112020_civil <- filtered_courses_soc_mac_112020_civil[-(i+1),]
-      }
-    }
-  }, silent=TRUE)
-
-nrow(filtered_courses_soc_mac_112020_civil)
-
-number<-ncol(filtered_courses_soc_mac_112020_civil)
-
-filtered_courses_soc_mac_112020_civil[,number]<-NULL
-
-features <- c(sprintf("Tzyun%1d", seq(1,(ncol(filtered_courses_soc_mac_112020_civil)-2))))
-
-colnames(filtered_courses_soc_mac_112020_civil)[3:ncol(filtered_courses_soc_mac_112020_civil)] <- features
-
-class(filtered_courses_soc_mac_112020_civil)
-
-filtered_courses_soc_mac_112020_civil<-as.data.frame(filtered_courses_soc_mac_112020_civil)
-class(filtered_courses_soc_mac_112020_civil$Tzyun8)
-filtered_courses_soc_mac_112020_civil$Tzyun8<-as.numeric(filtered_courses_soc_mac_112020_civil$Tzyun8)
-class(filtered_courses_soc_mac_112020_civil$Tzyun8)
-
+# 
+# courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+#   mutate_at(c(3:9,11:15), funs(c(scale(.))))
+# 
+# courses_soc_mac_112020_civil_am<-as.data.frame(courses_soc_mac_112020_civil_am)
+# 
+# library(dplyr)
+# courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+#   mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
+#                                                 RAvg2_courses_soc_mac,
+#                                                 RAvg3_courses_soc_mac,
+#                                                 RAvg4_courses_soc_mac,
+#                                                 RAvg5_courses_soc_mac)))
+# courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+#   mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
+#                                                   RTeken2_courses_soc_mac,
+#                                                   RTeken3_courses_soc_mac,
+#                                                   RTeken4_courses_soc_mac,
+#                                                   RTeken5_courses_soc_mac)))
+# courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+#   mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
+#                                                 NPct2_courses_soc_mac)))
+# 
+# courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>% 
+#   mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
+# 
+# filtered_courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
+#   select(personal_number,GroupId,am_courses_soc_mac)
+# 
+# gibush_candidates_kakatz_07.2021_civil <-
+#   merge(gibush_candidates_kakatz_07.2021_civil,filtered_courses_soc_mac_112020_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
+# 
 library(descr)
 library(psych)
-freq(ordered(round(filtered_courses_soc_mac_112020_civil$Tzyun8,2)), plot = F,main=colnames(filtered_courses_soc_mac_112020_civil$Tzyun8),font=2)
-filtered_courses_soc_mac_112020_civil[10:16]<-NULL
-
-CreateDate_courses_soc_mac<-read.csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/CreateDate_courses_soc_mac.csv",header=T, sep=",", quote="\"", dec=".", fill=T, comment.char="")
-
-filtered_courses_soc_mac_112020_civil <-
-  merge(filtered_courses_soc_mac_112020_civil,CreateDate_courses_soc_mac,by=c("GroupId"), all.x=T, all.y=F,sort = FALSE)
-class(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
-head(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
-filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac<-as.Date(as.character(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac),format="%d/%m/%Y")
-class(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
-head(filtered_courses_soc_mac_112020_civil$CreateDate_courses_soc_mac)
-n_occur<-data.frame(table(filtered_courses_soc_mac_112020_civil$personal_number))
-n_occur[n_occur$Freq>1,]
-library(data.table)
-filtered_courses_soc_mac_112020_civil<-setDT(filtered_courses_soc_mac_112020_civil)[,.SD[which.max(CreateDate_courses_soc_mac)],keyby=personal_number]
-n_occur<-data.frame(table(filtered_courses_soc_mac_112020_civil$personal_number))
-n_occur[n_occur$Freq>1,]
-
-colnames(filtered_courses_soc_mac_112020_civil)[3]<-"RAvg1_courses_soc_mac"
-colnames(filtered_courses_soc_mac_112020_civil)[4]<-"RAvg2_courses_soc_mac"
-colnames(filtered_courses_soc_mac_112020_civil)[5]<-"RAvg3_courses_soc_mac"
-colnames(filtered_courses_soc_mac_112020_civil)[6]<-"RAvg4_courses_soc_mac"
-colnames(filtered_courses_soc_mac_112020_civil)[7]<-"RAvg5_courses_soc_mac"
-colnames(filtered_courses_soc_mac_112020_civil)[8]<-"NPct1_courses_soc_mac"
-colnames(filtered_courses_soc_mac_112020_civil)[9]<-"NPct2_courses_soc_mac"
-filtered_courses_soc_mac_112020_civil$RTeken1_courses_soc_mac<-NA
-filtered_courses_soc_mac_112020_civil$RTeken2_courses_soc_mac<-NA
-filtered_courses_soc_mac_112020_civil$RTeken3_courses_soc_mac<-NA
-filtered_courses_soc_mac_112020_civil$RTeken4_courses_soc_mac<-NA
-filtered_courses_soc_mac_112020_civil$RTeken5_courses_soc_mac<-NA
-filtered_courses_soc_mac_112020_civil$NPct1_courses_soc_mac<-
-round(as.numeric(filtered_courses_soc_mac_112020_civil$NPct1_courses_soc_mac))
-filtered_courses_soc_mac_112020_civil$NPct2_courses_soc_mac<-
-round(as.numeric(filtered_courses_soc_mac_112020_civil$NPct2_courses_soc_mac))
-
-GroupId <- filtered_courses_soc_mac_112020_civil %>%
-  group_split (GroupId)
-class(GroupId)
-GroupId<-as.list(GroupId)
-class(GroupId)
-length(GroupId)
-
-for (i in 1:length(GroupId)) {
-for (j in 1:length(GroupId[[i]]$RAvg1_courses_soc_mac)){
-GroupId[[i]]$RAvg1_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg1_courses_soc_mac)
-GroupId[[i]]$RTeken1_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg1_courses_soc_mac[j]-
-mean(GroupId[[i]]$RAvg1_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg1_courses_soc_mac)*10+70,0)
-
-GroupId[[i]]$RAvg2_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg2_courses_soc_mac)
-GroupId[[i]]$RTeken2_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg2_courses_soc_mac[j]-
-mean(GroupId[[i]]$RAvg2_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg2_courses_soc_mac)*10+70,0)
-
-GroupId[[i]]$RAvg3_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg3_courses_soc_mac)
-GroupId[[i]]$RTeken3_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg3_courses_soc_mac[j]-
-mean(GroupId[[i]]$RAvg3_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg3_courses_soc_mac)*10+70,0)
-
-GroupId[[i]]$RAvg4_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg4_courses_soc_mac)
-GroupId[[i]]$RTeken4_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg4_courses_soc_mac[j]-
-mean(GroupId[[i]]$RAvg4_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg4_courses_soc_mac)*10+70,0)
-
-GroupId[[i]]$RAvg5_courses_soc_mac<-as.numeric(GroupId[[i]]$RAvg5_courses_soc_mac)
-GroupId[[i]]$RTeken5_courses_soc_mac[j]<-round((GroupId[[i]]$RAvg5_courses_soc_mac[j]-
-mean(GroupId[[i]]$RAvg5_courses_soc_mac))/
-sd(GroupId[[i]]$RAvg5_courses_soc_mac)*10+70,0)
-}
-}
-
-GroupId_df<-c()
-for (i in 1:length(GroupId)) {
-  GroupId_df_temp<-as.data.frame(GroupId[[i]])
-  GroupId_df<-rbind(GroupId_df,GroupId_df_temp)
-}
-
-class(GroupId_df)
-
-courses_soc_mac_112020_civil_am<-GroupId_df
-
-nrow(courses_soc_mac_112020_civil_am)
-
-class(courses_soc_mac_112020_civil_am)
-
-colnames(courses_soc_mac_112020_civil_am)
-
-courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
-  mutate_at(c(3:9,11:15), funs(c(scale(.))))
-
-courses_soc_mac_112020_civil_am<-as.data.frame(courses_soc_mac_112020_civil_am)
-
-library(dplyr)
-courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
-  mutate(RAvg_courses_soc_mac = rowMeans(select(.,RAvg1_courses_soc_mac,
-                                                RAvg2_courses_soc_mac,
-                                                RAvg3_courses_soc_mac,
-                                                RAvg4_courses_soc_mac,
-                                                RAvg5_courses_soc_mac)))
-courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
-  mutate(RTeken_courses_soc_mac = rowMeans(select(.,RTeken1_courses_soc_mac,
-                                                  RTeken2_courses_soc_mac,
-                                                  RTeken3_courses_soc_mac,
-                                                  RTeken4_courses_soc_mac,
-                                                  RTeken5_courses_soc_mac)))
-courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
-  mutate(NPct_courses_soc_mac = rowMeans(select(.,NPct1_courses_soc_mac,
-                                                NPct2_courses_soc_mac)))
-
-courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>% 
-  mutate(am_courses_soc_mac = rowMeans(select(.,RAvg_courses_soc_mac,RTeken_courses_soc_mac,NPct_courses_soc_mac)))
-
-filtered_courses_soc_mac_112020_civil_am <- courses_soc_mac_112020_civil_am %>%
-  select(personal_number,GroupId,am_courses_soc_mac)
-
-gibush_candidates_kakatz_07.2021_civil <-
-  merge(gibush_candidates_kakatz_07.2021_civil,filtered_courses_soc_mac_112020_civil_am,by=c("personal_number"), all.x=T, all.y=F,sort = FALSE)
-
-library(descr)
-library(psych)
-gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac
+# gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac<-gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac
 describe(as.numeric(unlist(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)))
 freq(ordered(round(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac,2)), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac),font=2)
 # freq(ordered(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$GroupName_courses_soc_mac),font=2)
@@ -1266,9 +1266,21 @@ colnames(gibush_candidates_kakatz_07.2021_civil)
 class(gibush_candidates_kakatz_07.2021_civil$apptitudes)
 class(gibush_candidates_kakatz_07.2021_civil$final_mac_course_score)
 class(gibush_candidates_kakatz_07.2021_civil$kaba)
-gibush_candidates_kakatz_07.2021_civil$kaba<-as.numeric(gibush_candidates_kakatz_07.2021_civil$kaba)
-class(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
+library(tidyverse)
+mClean <- function(strVec){
+  pass1 <- strVec %>% 
+    str_trim() %>% 
+    str_extract("(?x)        # Perl-style whitespace
+                ^[\\+\\-]?   # An optional leading +/-
+                \\d+         # the integer part
+                (\\.\\d+)? # A fractional part
+                ") %>% 
+    as.numeric()
+}
 
+gibush_candidates_kakatz_07.2021_civil$kaba<-as.numeric(mClean(gibush_candidates_kakatz_07.2021_civil$kaba))
+class(gibush_candidates_kakatz_07.2021_civil$am_courses_soc_mac)
+# 
 # predicted_FileGrade
 gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade <- format(round(predict(reg_FileGrade1, gibush_candidates_kakatz_07.2021_civil),2), nsmall = 2)
 freq(ordered(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade), plot = F,main=colnames(gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade),font=2)
@@ -1376,7 +1388,7 @@ locale("he")
 
 # n=0
 # repeat {
-library(gargle)# restart R before
+# library(gargle)# restart R before
 library(googledrive)
 library(dplyr)
 library(readr)
@@ -1384,7 +1396,7 @@ locale("he")
 drive_auth(email = "asherr1211@gmail.com")
 drive_download("gibush_candidates_kakatz_07.2021_civil_final_scores****",path = "C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd",type = "csv",overwrite=T)
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-read_csv("C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
-# gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]
+gibush_candidates_kakatz_07.2021_civil_final_scores_gd<-gibush_candidates_kakatz_07.2021_civil_final_scores_gd[-1]
 write_excel_csv(gibush_candidates_kakatz_07.2021_civil_final_scores_gd,"C:/Users/USER/Documents/MAMDA/JOMAGAV/alternative_gibush/gibush_candidates_kakatz_07.2021_civil_final_scores_gd.csv")
 gibush_candidates_kakatz_07.2021_civil_final_scores_gd[6]<-gibush_candidates_kakatz_07.2021_civil$predicted_FileGrade
 gibush_candidates_kakatz_07.2021_civil$personality <-gibush_candidates_kakatz_07.2021_civil_final_scores_gd$"אישיות"
